@@ -50,3 +50,7 @@ In this puzzle, we want to simulate picking a lock. This will both be a scene in
 
 ## Strectch Goal
 - [ ] Give better texture to game elements
+
+=============================
+## Blog
+* 04/12/2019: Create team webpage. Fill it with our initial project design, which is an escape room VR game.
