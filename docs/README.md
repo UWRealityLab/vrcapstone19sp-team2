@@ -5,12 +5,14 @@ Team 2 - Qian Yan, Yifan Xu, Jiwen Wu, Yexiang Shao
 ## Introduction
 For the final project of this course, we are planing to work on creating an escape room VR game. It will be a single player game in which the player is confined in a limited game space filled with interactable game components.
 
-Just like a typical escape room experience, in this confined game space, which probably will be an office, a living room, etc., player will be able to interact with all sorts of furnitures and electronics to find clues, solve puzzles and eventually get out of the room. But what special in this game is that we will fully utilize the power of VR to really give the player an immerse gaming experience like they are playing an escape room in the real life, and even better with the environment we will be able to create freely with Unity.
+Just like a typical escape room experience, in this confined game space, which probably will be an office, a living room, etc., player will be able to interact with all sorts of furnitures and electronics to find clues, solve puzzles and eventually get out of the room. But what special in this game is that we will fully utilize the power of VR to really give the player an immerse gaming experience like they are playing an escape room in the real life; actually even better with the environment we will be able to create freely with Unity.
 
 For the gameplay, on top of the ordinary "search and find", we plan to have (at least) three core puzzles that distinguishes our game from the other game. They are illustrated in more details below.
 
 ## Story line, Narrative
-(Make A Story)
+Detective Johnson is tracing a mysterious death of an old millionaire. That was a rainy day, and he was in one of the millionair's chalet alone trying to find anything related to the mysterious death.
+
+The rain went larger and larger and Johnson finally fell asleep on the sofa. When he woke up, he found himself in a dark room...
 
 ## Components
 ### Environment
@@ -20,10 +22,28 @@ Most of these components will just be there so that the player will be able to p
 
 Other components in the environment will be used to reveal the story line and give the player the some information of the environment they are trapped in to increase the imersiveness. For example, instead of giving the player the background of the owner of the house directly through narrative, we can put them on a letter on the table so players can explore it by themselves. Another example will be a window in the room to reveal some of the view outside and raindrops on the window to match the possibly heavy rain background music.
 
+### Player movement
+In our game, player will only being able to move like a human using the controller, not through any teleportation which can ruin the immersiveness of the game making it feel unreal.
+
 ### Puzzles
-#### Light Puzzle
+#### Flash Light Puzzle
+In this game, we want to explore the effect of the limited vision to increase the imersiveness and the thrill of the game. Player will initially only be able to explore the environment through the flash light until they find the switch of the light.
+
+More over, one of the puzzle in the game will be related to the flash light. To solve this puzzle, player needs to turn off the light to see the hints that will be invisible if light is on.
+
 #### Radio Puzzle
 #### Lockpicking
-### UI
 ## Goal
+### Week 2
+- [ ] A simple work space with work benches
+- [ ] Player & Player Movement
+### Week 3 & 4
+- [ ] Three main puzzles finished
+### Week 5 & 6
+- [ ] More elements/decorations to the game
+### Week 7
+- [ ] Finish the game logic
+### Week 8
+
 ## Strectch Goal
+- [ ] Give better texture to game elements
