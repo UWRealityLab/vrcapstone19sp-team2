@@ -32,7 +32,10 @@ In this game, we want to explore the effect of the limited vision to increase th
 More over, one of the puzzle in the game will be related to the flash light. To solve this puzzle, player needs to turn off the light to see the hints that will be invisible if light is on.
 
 #### Radio Puzzle
+Radio Puzzle is basically simulating operating radio devices such as telegraph machines and some other normal radio devices. The expected design would be let the player operate these devices given a hint and find something to get out of the escape room. For example, a player would swtich to and hear from FM 105.3 to gather hints, but it could be more complex than this. The significance of this puzzle is about designing and creating radio devices, and the context could be situated at when world wars happened, as a soldier is trying to send or receive messages with a telegraph machine.
+
 #### Lockpicking
+In this puzzle, we want to simulate picking a lock. This will both be a scene in the escape room game, and an educational tutorial too, as lock picking is actually not that easy in real life and we would like to give player a chance to experience lock picking in this game. Controlling lock picking tools with VR controllers can be challenging, so we are thinking of creating a very big lock and big lock picking tools to make things easier. Hopefully, players will be able to pick a lock in real life after playing our game a few times!
 ## Goal
 ### Week 2
 - [ ] A simple work space with work benches
