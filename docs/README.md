@@ -57,10 +57,10 @@ In this puzzle, we want to simulate picking a lock. This will both be a scene in
 ## Blog
 ###Week 1
 This week all the group members did Unity tutorial and experienced with some VR/AR devices available for our capstone projects. We also brainstormed our project ideas individually. The tentative project ideas we have are: 
-- [] making pottery on VR
-- [] AR/VR drum game
-- [] VR excape room
-...
+- [ ] making pottery on VR
+- [ ] AR/VR drum game
+- [ ] VR excape room
+- [ ] ...
 We evaluated the feasibility of each idea individually and our plan for next week is to discuss our ideas together and hopefully finalize our project.
 
 ###Week 2
