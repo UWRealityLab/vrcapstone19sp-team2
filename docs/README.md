@@ -2,6 +2,9 @@ VR ESCAPE ROOM
 =============================
 Team 2 - Qian Yan, Yifan Xu, Jiwen Wu, Yexiang Shao
 
+## Abstract
+This gives a preview of our team's course project and the ultimate goal we wish to achieve by the end of the quarter. This project is designed so that everyone in the team can have something different to work on concurrently and learn various features provided by Unity framework. At the mean time, we also want the project to be interesting, not only yielding a result that is amazing to be played with, but also having a developing process that is enjoyable to us.
+
 ## Introduction
 For the final project of this course, we are planing to work on creating an escape room VR game. It will be a single player game in which the player is confined in a limited game space filled with interactable game components.
 
