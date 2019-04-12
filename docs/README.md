@@ -55,4 +55,14 @@ In this puzzle, we want to simulate picking a lock. This will both be a scene in
 - [ ] Give better texture to game elements
 
 ## Blog
-- 04/12/2019: Create team webpage. Fill it with our initial project design, which is an escape room VR game.
+###Week 1
+This week all the group members did Unity tutorial and experienced with some VR/AR devices available for our capstone projects. We also brainstormed our project ideas individually. The tentative project ideas we have are: 
+- [] making pottery on VR
+- [] AR/VR drum game
+- [] VR excape room
+...
+We evaluated the feasibility of each idea individually and our plan for next week is to discuss our ideas together and hopefully finalize our project.
+
+###Week 2
+This week we learned ARcore tutorial and started to discuss our project ideas together. Create team webpage. We listed the pros and cons of our topics and evaluated them. We also did some research on existed projects that are similar to our ideas. We found the projects like VR pottery, Drums Hero, etc. Therefore, we chose to develop a VR excape room with some creative features for our project. After finalizing our project, which is an escape room VR game, we wrote a proposal for it and filled the webpage with our initial project design.
+Our plan for next week is to present our project design to the class and start setting environment for our project. After getting familiar with the device we are going to use, we also want to build some initial settings for our project next week.
