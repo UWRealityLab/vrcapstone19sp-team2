@@ -69,3 +69,25 @@ This week we learned ARcore tutorial and started to discuss our project ideas to
 We found the projects like [VR pottery](https://store.steampowered.com/app/992610/Lets_Create_Pottery_VR/), [Drums Hero](https://store.steampowered.com/app/608370/Drums_Hero/), etc. 
 Therefore, we chose to develop a VR excape room with some creative features for our project. After finalizing our project, which is an escape room VR game, we wrote a proposal for it and filled the webpage with our initial project design.
 Our plan for next week is to present our project design to the class and start setting environment for our project. After getting familiar with the device we are going to use, we also want to build some initial settings for our project next week.
+
+### Week 2
+Potential Environment
+- https://assetstore.unity.com/packages/3d/environments/urban/old-brick-house-94243
+- https://assetstore.unity.com/packages/3d/environments/fantasy/medieval-cartoon-furniture-pack-15094
+
+Furnitures
+- https://assetstore.unity.com/publishers/2284?orderBy=popularity&page=2&plusPro=false&price=0-4000&rating=0&released=0
+
+Flashlight
+- https://assetstore.unity.com/packages/3d/props/electronics/flashlight-18972
+
+Radio
+- https://assetstore.unity.com/packages/3d/props/electronics/retro-radio-76817
+- https://assetstore.unity.com/packages/3d/props/electronics/vintage-radio-pack-27734
+
+Lockingpicking
+- https://assetstore.unity.com/packages/3d/props/tools/mini-pack-lockpick-kit-80028
+
+Sample project
+- https://github.com/yinsimei/Escape_2016/tree/master/Assets
+ - https://www.youtube.com/watch?v=lnSwbf05Kxs&index=3&list=PL8BNwwCeojJ5MDnWPpv-lB1OdrQIG3B7N
