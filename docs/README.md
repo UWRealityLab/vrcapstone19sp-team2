@@ -54,7 +54,7 @@ In this puzzle, we want to simulate picking a lock. This will both be a scene in
 ## Strectch Goal
 - [ ] Give better texture to game elements
 
-## Project Requirement Documentation
+## Product Requirements Document
 [PRD](https://docs.google.com/document/d/1rcIkcjQwjiIJ1NvRoKyZVYqxz6zIwUgDSnxbGwEAvUE/edit?usp=sharing) (Accessible with UW email)
 
 ## Blog
