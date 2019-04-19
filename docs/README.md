@@ -59,7 +59,7 @@ In this puzzle, we want to simulate picking a lock. This will both be a scene in
 This week all the group members did Unity tutorial and experienced with some VR/AR devices available for our capstone projects. We also brainstormed our project ideas individually. The tentative project ideas we have are: 
 - [ ] making pottery on VR
 - [ ] AR/VR drum game
-- [ ] VR excape room
+- [ ] VR escape room
 - [ ] ...
 
 We evaluated the feasibility of each idea individually and our plan for next week is to discuss our ideas together and hopefully finalize our project.
@@ -67,7 +67,7 @@ We evaluated the feasibility of each idea individually and our plan for next wee
 ### Week 2
 This week we learned ARcore tutorial and started to discuss our project ideas together. Create team webpage. We listed the pros and cons of our topics and evaluated them. We also did some research on existed projects that are similar to our ideas. 
 We found the projects like [VR pottery](https://store.steampowered.com/app/992610/Lets_Create_Pottery_VR/), [Drums Hero](https://store.steampowered.com/app/608370/Drums_Hero/), etc. 
-Therefore, we chose to develop a VR excape room with some creative features for our project. After finalizing our project, which is an escape room VR game, we wrote a proposal for it and filled the webpage with our initial project design.
+Therefore, we chose to develop a VR escape room with some creative features for our project. After finalizing our project, which is an escape room VR game, we wrote a proposal for it and filled the webpage with our initial project design.
 Our plan for next week is to present our project design to the class and start setting environment for our project. After getting familiar with the device we are going to use, we also want to build some initial settings for our project next week.
 
 ### Week 2
@@ -113,3 +113,13 @@ Breakable Containers
 Arms
 - https://assetstore.unity.com/packages/tools/visual-scripting/visual-interaction-55228
 - https://assetstore.unity.com/packages/tools/animation/full-arms-vr-ultimate-interaction-toolset-102839
+
+### Week 3
+On Tuesday, we presented our project in front of the class and absorbed many creative ideas and suggestions from our instructors, TAs and classmates. One important thing is to make our escape room distinct from the others. For example, we could put some objects in our game that are not easily accessible in the real life, such as laser guns, make elements flow around and put our room on a plane or a ship. There were also several questions raised; we will have a 5-minute demo at the end so we should leverage the length and difficulty of the game and maybe give some hints when players need them. Moreover, it is significant to decide how players move in the game (teleport vs. actually walking), and we are stilling testing this.
+On Thursday, Qian was setting up the environment and we together were looking for assets that we could make use of, as listed above. Basically, we have set up a terrain and a big house for our escape rooms and other VR headset stuff. Actually, we spent a lot of time testing out which asset is usable and suitable. However, we are not sure what to put into our Git (maybe just scripts and things we created?) because those assets could be as large as several gigabytes. 
+We had also decided several things:
+- There are some "lockpicking" assets already, so we could import and customize them by ourselves.
+- There are no interactive Radio assets in the store, so we decided to make use of only the models and appearance and then to add some dials and buttons along with some scripts to make them interactive.
+A suggestion from our TAs is to settle down the overall game logic first and then add other game components, such that each week we could at least have a running version for people to try and test and we could fix bugs or adjust the difficulty correspondingly.
+For the next week, we plan to “shrink” that big house into a single room that is going to be our escape room, finalize the environment(to put the room in a ship or a plane and set up weather and lights), have all basic, usable assets ready(e.g. interactive radios) and finishing up player's movement(teleport vs. actually walking). 
+
