@@ -128,5 +128,7 @@ We had also decided several things:
 
 A suggestion from our TAs is to settle down the overall game logic first and then add other game components, such that each week we could at least have a running version for people to try and test and we could fix bugs or adjust the difficulty correspondingly.
 
+We have also added a section in the website for PRD as shown above.
+
 For the next week, we plan to “shrink” that big house into a single room that is going to be our escape room, finalize the environment(to put the room in a ship or a plane and set up weather and lights), have all basic, usable assets ready(e.g. interactive radios) and finishing up player's movement(teleport vs. actually walking). 
 
