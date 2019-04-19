@@ -92,3 +92,6 @@ Lockingpicking
 Sample project
 - https://github.com/yinsimei/Escape_2016/tree/master/Assets
  - https://www.youtube.com/watch?v=lnSwbf05Kxs&index=3&list=PL8BNwwCeojJ5MDnWPpv-lB1OdrQIG3B7N
+ 
+Gun Pack
+- https://assetstore.unity.com/packages/3d/props/guns/modular-gun-pack-85412
