@@ -116,7 +116,9 @@ Arms
 
 ### Week 3
 On Tuesday, we presented our project in front of the class and absorbed many creative ideas and suggestions from our instructors, TAs and classmates. One important thing is to make our escape room distinct from the others. For example, we could put some objects in our game that are not easily accessible in the real life, such as laser guns, make elements flow around and put our room on a plane or a ship. There were also several questions raised; we will have a 5-minute demo at the end so we should leverage the length and difficulty of the game and maybe give some hints when players need them. Moreover, it is significant to decide how players move in the game (teleport vs. actually walking), and we are stilling testing this.
+
 On Thursday, Qian was setting up the environment and we together were looking for assets that we could make use of, as listed above. Basically, we have set up a terrain and a big house for our escape rooms and other VR headset stuff. Actually, we spent a lot of time testing out which asset is usable and suitable. However, we are not sure what to put into our Git (maybe just scripts and things we created?) because those assets could be as large as several gigabytes. 
+
 We had also decided several things:
 - There are some "lockpicking" assets already, so we could import and customize them by ourselves.
 - There are no interactive Radio assets in the store, so we decided to make use of only the models and appearance and then to add some dials and buttons along with some scripts to make them interactive.
