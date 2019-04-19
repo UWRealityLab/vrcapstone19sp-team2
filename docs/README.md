@@ -74,6 +74,7 @@ Our plan for next week is to present our project design to the class and start s
 Potential Environment
 - https://assetstore.unity.com/packages/3d/environments/urban/old-brick-house-94243
 - https://assetstore.unity.com/packages/3d/environments/fantasy/medieval-cartoon-furniture-pack-15094
+- https://assetstore.unity.com/packages/3d/environments/modern-archviz-leafless-108308
 
 Furnitures
 - https://assetstore.unity.com/publishers/2284?orderBy=popularity&page=2&plusPro=false&price=0-4000&rating=0&released=0
