@@ -95,3 +95,14 @@ Sample project
  
 Gun Pack
 - https://assetstore.unity.com/packages/3d/props/guns/modular-gun-pack-85412
+- https://assetstore.unity.com/packages/tools/input-management/vr-weapon-interactor-64080
+- https://assetstore.unity.com/packages/3d/characters/animated-marksman-pack-108515
+
+Interactable Objects
+- https://assetstore.unity.com/packages/3d/extreme-interactable-pack-81536
+- https://assetstore.unity.com/packages/3d/characters/3d-animated-book-67997
+
+Arms
+- 
+- https://assetstore.unity.com/packages/tools/visual-scripting/visual-interaction-55228
+- https://assetstore.unity.com/packages/tools/animation/full-arms-vr-ultimate-interaction-toolset-102839
