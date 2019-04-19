@@ -44,12 +44,25 @@ In this puzzle, we want to simulate picking a lock. This will both be a scene in
 - [ ] A simple work space with work benches
 - [ ] Player & Player Movement
 ### Week 3 & 4
-- [ ] Three main puzzles finished
+- [ ] Game environment set up
+- [ ] Player & Player Movement
+- [ ] Placing simple interactable objects
+- [ ] Some hints placed to make the game playable
+- [ ] Start working on three core puzzles
 ### Week 5 & 6
 - [ ] More elements/decorations to the game
+- [ ] Continue working on core puzzles
+- [ ] Increase the difficulty of the game by placing more hings and interactable objects
 ### Week 7
 - [ ] Finish the game logic
-### Week 8
+- [ ] Ready for midterm project presentation
+- [ ] Demo and Minimal playable game
+### Week 8 & 9
+- [ ] Finish three core puzzles
+- [ ] Increase user experience
+- [ ] Work on strech goal
+### Week 10
+- [ ] Prepare for Demo and Final presentation
 
 ## Strectch Goal
 - [ ] Give better texture to game elements
