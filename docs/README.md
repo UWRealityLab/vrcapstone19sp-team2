@@ -101,8 +101,15 @@ Gun Pack
 Interactable Objects
 - https://assetstore.unity.com/packages/3d/extreme-interactable-pack-81536
 - https://assetstore.unity.com/packages/3d/characters/3d-animated-book-67997
+- https://assetstore.unity.com/packages/3d/props/classic-typewriter-125655
+- https://assetstore.unity.com/packages/3d/props/scattered-paper-debris-74192
+
+Breakable Containers
+- https://assetstore.unity.com/packages/3d/props/furniture/breakable-objects-system-addon-2-131534
+- https://assetstore.unity.com/packages/3d/props/breakable-objects-system-addon-1-131194
+- https://assetstore.unity.com/packages/3d/environments/dungeons/breakable-objects-system-addon-3-131692
+- https://assetstore.unity.com/packages/3d/props/breakable-medieval-containers-116612
 
 Arms
-- 
 - https://assetstore.unity.com/packages/tools/visual-scripting/visual-interaction-55228
 - https://assetstore.unity.com/packages/tools/animation/full-arms-vr-ultimate-interaction-toolset-102839
