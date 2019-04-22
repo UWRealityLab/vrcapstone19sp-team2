@@ -1,0 +1,26 @@
+Lighting:
+    Please ensure you're working in the linear color space when using PBR assets!
+
+    If you're unsure if this is already set, navigate to
+    Edit -> Project Settings -> Player -> Other Settings -> Color Space -> linear
+
+    Working in gamma may produce undesireable results.
+
+    For more information, check out Unity's own documentation on the subject.
+
+    https://docs.unity3d.com/Manual/LinearRendering-LinearOrGammaWorkflow.html
+
+Performance:
+    While the textures are exported in 4096x4096 resolution, it's not advised
+    to use this resolution in real-time applications. For props such as these for 
+    higher end games, it's generally advised to keep it at 1024x1024 for high-end platforms,
+    and 512x512 or even 256x256 for lower-end platforms. Higher resolutions requires both more
+    disk space for the end consumer, along with RAM and VRAM. Running low on VRAM can lead to 
+    severe stutters.
+
+    To lower the resolution from the original 4096x4096 presentation resolution, navigate to
+    ...\Cardboard_Boxes\Textures\CardboardBoxes\*.png and set the Max Size at the bottom of the import
+    window to your desired resolution.
+
+    If you have questions you can reach me at: thespecialduckling@gmail.com 
+    See more at: https://assetstore.unity.com/publishers/7606

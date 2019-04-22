@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1951862086847972}
+  m_IsPrefabParent: 1
+--- !u!1 &1951862086847972
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4514846452590810}
+  - component: {fileID: 114768512017496360}
+  m_Layer: 0
+  m_Name: OldHouse_FPS_Interactions
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4514846452590810
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1951862086847972}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114768512017496360
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1951862086847972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5db815f04f39d1b49868e9c348688987, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doorHandleSounds:
+  - {fileID: 8300000, guid: e901f788b3d56414da2e675a9db2a0ca, type: 3}
+  - {fileID: 8300000, guid: af0bb66dfa35b51438df740018ad559f, type: 3}
+  - {fileID: 8300000, guid: f99c5cea4471a9542970c596a4e3bc8f, type: 3}
+  - {fileID: 8300000, guid: c6a759d5d1f68804d88c04562d5b7c56, type: 3}
+  - {fileID: 8300000, guid: aae2161dc6817fd408c74084288a54b7, type: 3}
+  trapdoorOpenSound: {fileID: 8300000, guid: e87055d70d9c30e4284cf3f144d0cc36, type: 3}
+  trapdoorCloseSound: {fileID: 8300000, guid: b0ce2acb706eb79448d869c5bfb0a2ad, type: 3}
+  outdoorLightswitch: {fileID: 8300000, guid: 6b54558c0e6e0bf46843d77eb9ee7e81, type: 3}
+  indoorLightOn: {fileID: 8300000, guid: 7ba90a0958106ea449c2f0c9118aca1f, type: 3}
+  indoorLightOff: {fileID: 8300000, guid: 6377b3fc04295674ebc2b11a33070e86, type: 3}
+  smallGate: {fileID: 8300000, guid: 29c7b0b2c1b0e4042872c5fed805829e, type: 3}
+  largeGate_01: {fileID: 8300000, guid: 75eb58aa21f83c1449980529534ab878, type: 3}
+  largeGate_02: {fileID: 8300000, guid: ad8b2541358521148a7b91778b31b417, type: 3}
+  showCrosshair: 1
+  rayDistance: 3
+  crosshair: {fileID: 2800000, guid: 8900389355af6a34daa4e683efdaa9ff, type: 3}
+  eButton: {fileID: 2800000, guid: 5b0a55c914649634eb6924e49e22ab4f, type: 3}
+  heaterOn: {fileID: 0}
+  heaterOff: {fileID: 0}
