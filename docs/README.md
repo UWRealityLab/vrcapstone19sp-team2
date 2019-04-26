@@ -6,16 +6,17 @@ Team 2 - Qian Yan, Yifan Xu, Jiwen Wu, Yexiang Shao
 This gives a preview of our team's course project and the ultimate goal we wish to achieve by the end of the quarter. This project is designed so that everyone in the team can have something different to work on concurrently and learn various features provided by Unity framework. At the mean time, we also want the project to be interesting, not only yielding a result that is amazing to be played with, but also having a developing process that is enjoyable to us.
 
 ## Introduction
-For the final project of this course, we are planing to work on creating an escape room VR game. It will be a single player game in which the player is confined in a limited game space filled with interactable game components.
+For the final project of this course, we are planning to work on creating an escape room VR game. It will be a single player game in which the player is confined in a limited game space filled with interactable game components.
 
 Just like a typical escape room experience, in this confined game space, which probably will be an office, a living room, etc., player will be able to interact with all sorts of furnitures and electronics to find clues, solve puzzles and eventually get out of the room. But what special in this game is that we will fully utilize the power of VR to really give the player an immerse gaming experience like they are playing an escape room in the real life; actually even better with the environment we will be able to create freely with Unity.
 
 For the gameplay, on top of the ordinary "search and find", we plan to have (at least) three core puzzles that distinguishes our game from the other game. They are illustrated in more details below.
 
 ## Story line, Narrative
-Detective Johnson is tracing a mysterious death of an old millionaire. That was a rainy day, and he was in one of the millionair's chalet alone trying to find anything related to the mysterious death.
+Detective Johnson is tracing a mysterious death of an old millionaire. That was a rainy day, and he was trying to rendezvous with one of his undercover informer near one of the millionaire’s old chalet. Fifteen minutes have passed the agreed meeting time, but the informer still has not shown up yet. Detective Johnson kept waiting...thirty minutes...one hour...until he has lost track of time… Suddenly, he was hit on the back of the head! Detective Johnson lost his consciousness…
 
-The rain went larger and larger and Johnson finally fell asleep on the sofa. When he woke up, he found himself in a dark room...
+When he woke up, he found himself in a dark room. Johnson realized that his hands were cuffed, and not only that, the room is located underwater, and water is filling up the room quite fast! Johnson will have to hurry now….. He needs to gather information from the room to find out the whereabouts of his undercover informer, and find a way to escape the room before the room is completely filled with water!
+
 
 ## Components
 ### Environment
@@ -145,3 +146,17 @@ We have also added a section in the website for PRD as shown above.
 
 For the next week, we plan to “shrink” that big house into a single room that is going to be our escape room, finalize the environment(to put the room in a ship or a plane and set up weather and lights), have all basic, usable assets ready(e.g. interactive radios) and finishing up player's movement(teleport vs. actually walking). 
 
+### Week 4
+This week, we finished setting up our main game environment--the room we need to escape from. We have placed many furniture, a secret chamber, light sources, texture for both the walls of the room and the floor, and many other decorations. 
+
+We decided to implement teleporting instead of actually walking around, as after careful testing, teleporting provides better user experience. We have added the teleporting plane to the room, and everywhere in the room that is not blocked by objects are now teleportable.
+
+We also greatly modified our storyline and setting, created a game flow plan on how the puzzles are linked together, and updated our PRD to reflect these changes. Now, the escape room is underwater and water is filling up the room, and the player will need to find a way to get out of the room before the room is completely filled with water. We have finalized the locations of our puzzles and hints.
+
+![](flow.jpg)
+
+*our Game Flow*
+
+Since radios found in the asset store are not interactable (the frequency knob cannot be turned), we kept digging in the asset store and found an interactable set of knob, lever, and button. We also did research on how to script the interaction of openning/closing the shutters, turn on/off lights, and firing a gun (potential way of breaking the roof window).
+
+For next week, we plan to get most of the puzzles working and interactable (the lock picking puzzles could be complicated and might require extra time). For instance, shutter can now be open/close as user is adjusting the position of a lever, lights can be turned on/off after the master switch is on, refrigerator and oven can be open/closed correctly, etc. Also, we will experiment with adding the effect of the room being underwater (maybe user can see fish swimming from the roof windows), and water filling into the room.
