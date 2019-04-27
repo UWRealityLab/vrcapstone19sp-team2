@@ -2,6 +2,9 @@ VR ESCAPE ROOM
 =============================
 Team 2 - Qian Yan, Yifan Xu, Jiwen Wu, Yexiang Shao
 
+## PRD
+For more detailed and updated design, please see our [PRD](https://docs.google.com/document/d/1rcIkcjQwjiIJ1NvRoKyZVYqxz6zIwUgDSnxbGwEAvUE/edit?usp=sharing) (Accessible with UW email). 
+
 ## Abstract
 This gives a preview of our team's course project and the ultimate goal we wish to achieve by the end of the quarter. This project is designed so that everyone in the team can have something different to work on concurrently and learn various features provided by Unity framework. At the mean time, we also want the project to be interesting, not only yielding a result that is amazing to be played with, but also having a developing process that is enjoyable to us.
 
@@ -20,7 +23,7 @@ When he woke up, he found himself in a dark room. Johnson realized that his hand
 
 ## Components
 ### Environment
-This is the play ground of the game, the room our player is trapped in. To increase the immersiveness of the game, we want to make it real. This room will be filled with interactly components, like furnitures, decorations and electronics just like a real room. On top of that, 
+This is the play ground of the game, the room our player is trapped in. To increase the immersiveness of the game, we want to make it real. This room will be filled with interactly components, like furnitures, decorations and electronics just like a real room.
 
 Most of these components will just be there so that the player will be able to play with and move around to increase the reality of the environment and give the player a basic idea on what kinds of interactions are allowed in this environment. Some hints & clues will also be hidden with these components.
 
