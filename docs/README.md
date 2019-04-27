@@ -183,3 +183,11 @@ We also greatly modified our storyline and setting, created a game flow plan on 
 Since radios found in the asset store are not interactable (the frequency knob cannot be turned), we kept digging in the asset store and found an interactable set of knob, lever, and button. We also did research on how to script the interaction of openning/closing the shutters, turn on/off lights, and firing a gun (potential way of breaking the roof window).
 
 For next week, we plan to get most of the puzzles working and interactable (the lock picking puzzles could be complicated and might require extra time). For instance, shutter can now be open/close as user is adjusting the position of a lever, lights can be turned on/off after the master switch is on, refrigerator and oven can be open/closed correctly, etc. Also, we will experiment with adding the effect of the room being underwater (maybe user can see fish swimming from the roof windows), and water filling into the room.
+
+### Week 5
+This week, we have devided our work among the four of us. We will each focus on one aspect/puzzle of the game.
+- Qian Yan: Work on further improving the game scene and add scripts to make furnitures interact able. Here are the summary of the goals achieved:
+ - Greatly improved the lighting of the game scene - the scene now looks more "real" and actually has better performance than before with the lightings in the room.
+ - Many stuffs like pillows and scattered papers can now be interactable in a simple way.
+ - The drawers now can be pull out and pull in with a linear movement script.
+ 
