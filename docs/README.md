@@ -186,8 +186,10 @@ For next week, we plan to get most of the puzzles working and interactable (the 
 
 ### Week 5
 This week, we have devided our work among the four of us. We will each focus on one aspect/puzzle of the game.
-- Qian Yan: Work on further improving the game scene and add scripts to make furnitures interact able. Here are the summary of the goals achieved:
- - Greatly improved the lighting of the game scene - the scene now looks more "real" and actually has better performance than before with the lightings in the room.
- - Many stuffs like pillows and scattered papers can now be interactable in a simple way.
- - The drawers now can be pull out and pull in with a linear movement script.
+- Qian Yan: Work on further improving the game scene and add scripts to make furnitures interactable. Here are the summary of the goals achieved:
+  - Greatly improved the lighting of the game scene - the scene now looks more "real" and actually has better performance than before with the lightings in the room.
+  - Many stuffs like pillows and scattered papers can now be interactable in a simple way.
+  - The drawers of the desk now can be pull out and pull in with a linear movement script.
+  - The fridge doors can now be open/closed with a circular script motion.
+  - The secret door now has an open/close animation triggered with a button press.
  
