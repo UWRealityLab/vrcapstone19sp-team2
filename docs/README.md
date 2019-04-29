@@ -74,7 +74,15 @@ In this puzzle, we want to simulate picking a lock. This will both be a scene in
 ## Product Requirements Document
 [PRD](https://docs.google.com/document/d/1rcIkcjQwjiIJ1NvRoKyZVYqxz6zIwUgDSnxbGwEAvUE/edit?usp=sharing) (Accessible with UW email)
 
-## Blog
+## Blog Post
+
+### Requirement
+- What every member did this week
+- Update on code, links to relevant code added this week
+- Update on ideas (current demo result: embed video and/or screenshot)
+- Plan for next week (for every team member)
+- Blocking issues, help needed
+
 ### Week 1
 
 This week all the group members did Unity tutorial and experienced with some VR/AR devices available for our capstone projects. We also brainstormed our project ideas individually. The tentative project ideas we have are: 
