@@ -200,4 +200,7 @@ This week, we have devided our work among the four of us. We will each focus on 
   - The drawers of the desk now can be pull out and pull in with a linear movement script.
   - The fridge doors can now be open/closed with a circular script motion.
   - The secret door now has an open/close animation triggered with a button press.
+  
+ [![ShutterControl](http://img.youtube.com/vi/ZXL-LVkaTqY/0.jpg)](http://www.youtube.com/watch?v=ZXL-LVkaTqY "Shutter")
  
+ [![Radio](http://img.youtube.com/vi/3RF-ovc2yQA/0.jpg)](http://www.youtube.com/watch?v=3RF-ovc2yQA "Radio")
