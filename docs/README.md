@@ -204,4 +204,6 @@ This week, we have devided our work among the four of us. We will each focus on 
     ![Doors](pics/circular_doors.gif)
   - The secret door now has an open/close animation triggered with a button press.
     ![Fridge Door](pics/secret_door.gif)
- 
+  
+ [![ShutterControl](http://img.youtube.com/vi/ZXL-LVkaTqY/0.jpg)](http://www.youtube.com/watch?v=ZXL-LVkaTqY "Shutter")
+ [![Radio](http://img.youtube.com/vi/3RF-ovc2yQA/0.jpg)](http://www.youtube.com/watch?v=3RF-ovc2yQA "Radio")
