@@ -1,0 +1,213 @@
+fileFormatVersion: 2
+guid: 887205e4e84cfd8478b4846ce2ab7a6e
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Bone019
+    100002: Bone020
+    100004: Bone021
+    100006: Bone022
+    100008: Bone023
+    100010: Bone024
+    100012: Bone026
+    100014: Bone_GFC_all
+    100016: //RootNode
+    100018: gfClock
+    100020: GF_Clock
+    100022: HourHand
+    100024: MinHand
+    100026: Pendulum
+    100028: Weight1
+    100030: Weight2
+    100032: Weight3
+    400000: Bone019
+    400002: Bone020
+    400004: Bone021
+    400006: Bone022
+    400008: Bone023
+    400010: Bone024
+    400012: Bone026
+    400014: Bone_GFC_all
+    400016: //RootNode
+    400018: gfClock
+    400020: GF_Clock
+    400022: HourHand
+    400024: MinHand
+    400026: Pendulum
+    400028: Weight1
+    400030: Weight2
+    400032: Weight3
+    2300000: GF_Clock
+    2300002: HourHand
+    2300004: MinHand
+    2300006: Pendulum
+    2300008: Weight1
+    2300010: Weight2
+    2300012: Weight3
+    3300000: GF_Clock
+    3300002: HourHand
+    3300004: MinHand
+    3300006: Pendulum
+    3300008: Weight1
+    3300010: Weight2
+    3300012: Weight3
+    4300000: gfClock
+    4300002: GF_Clock
+    4300004: Weight3
+    4300006: MinHand
+    4300008: HourHand
+    4300010: Pendulum
+    4300012: Weight1
+    4300014: Weight2
+    7400000: TickTockGFClock
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: gfClock
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hands
+    second: {fileID: 2100000, guid: 32af590d04e21af4da53128406453259, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MultiMat_0
+    second: {fileID: 2100000, guid: 470f6a4861c82664b931e35c98e605c4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: glass
+    second: {fileID: 2100000, guid: 1d9abdd8cbbe0e045bb08e834c963f79, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wood
+    second: {fileID: 2100000, guid: a5ffb8ce525fbb1488aac0c68321defc, type: 2}
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 2
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: TickTockGFClock
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 160
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 1
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Bone019
+        weight: 1
+      - path: Bone019/Bone020
+        weight: 1
+      - path: Bone021
+        weight: 1
+      - path: Bone021/Bone022
+        weight: 1
+      - path: Bone023
+        weight: 1
+      - path: Bone023/Bone024
+        weight: 1
+      - path: Bone_GFC_all
+        weight: 1
+      - path: Bone_GFC_all/Bone026
+        weight: 1
+      - path: gfClock
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.01
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 0
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 4
+    normalCalculationMode: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
