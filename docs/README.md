@@ -198,6 +198,10 @@ This week, we have devided our work among the four of us. We will each focus on 
   - Greatly improved the lighting of the game scene - the scene now looks more "real" and actually has better performance than before with the lightings in the room.
   - Many stuffs like pillows and scattered papers can now be interactable in a simple way.
   - The drawers of the desk now can be pull out and pull in with a linear movement script.
+    ![Desk](pics/desk.gif)
   - The fridge doors can now be open/closed with a circular script motion.
+    ![Fridge Door](pics/fridge_door.gif)
+    ![Doors](pics/circular_doors.gif)
   - The secret door now has an open/close animation triggered with a button press.
+    ![Fridge Door](pics/secret_door.gif)
  
