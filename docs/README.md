@@ -212,6 +212,11 @@ This week, we have devided our work among the four of us. We will each focus on 
   [![Radio](http://img.youtube.com/vi/3RF-ovc2yQA/0.jpg)](http://www.youtube.com/watch?v=3RF-ovc2yQA "Radio")
   - Implemented a flashlight that is able to be switched on/off (no demo is included because we are going to switch to a new flashlight prefab). In addition, we figured out how to turn on/off any light.
   
+- Yifan Xu: Work on gun break the windows
+  - A delicate model of gun can be picked up by the users by grabbing the grip
+  - After being picked up, the gun will attach to the controller until the grip is grabbed again
+  - User can fire the gun by grabbing the pinch. In current state, a light effect and fire animation will launch but no bullet will come from the gun.
+  - A breakable window which will break into pieces after detecting a collision is ready to be placed.
   
 Plans for next week:
 - Qian Yan: will work on the oven hint.
