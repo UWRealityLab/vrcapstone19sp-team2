@@ -217,6 +217,7 @@ This week, we have devided our work among the four of us. We will each focus on 
   - After being picked up, the gun will attach to the controller until the grip is grabbed again
   - User can fire the gun by grabbing the pinch. In current state, a light effect, a gunshot sound and a fire animation will launch but no bullet will come from the gun.
   - A breakable window which will break into pieces after detecting a collision is ready to be placed.
+  ![Gunshot](pics/gun_shot.gif)
   
 Plans for next week:
 - Qian Yan: will work on the oven hint.
