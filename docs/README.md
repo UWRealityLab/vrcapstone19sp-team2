@@ -204,6 +204,24 @@ This week, we have devided our work among the four of us. We will each focus on 
     ![Doors](pics/circular_doors.gif)
   - The secret door now has an open/close animation triggered with a button press.
     ![Fridge Door](pics/secret_door.gif)
+ 
+- Jiwen Wu & Yexiang Shao: We worked on several interactive parts of the room:
+  - The shutter on the ceiling that covers the roof windows can now be openned/closed with a press of a button, using animations and Unity's animator class. As we are going to hide a hint on the roof window, the player will need to open the shutters in order to see the hint: (Click on the picture to see a demo)               
+  [![ShutterControl](http://img.youtube.com/vi/ZXL-LVkaTqY/0.jpg)](http://www.youtube.com/watch?v=ZXL-LVkaTqY "Shutter") 
+  - The radio is now fully functional: the tuning knob is working properly, and when switched to different frequencies, different audio will be played, including the hints. This took quite some time, because of Unity's complex Quaterion system returns weird angles. We made the radio tuning knob work after using the circular drive script instead. (Click on the picture to see a demo)
+  [![Radio](http://img.youtube.com/vi/3RF-ovc2yQA/0.jpg)](http://www.youtube.com/watch?v=3RF-ovc2yQA "Radio")
+  - Implemented a flashlight that is able to be switched on/off (no demo is included because we are going to switch to a new flashlight prefab). In addition, we figured out how to turn on/off any light.
   
- [![ShutterControl](http://img.youtube.com/vi/ZXL-LVkaTqY/0.jpg)](http://www.youtube.com/watch?v=ZXL-LVkaTqY "Shutter")
- [![Radio](http://img.youtube.com/vi/3RF-ovc2yQA/0.jpg)](http://www.youtube.com/watch?v=3RF-ovc2yQA "Radio")
+  
+Plans for next week:
+- Qian Yan: will work on the oven hint.
+  - figure out how to hide the tool in an ice cube
+  - implement a functional oven that can be turned on/off
+  - implement the effect of ice melting, so that after a period of time, the ice completely melts and the player will be able to retrieve the tool
+  - figure out how to detect when the oven tray holding the ice cube is placed into oven, and after certain time, the ice melts and the tools will be reveiled.
+  = figure out the collision models of the ice cube / tool / oven / oven tray.
+
+- Jiwen Wu & Yexiang Shao:
+  - work on a functional fuse box, which will give electricity to the room and then every light/appliance will be able to function.
+  - work on a implementing a safe. Try to add some sort of a password system.
+  - decorate the room further more -- for instance, put beer/drinks into the fridge, oven trays in cabinet, put real-life switches in the room to control light and shutter (instead of the current simple button), etc.
