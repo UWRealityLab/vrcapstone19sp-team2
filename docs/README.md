@@ -212,6 +212,12 @@ This week, we have devided our work among the four of us. We will each focus on 
   [![Radio](http://img.youtube.com/vi/3RF-ovc2yQA/0.jpg)](http://www.youtube.com/watch?v=3RF-ovc2yQA "Radio")
   - Implemented a flashlight that is able to be switched on/off (no demo is included because we are going to switch to a new flashlight prefab). In addition, we figured out how to turn on/off any light.
   
+- Yifan Xu: Work on developing a gun that can break the windows to escape the room
+  - A delicate model of gun can be picked up by the users by grabbing the grip
+  - After being picked up, the gun will attach to the controller until the grip is grabbed again
+  - User can fire the gun by grabbing the pinch. In current state, a light effect, a gunshot sound and a fire animation will launch but no bullet will come from the gun.
+  - A breakable window which will break into pieces after detecting a collision is ready to be placed.
+  ![Gunshot](pics/gun_shot.gif)
   
 Plans for next week:
 - Qian Yan: will work on the oven hint.
@@ -225,3 +231,10 @@ Plans for next week:
   - work on a functional fuse box, which will give electricity to the room and then every light/appliance will be able to function.
   - work on a implementing a safe. Try to add some sort of a password system.
   - decorate the room further more -- for instance, put beer/drinks into the fridge, oven trays in cabinet, put real-life switches in the room to control light and shutter (instead of the current simple button), etc.
+  
+- Yifan Xu:
+  - continue working on the effects of gun and breakable window, including:
+    - determine the direction and path of the bullets
+    - break the windows when it's "shot".
+  - drop some hints in the scenes by writing them on papers hidden in the breakable objects.
+  - enrich the storyline by placing an animated book that narrates the story in the scene.
