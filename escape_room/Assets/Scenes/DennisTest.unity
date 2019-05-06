@@ -2132,6 +2132,7 @@ GameObject:
   - component: {fileID: 616509355}
   - component: {fileID: 616509354}
   - component: {fileID: 616509353}
+  - component: {fileID: 616509356}
   m_Layer: 0
   m_Name: GameObject (1)
   m_TagString: Untagged
@@ -2263,6 +2264,19 @@ MonoBehaviour:
   handFollowTransform: 1
   highlightOnHover: 1
   hideHighlight: []
+--- !u!114 &616509356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 616509351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4910697a9bfe82143a077ca2549817c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pass: 0
 --- !u!1001 &627451433
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2930,6 +2944,7 @@ GameObject:
   - component: {fileID: 915381200}
   - component: {fileID: 915381199}
   - component: {fileID: 915381198}
+  - component: {fileID: 915381201}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -2981,22 +2996,22 @@ MonoBehaviour:
   axisOfRotation: 2
   childCollider: {fileID: 0}
   linearMapping: {fileID: 0}
-  hoverLock: 0
-  limited: 0
+  hoverLock: 1
+  limited: 1
   frozenDistanceMinMaxThreshold: {x: 0.1, y: 0.2}
   onFrozenDistanceThreshold:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  minAngle: -100
+  minAngle: 0
   freezeOnMin: 0
   onMinAngle:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  maxAngle: 0
+  maxAngle: 1
   freezeOnMax: 0
   onMaxAngle:
     m_PersistentCalls:
@@ -3004,7 +3019,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   forceStart: 1
-  startAngle: -20
+  startAngle: 0
   rotateGameObject: 1
   debugPath: 0
   dbgPathLimit: 50
@@ -3061,6 +3076,18 @@ MonoBehaviour:
   handFollowTransform: 1
   highlightOnHover: 1
   hideHighlight: []
+--- !u!114 &915381201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 915381196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad64cc4aec479ca48bbee2acd81bf08e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &928225392
 GameObject:
   m_ObjectHideFlags: 0
@@ -4216,14 +4243,14 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  minAngle: -100
+  minAngle: 0
   freezeOnMin: 0
   onMinAngle:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  maxAngle: 0
+  maxAngle: 1
   freezeOnMax: 0
   onMaxAngle:
     m_PersistentCalls:
@@ -6683,6 +6710,7 @@ GameObject:
   - component: {fileID: 1377107333}
   - component: {fileID: 1377107331}
   - component: {fileID: 1377107332}
+  - component: {fileID: 1275313040939273}
   m_Layer: 0
   m_Name: Safe_Door_LOD0
   m_TagString: Untagged
@@ -6690,6 +6718,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1275313040939273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1275313040939272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb353785224f62d4eb75ab624e7e6dce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1456465048667705
 GameObject:
   m_ObjectHideFlags: 0
