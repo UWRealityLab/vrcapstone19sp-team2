@@ -42,7 +42,7 @@ public class OvenScript : MonoBehaviour
     {
         // Disable door circular drive
 
-        // To disable hovering:
+        // To disable hovering
         doorCollider.AddComponent<IgnoreHovering>();
         redLight.SetActive(true);
         greenLight.SetActive(false);
