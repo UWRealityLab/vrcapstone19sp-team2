@@ -12,8 +12,8 @@ public class LightSwitch : MonoBehaviour
     public float momemtumDampenRate = 5.0f;
     public float initialMappingOffset;
 
-    public GameObject lamp;
-    public float delta = 0.001f;
+    // public GameObject lamp;
+    // public float delta = 0.001f;
 
     protected Hand.AttachmentFlags attachmentFlags = Hand.AttachmentFlags.DetachFromOtherHand;
 
@@ -114,6 +114,7 @@ public class LightSwitch : MonoBehaviour
         }
     }
 
+    /*
     private void LateUpdate()
     {
         if (startPosition.localPosition.y - this.transform.localPosition.y <= delta)
@@ -126,4 +127,5 @@ public class LightSwitch : MonoBehaviour
             lamp.GetComponentInChildren<Light>().enabled = false;
         }
     }
+    */
 }

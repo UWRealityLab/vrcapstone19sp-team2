@@ -316,11 +316,11 @@ GameObject:
   - component: {fileID: 33380963}
   m_Layer: 0
   m_Name: Directional Light (2)
-  m_TagString: Untagged
+  m_TagString: light
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!108 &33380963
 Light:
   m_ObjectHideFlags: 0
@@ -788,7 +788,7 @@ GameObject:
   m_Component:
   - component: {fileID: 88218085}
   m_Layer: 0
-  m_Name: End
+  m_Name: End_C
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -851,7 +851,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 112514285}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ff2b670032947c04ab8a1b4fe2707adf, type: 3}
   m_Name: 
@@ -861,8 +861,6 @@ MonoBehaviour:
   maintainMomemntum: 0
   momemtumDampenRate: 5
   initialMappingOffset: 0
-  lamp: {fileID: 574722260}
-  delta: 0.001
 --- !u!114 &112514288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2513,8 +2511,6 @@ MonoBehaviour:
   maintainMomemntum: 0
   momemtumDampenRate: 5
   initialMappingOffset: 0
-  lamp: {fileID: 840738352}
-  delta: 0.001
 --- !u!1 &516965364
 GameObject:
   m_ObjectHideFlags: 0
@@ -2544,7 +2540,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 516965364}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ff2b670032947c04ab8a1b4fe2707adf, type: 3}
   m_Name: 
@@ -2554,8 +2550,6 @@ MonoBehaviour:
   maintainMomemntum: 0
   momemtumDampenRate: 5
   initialMappingOffset: 0
-  lamp: {fileID: 628613086}
-  delta: 0.001
 --- !u!114 &516965366
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2682,6 +2676,9 @@ GameObject:
   - component: {fileID: 517464028}
   - component: {fileID: 518234106}
   - component: {fileID: 519232826}
+  - component: {fileID: 516965375}
+  - component: {fileID: 516965373}
+  - component: {fileID: 516965376}
   m_Layer: 0
   m_Name: fusebox_cover
   m_TagString: Untagged
@@ -2689,6 +2686,50 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &516965373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 516965372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f32883eed859804dbb0c5fedac91496, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  axisOfRotation: 2
+  childCollider: {fileID: 0}
+  linearMapping: {fileID: 0}
+  hoverLock: 0
+  limited: 1
+  frozenDistanceMinMaxThreshold: {x: 0.1, y: 0.2}
+  onFrozenDistanceThreshold:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  minAngle: 90
+  freezeOnMin: 0
+  onMinAngle:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  maxAngle: 200
+  freezeOnMax: 0
+  onMaxAngle:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  forceStart: 0
+  startAngle: 0
+  rotateGameObject: 1
+  debugPath: 0
+  dbgPathLimit: 50
+  debugText: {fileID: 0}
+  outAngle: 0
 --- !u!1 &516965374
 GameObject:
   m_ObjectHideFlags: 0
@@ -2707,6 +2748,70 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &516965375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 516965372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b93b6a877adcbf94c89a9d6e0c0e844d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activateActionSetOnAttach:
+    actionSetPath: 
+  hideHandOnAttach: 1
+  hideSkeletonOnAttach: 0
+  hideControllerOnAttach: 0
+  handAnimationOnPickup: 0
+  setRangeOfMotionOnPickup: -1
+  useHandObjectAttachmentPoint: 1
+  attachEaseIn: 0
+  snapAttachEaseInCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  snapAttachEaseInTime: 0.15
+  snapAttachEaseInCompleted: 0
+  skeletonPoser: {fileID: 0}
+  handFollowTransform: 1
+  highlightOnHover: 1
+  hideHighlight: []
+--- !u!65 &516965376
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 516965372}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.2238207, y: 6.2096825, z: 8.127255}
+  m_Center: {x: 0.110323, y: 3.10187, z: -0.0000002408436}
 --- !u!54 &517064026
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2856,13 +2961,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 516965372}
-  m_LocalRotation: {x: -0.0020023282, y: -0.00020282711, z: -0.2330665, w: 0.9724587}
+  m_LocalRotation: {x: -0.0012217964, y: 0.0016043229, z: 0.7071057, w: 0.707105}
   m_LocalPosition: {x: 3.1067529, y: 2.5075498, z: 0.066614985}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 517464026}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: -0.22900002, y: 0.031000001, z: -26.955002}
+  m_LocalEulerAnglesHint: {x: -0.22900002, y: 0.031000001, z: 90}
 --- !u!4 &517464030
 Transform:
   m_ObjectHideFlags: 0
@@ -3282,12 +3387,6 @@ Transform:
   m_Father: {fileID: 1194601860}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &574722260 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1769376851354596, guid: e7adc5ad67fb9704588ebc686c5e59e4,
-    type: 3}
-  m_PrefabInstance: {fileID: 894136483}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &579760696
 GameObject:
   m_ObjectHideFlags: 0
@@ -3298,7 +3397,7 @@ GameObject:
   m_Component:
   - component: {fileID: 579760697}
   m_Layer: 0
-  m_Name: End
+  m_Name: End_B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3331,7 +3430,7 @@ GameObject:
   - component: {fileID: 601055978}
   m_Layer: 0
   m_Name: Directional Light
-  m_TagString: Untagged
+  m_TagString: light
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3504,12 +3603,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 627451433}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &628613086 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1769376851354596, guid: e7adc5ad67fb9704588ebc686c5e59e4,
-    type: 3}
-  m_PrefabInstance: {fileID: 1723409860}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &629378445
 GameObject:
   m_ObjectHideFlags: 0
@@ -3520,7 +3613,7 @@ GameObject:
   m_Component:
   - component: {fileID: 629378446}
   m_Layer: 0
-  m_Name: End
+  m_Name: End_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3867,7 +3960,7 @@ PrefabInstance:
     - target: {fileID: 114000013988111622, guid: 88075a54c7fb1484ba25db394b612917,
         type: 3}
       propertyPath: onButtonIsPressed.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114000013988111622, guid: 88075a54c7fb1484ba25db394b612917,
         type: 3}
@@ -3882,7 +3975,7 @@ PrefabInstance:
     - target: {fileID: 114000013988111622, guid: 88075a54c7fb1484ba25db394b612917,
         type: 3}
       propertyPath: onButtonIsPressed.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetTrigger
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 114000013988111622, guid: 88075a54c7fb1484ba25db394b612917,
         type: 3}
@@ -3909,6 +4002,26 @@ PrefabInstance:
       propertyPath: onButtonIsPressed.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 516965370}
+    - target: {fileID: 114000013988111622, guid: 88075a54c7fb1484ba25db394b612917,
+        type: 3}
+      propertyPath: onButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 484030364}
+    - target: {fileID: 114000013988111622, guid: 88075a54c7fb1484ba25db394b612917,
+        type: 3}
+      propertyPath: onButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013988111622, guid: 88075a54c7fb1484ba25db394b612917,
+        type: 3}
+      propertyPath: onButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013988111622, guid: 88075a54c7fb1484ba25db394b612917,
+        type: 3}
+      propertyPath: onButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: control
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88075a54c7fb1484ba25db394b612917, type: 3}
 --- !u!1 &822204129
@@ -3943,12 +4056,6 @@ Transform:
   m_Father: {fileID: 1394960364}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &840738352 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1769376851354596, guid: e7adc5ad67fb9704588ebc686c5e59e4,
-    type: 3}
-  m_PrefabInstance: {fileID: 1295555306}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &858559449
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4049,6 +4156,10 @@ PrefabInstance:
     - target: {fileID: 1769376851354596, guid: e7adc5ad67fb9704588ebc686c5e59e4, type: 3}
       propertyPath: m_Name
       value: RFAIPP_Lamp2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1769376851354596, guid: e7adc5ad67fb9704588ebc686c5e59e4, type: 3}
+      propertyPath: m_TagString
+      value: light
       objectReference: {fileID: 0}
     - target: {fileID: 4051099914249012, guid: e7adc5ad67fb9704588ebc686c5e59e4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4641,7 +4752,7 @@ GameObject:
   m_Component:
   - component: {fileID: 959138904}
   m_Layer: 0
-  m_Name: Start
+  m_Name: Start_C
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4836,7 +4947,7 @@ GameObject:
   m_Component:
   - component: {fileID: 983719153}
   m_Layer: 0
-  m_Name: Start
+  m_Name: Start_B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5628,6 +5739,10 @@ PrefabInstance:
     - target: {fileID: 1769376851354596, guid: e7adc5ad67fb9704588ebc686c5e59e4, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1769376851354596, guid: e7adc5ad67fb9704588ebc686c5e59e4, type: 3}
+      propertyPath: m_TagString
+      value: light
       objectReference: {fileID: 0}
     - target: {fileID: 4051099914249012, guid: e7adc5ad67fb9704588ebc686c5e59e4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7081,6 +7196,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RFAIPP_Lamp3
       objectReference: {fileID: 0}
+    - target: {fileID: 1769376851354596, guid: e7adc5ad67fb9704588ebc686c5e59e4, type: 3}
+      propertyPath: m_TagString
+      value: light
+      objectReference: {fileID: 0}
     - target: {fileID: 4051099914249012, guid: e7adc5ad67fb9704588ebc686c5e59e4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.511
@@ -8413,7 +8532,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2039492964}
   m_Layer: 0
-  m_Name: Start
+  m_Name: Start_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9193,6 +9312,17 @@ MonoBehaviour:
   onButtonDown:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 3457805588961847004}
+        m_MethodName: switchLight
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 3344512291572031581}
         m_MethodName: OnButtonDown
         m_Mode: 0
@@ -9226,7 +9356,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3457805588961847004}
-        m_MethodName: switchLight
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9312,6 +9442,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightOn: 0
-  lamp1: {fileID: 840738352}
-  lamp2: {fileID: 574722260}
-  lamp3: {fileID: 628613086}
+  allLights: []
+  switchA: {fileID: 516965360}
+  switchB: {fileID: 112514285}
+  switchC: {fileID: 516965364}
+  lightTagName: 
+  AStart: {fileID: 2039492964}
+  AEnd: {fileID: 629378446}
+  BStart: {fileID: 983719153}
+  BEnd: {fileID: 579760697}
+  CStart: {fileID: 959138904}
+  CEnd: {fileID: 88218085}
+  delta: 0.001
