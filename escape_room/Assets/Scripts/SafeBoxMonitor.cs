@@ -1,11 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using Valve.VR.InteractionSystem;
-using System.Globalization;
+using UnityEngine;
 using UnityEngine.UI;
 
-public class RadioMonitor : MonoBehaviour
+public class SafeBoxMonitor : MonoBehaviour
 {
     Text text;
     // Update is called once per frame
@@ -13,7 +12,7 @@ public class RadioMonitor : MonoBehaviour
     {
         LinearMapping mapping = this.GetComponent<LinearMapping>();
         float value = mapping.value;
-        //Debug.Log(value);
+        Debug.Log(value);
         if (text == null)
             text = this.GetComponent<Text>();
         if (text == null)
@@ -24,10 +23,13 @@ public class RadioMonitor : MonoBehaviour
         //float flt = float.Parse(str, CultureInfo.InvariantCulture.NumberFormat);
         //flt = flt * 25.0f + 85.0f;
         //string res = flt.ToString().Contains(".") ? flt.ToString() : flt.ToString() + ".0";
-        string res = FloatConversion.circularDriveValueToString(value, 1, 25.0f, 85.0f);
-        if (res.Equals("110.0"))
-            res = "85.0";
-        text.text = res;
+        string currentCode =
+            FloatConversion.circularDriveValueToString(value, 3, 100f, 0f);
+        int currentCodeNum = int.Parse(currentCode.Substring(0, currentCode.IndexOf(".")));
+        int adjustedCode = 100 - ((int)System.Math.Round(currentCodeNum / 1.0)) * 1;
+        if (adjustedCode == 100)
+            adjustedCode = 0;
+        text.text = adjustedCode.ToString();
         //Debug.Log("Radio Monitor done: " + res);
     }
 }
