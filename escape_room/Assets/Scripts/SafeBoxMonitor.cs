@@ -12,13 +12,21 @@ public class SafeBoxMonitor : MonoBehaviour
     {
         LinearMapping mapping = this.GetComponent<LinearMapping>();
         float value = mapping.value;
-        Debug.Log(value);
+        //Debug.Log(value);
         if (text == null)
             text = this.GetComponent<Text>();
         if (text == null)
             return;
         if (text.text == null)
             text.text = "";
+        if (!this.gameObject.transform.parent.parent.parent.gameObject.GetComponent<SafeboxSwitch>().isOn)
+        {
+            text.text = "";
+            return;
+        } else
+        {
+            text.text = "0";
+        }
         //string str = value.ToString("0.0");
         //float flt = float.Parse(str, CultureInfo.InvariantCulture.NumberFormat);
         //flt = flt * 25.0f + 85.0f;
