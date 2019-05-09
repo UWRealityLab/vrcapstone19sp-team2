@@ -8,6 +8,7 @@ public class RadioAudio : MonoBehaviour
 {
     public AudioClip audio1;
     public AudioClip audio2;
+    public AudioClip audio3;
     public AudioSource audioSource;
     Text text;
 
@@ -32,6 +33,13 @@ public class RadioAudio : MonoBehaviour
                 if (audioSource.clip == null || !audioSource.clip.Equals(audio2))
                 {
                     audioSource.clip = audio2;
+                    audioSource.Play();
+                }
+            } else if (text.text.Equals("90.0"))
+            {
+                if (audioSource.clip == null || !audioSource.clip.Equals(audio3))
+                {
+                    audioSource.clip = audio3;
                     audioSource.Play();
                 }
             }
