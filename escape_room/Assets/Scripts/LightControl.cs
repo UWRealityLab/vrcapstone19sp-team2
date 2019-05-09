@@ -24,7 +24,7 @@ public class LightControl : MonoBehaviour
         allLights = GameObject.FindGameObjectsWithTag(lightTagName);
         foreach (GameObject l in allLights)
         {
-            l.GetComponentInChildren<Light>().enabled = lightOn;
+            l.GetComponent<Light>().enabled = lightOn;
         }
     }
 
@@ -40,7 +40,7 @@ public class LightControl : MonoBehaviour
             
             foreach (GameObject l in allLights)
             {
-                l.GetComponentInChildren<Light>().enabled = lightOn;
+                l.GetComponent<Light>().enabled = lightOn;
             }
         }
 
@@ -54,7 +54,7 @@ public class LightControl : MonoBehaviour
            
             foreach (GameObject l in allLights)
             {
-                l.GetComponentInChildren<Light>().enabled = lightOn;
+                l.GetComponent<Light>().enabled = lightOn;
             }
         }
     }

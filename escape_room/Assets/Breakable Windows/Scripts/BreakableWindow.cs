@@ -4,12 +4,13 @@ using UnityEngine;
 
 [AddComponentMenu("Breakable Windows/Breakable Window")]
 [RequireComponent(typeof(AudioSource))]
-public class BreakableWindow : MonoBehaviour {
+public class BreakableWindow : MonoBehaviour
+{
 
-    
+
     [Tooltip("Layer should be TransparentFX or your own layer for breakable windows.")]
     public LayerMask layer;
-    [Range(2,25)]
+    [Range(2, 25)]
     public int partsX = 5;
     [Range(2, 25)]
     public int partsY = 5;
@@ -42,7 +43,7 @@ public class BreakableWindow : MonoBehaviour {
     public List<GameObject> splinters;
     private Vector3[] vertices;
     private Vector3[] normals;
-    
+
     private bool allreadyCalculated = false;
     private GameObject splinterParent;
     int[] tris;
@@ -64,7 +65,7 @@ public class BreakableWindow : MonoBehaviour {
     {
         vertices = new Vector3[(partsX + 1) * (partsY + 1)];
         normals = new Vector3[(partsX + 1) * (partsY + 1)];
-        
+
 
         for (int y = 0; y < partsY + 1; y++)
         {
@@ -148,12 +149,12 @@ public class BreakableWindow : MonoBehaviour {
 
         MeshFilter mf = obj.AddComponent<MeshFilter>();
         mf.mesh = m;
-        
+
         MeshCollider col = obj.AddComponent<MeshCollider>();
         col.inflateMesh = true;
         col.convex = true;
         if (destroyPhysicsTime > 0 && destroyColliderWithPhysics) Destroy(col, destroyPhysicsTime);
-        
+
         Rigidbody rigid = obj.AddComponent<Rigidbody>();
         rigid.centerOfMass = (v[0] + v[1] + v[2]) / 3f;
         if (addTorques && preCalculate == false) rigid.AddTorque(new Vector3(Random.value > 0.5f ? Random.value * 50 : -Random.value * 50, Random.value > 0.5f ? Random.value * 50 : -Random.value * 50, Random.value > 0.5f ? Random.value * 50 : -Random.value * 50));
@@ -221,7 +222,7 @@ public class BreakableWindow : MonoBehaviour {
             Destroy(GetComponent<MeshRenderer>());
             Destroy(GetComponent<MeshFilter>());
 
-            isBroken = true;            
+            isBroken = true;
         }
 
         if (breakingSound != null)
@@ -248,6 +249,6 @@ public class BreakableWindow : MonoBehaviour {
                 }
             }
             else breakWindow();
-        }        
+        }
     }
 }

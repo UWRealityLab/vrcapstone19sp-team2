@@ -20,8 +20,7 @@ public class SafeBoxOpenDoor : MonoBehaviour
         pass = this.GetComponentInChildren<SafeboxOpener>().okToOpenDoor;
         if (pass)
         {
-            circularDrive.minAngle = -100.0f;
-            circularDrive.maxAngle = 0.0f;
+            Destroy(GetComponent<IgnoreHovering>());
         }
     }
 }

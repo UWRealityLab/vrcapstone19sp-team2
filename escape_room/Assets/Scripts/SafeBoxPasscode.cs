@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class SafeBoxPasscode : MonoBehaviour
 {
     public bool pass;
-    int code = 66;
+    public int code;
     CircularDrive circularDrive;
 
     void Start()

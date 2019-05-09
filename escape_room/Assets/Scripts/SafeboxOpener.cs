@@ -40,7 +40,7 @@ public class SafeboxOpener : MonoBehaviour
     private void LateUpdate()
     {
         float rotation = float.Parse(this.GetComponent<LinearMapping>().value.ToString("0.00"));
-        Debug.Log("opener rotation: " + this.gameObject.transform.localEulerAngles.z);
+        //Debug.Log("opener rotation: " + this.gameObject.transform.localEulerAngles.z);
 
         if (this.gameObject.transform.localEulerAngles.z > 280.0f && passcodeGood)
         {

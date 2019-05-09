@@ -318,6 +318,7 @@ namespace Valve.VR.InteractionSystem
 
         protected virtual void OnDestroy()
         {
+            /*
             isDestroying = true;
 
             if (attachedToHand != null)
@@ -328,6 +329,7 @@ namespace Valve.VR.InteractionSystem
             
             if (highlightHolder != null)
                 Destroy(highlightHolder);
+                */
             
         }
 
