@@ -9,7 +9,7 @@ using System.Collections;
 
 
 public class BreakableObject:MonoBehaviour{
-	public Transform fragments; 					//Place the fractured object
+    public Transform fragments; 					//Place the fractured object
 	public float waitForRemoveCollider = 1.0f; 		//Delay before removing collider (negative/zero = never)
 	public float waitForRemoveRigid = 10.0f; 		//Delay before removing rigidbody (negative/zero = never)
 	public float waitForDestroy = 2.0f; 			//Delay before removing objects (negative/zero = never)
@@ -43,7 +43,10 @@ public class BreakableObject:MonoBehaviour{
 	// breaks object
 	public IEnumerator breakObject() {
 	    if (!broken) {
-	    	if(this.GetComponent<AudioSource>() != null){
+            // Remove hint
+            GameObject.Find("BloodDecal_ThisWay").SetActive(false);
+
+            if (this.GetComponent<AudioSource>() != null){
 	    		GetComponent<AudioSource>().Play();
 	    	}
 	    	broken = true;
