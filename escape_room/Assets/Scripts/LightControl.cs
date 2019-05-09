@@ -9,11 +9,15 @@ public class LightControl : MonoBehaviour
 
     // public GameObject lamp1, lamp2, lamp3;
 
-    public GameObject[] allLights;
+    private GameObject[] allLights;
+    private GameObject[] allEmissives;
+    private GameObject[] LandE;
 
     public GameObject switchA, switchB, switchC;
+    public GameObject lightMapController;
 
     public string lightTagName;
+    public string emissiveTagName;
 
     public Transform AStart, AEnd, BStart, BEnd, CStart, CEnd;
 
@@ -22,10 +26,24 @@ public class LightControl : MonoBehaviour
     private void Start()
     {
         allLights = GameObject.FindGameObjectsWithTag(lightTagName);
+        allEmissives = GameObject.FindGameObjectsWithTag(emissiveTagName);
+        LandE = GameObject.FindGameObjectsWithTag("LandE");
+
         foreach (GameObject l in allLights)
         {
             l.GetComponent<Light>().enabled = lightOn;
         }
+        foreach (GameObject l in allEmissives)
+        {
+            l.GetComponent<Renderer>().material.DisableKeyword("_EMISSION");
+        }
+        foreach (GameObject l in LandE)
+        {
+            l.GetComponent<Renderer>().material.DisableKeyword("_EMISSION");
+            l.GetComponent<Light>().enabled = lightOn;
+        }
+        lightMapController.GetComponent<LightMapSwitcher>().SwapLightmaps(1);
+
     }
 
     public void switchLight()
@@ -37,11 +55,20 @@ public class LightControl : MonoBehaviour
         if (AAtEnd && BAtEnd && CAtEnd)
         {
             lightOn = false;
-            
             foreach (GameObject l in allLights)
             {
                 l.GetComponent<Light>().enabled = lightOn;
             }
+            foreach (GameObject l in allEmissives)
+            {
+                l.GetComponent<Renderer>().material.DisableKeyword("_EMISSION");
+            }
+            foreach (GameObject l in LandE)
+            {
+                l.GetComponent<Renderer>().material.DisableKeyword("_EMISSION");
+                l.GetComponent<Light>().enabled = lightOn;
+            }
+            lightMapController.GetComponent<LightMapSwitcher>().SwapLightmaps(1);
         }
 
         bool AAtStart = AStart.transform.localPosition.y - switchA.transform.localPosition.y <= delta;
@@ -51,11 +78,20 @@ public class LightControl : MonoBehaviour
         if (AAtStart && BAtStart && CAtStart)
         {
             lightOn = true;
-           
             foreach (GameObject l in allLights)
             {
                 l.GetComponent<Light>().enabled = lightOn;
             }
+            foreach (GameObject l in allEmissives)
+            {
+                l.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
+            }
+            foreach (GameObject l in LandE)
+            {
+                l.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
+                l.GetComponent<Light>().enabled = lightOn;
+            }
+            lightMapController.GetComponent<LightMapSwitcher>().SwapLightmaps(0);
         }
     }
 }
