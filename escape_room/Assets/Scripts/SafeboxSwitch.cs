@@ -8,7 +8,7 @@ public class SafeboxSwitch : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        isOn = true;
+
     }
 
     public void enable()
