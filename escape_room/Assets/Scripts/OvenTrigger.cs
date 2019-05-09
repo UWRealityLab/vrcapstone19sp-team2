@@ -21,7 +21,10 @@ public class OvenTrigger : MonoBehaviour
             Debug.Log("entered");
             iceCubePos.SetActive(true);
             // Detach the ice cube in hand
-            iceCube.GetComponent<Interactable>().attachedToHand.DetachObject(iceCube, false);
+            if (iceCube.GetComponent<Interactable>().attachedToHand)
+            {
+                iceCube.GetComponent<Interactable>().attachedToHand.DetachObject(iceCube, false);
+            }
             iceCube.SetActive(false);
             GetComponentInParent<OvenScript>().CubeIn();
         }
