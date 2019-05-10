@@ -29,6 +29,14 @@ public class LightControl : MonoBehaviour
         allEmissives = GameObject.FindGameObjectsWithTag(emissiveTagName);
         LandE = GameObject.FindGameObjectsWithTag("LandE");
 
+        if (!lightOn)
+        {
+            turnOff();
+        }
+    }
+
+    private void turnOff()
+    {
         foreach (GameObject l in allLights)
         {
             l.GetComponent<Light>().enabled = lightOn;
@@ -43,7 +51,6 @@ public class LightControl : MonoBehaviour
             l.GetComponent<Light>().enabled = lightOn;
         }
         lightMapController.GetComponent<LightMapSwitcher>().SwapLightmaps(1);
-
     }
 
     public void switchLight()
