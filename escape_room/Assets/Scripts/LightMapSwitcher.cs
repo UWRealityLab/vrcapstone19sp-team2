@@ -52,7 +52,6 @@ public class LightMapSwitcher : MonoBehaviour
 
         DayReflections = new Texture[allReflectionProbes.Length];
         NightReflections = new Texture[allReflectionProbes.Length];
-        Debug.Log("hi");
 
         for (int i = 0; i < allReflectionProbes.Length; i++)
         {
