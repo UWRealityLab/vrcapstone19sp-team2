@@ -242,4 +242,20 @@ Plans for next week:
 ### Week 6
 We have finished our MVP! Here is a video of our MVP:
 
-  
+- Yexiang Shao
+  - Worked on radio dial and safe box mechanism, and integrated them into our main scene.
+  - Radio dial
+    - Added more audio sources to the radio to give players more hints and helped process the game. Last week, we already had two audios. One is the noise and the other is a commercial suggesting that there is a key inside the freezer. This week, I added a breaking-glass sound to bring up another hint which the player should use the gun to shoot the window.
+  - Safe box
+    - I also added a safe box whose function is to store that gun. The mechanism has four main parts:
+      - A knob for players to input a number from 0-99.
+      - A small monitor to display what number the player chooses.
+      - A handle that could be rotated only when the number is correct.
+      - A door that could be opened only when the handle has been rotated 280 degree.
+      
+Plans for next week:
+- TAs' suggestions from Thursday demo:
+
+- Yexiang Shao
+  - One way to make our game more immersive is to add more sound effects. For example, "Ding" sound from the oven and music from the music box, etc. Also, more audios will be added into the radio to make the radio puzzle even more complex and playable. For example, the hints would only be available when the player concatenate multiple audio pieces. In addition, these sounds could be combined with our UI to better their gaming experience. In a sentence, next week I am going to integrate more sounds into our game to make it more immersive, interesting and realistic.
+
