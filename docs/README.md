@@ -261,7 +261,23 @@ We have finished our MVP! Here is a video of our MVP:
     - made the fuse box cover to be openable.
   - Worked on the positions of the shutters and improved the sensibility of the buttons that control the shutters.
   - Decorated the main scene with more items.
-  
+
+- Qian Yan
+  - For this week, I finished the plan from last week - the oven puzzle. The key hidden inside the ice cube will be revealed once heated inside the oven.
+  - On top of that, I implemented a new secrete-door-open mechanism - the musicbox in the scene and the animation along with it.
+    - The musicbox will play once the key is inserted into the keyhole and the handle is turned. At the same time, the door will open & close when the tune finishes.
+    - To incorperate this, another secrete open-key is also added to the inside of the secrete the room. Player can open the door again from inside by pushing one of the bricks on the wall.
+  - Link the Jiwen's fuse box piece to the lightings in the room: this includes the lights and the emissive materials; so they are turned off properly.
+    - A flashlight is also added to the scene and tuned to stay in the hand in a reasonable way.
+  - Heavy work on the game scene:
+    - rework on room's lighting:
+      - a new baked lightmap switcher script is included so the baked lightmap gets switched between our light-on lightmap to light-off one with the fuse box to make the scene completely dark.
+      - adjust the room's lighting settings to have better lighting at day time.
+    - props like corpse, blood are added to the secrete room.
+    - props added into the kitchen area.
+  - Help to get the game ready for demo
+    - adjust the scene
+    - tune the breakable window part with Yifan
       
 Plans for next week:
 - TAs' suggestions from Thursday demo:
@@ -272,4 +288,7 @@ Plans for next week:
   - Will work on improving the textures and the interactability of the items in the main scene. For instance, currently, the shutter control buttons are "floating" in mid air, which does not look very good.
   - Improve the interactions for the existing items. For example, so knobs cannot be turned easily
   - Think about how to end the game: after the glass breaks, how does the player get out?
+- Qian Yan
+  - Think more about the gameplay - how to better embed the hints in the scene to make the player observe/listen and think to get the answer.
+  - Investigate into the possibility to migrate our game to use Quest.
 
