@@ -238,3 +238,8 @@ Plans for next week:
     - break the windows when it's "shot".
   - drop some hints in the scenes by writing them on papers hidden in the breakable objects.
   - enrich the storyline by placing an animated book that narrates the story in the scene.
+  
+### Week 6
+We have finished our MVP! Here is a video of our MVP:
+
+  
