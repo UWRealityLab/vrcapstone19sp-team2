@@ -241,6 +241,7 @@ Plans for next week:
   
 ### Week 6
 We have finished our MVP! Here is a video of our MVP:
+[![](http://img.youtube.com/vi/e7-90TjEM5Y/0.jpg)](http://www.youtube.com/watch?v=e7-90TjEM5Y "Demo")
 
 - Yexiang Shao
   - Worked on radio dial and safe box mechanism, and integrated them into our main scene.
@@ -253,10 +254,22 @@ We have finished our MVP! Here is a video of our MVP:
       - A handle that could be rotated only when the number is correct.
       - A door that could be opened only when the handle has been rotated 280 degree.
     ![Safe front](pics/safe.PNG)
+    
+- Jiwen Wu
+  - Worked on the mechanism for the fuse box, and integrated it to our main scene
+    - there are three switches and one button in the fuse box. All are interactable: only when all three switches are on the top position, and the user presses the button, will all the lights be turned on. When al three switches are down and the user presses the button, all lights will go off.
+    - made the fuse box cover to be openable.
+  - Worked on the positions of the shutters and improved the sensibility of the buttons that control the shutters.
+  - Decorated the main scene with more items.
+  
       
 Plans for next week:
 - TAs' suggestions from Thursday demo:
 
 - Yexiang Shao
   - One way to make our game more immersive is to add more sound effects. For example, "Ding" sound from the oven and music from the music box, etc. Also, more audios will be added into the radio to make the radio puzzle even more complex and playable. For example, the hints would only be available when the player concatenate multiple audio pieces. In addition, these sounds could be combined with our UI to better their gaming experience. In a sentence, next week I am going to integrate more sounds into our game to make it more immersive, interesting and realistic.
+- Jiwen Wu
+  - Will work on improving the textures and the interactability of the items in the main scene. For instance, currently, the shutter control buttons are "floating" in mid air, which does not look very good.
+  - Improve the interactions for the existing items. For example, so knobs cannot be turned easily
+  - Think about how to end the game: after the glass breaks, how does the player get out?
 
