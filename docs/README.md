@@ -262,6 +262,14 @@ We have finished our MVP! Here is a video of our MVP:
   - Worked on the positions of the shutters and improved the sensibility of the buttons that control the shutters.
   - Decorated the main scene with more items.
 
+- Yifan Xu
+  - Worked on the gun and the breakable glasses, and integrated them into the main scene.
+    - created a bullet instance to be shot when users fire the gun
+    - determined the direction and path of the bullets
+    - break the windows when it's "shot"
+    - allowed the users to shoot the gun in the scene and when the bullet hits the window, it will break into parts and fall down suddenly.
+    
+
 - Qian Yan
   - For this week, I finished the plan from last week - the oven puzzle. The key hidden inside the ice cube will be revealed once heated inside the oven.
   - On top of that, I implemented a new secrete-door-open mechanism - the musicbox in the scene and the animation along with it.
@@ -288,6 +296,11 @@ Plans for next week:
   - Will work on improving the textures and the interactability of the items in the main scene. For instance, currently, the shutter control buttons are "floating" in mid air, which does not look very good.
   - Improve the interactions for the existing items. For example, so knobs cannot be turned easily
   - Think about how to end the game: after the glass breaks, how does the player get out?
+- Yifan Xu
+  - Will Continue working on the gun to allow the users to load the gun themselves so they will be able to shoot
+    - Hide the magazine somewhere and so the user needs to find and assemble the gun
+    - Create a linear movement or animation to assemble and load the gun
+    - Add an audio source for loading the gun
 - Qian Yan
   - Think more about the gameplay - how to better embed the hints in the scene to make the player observe/listen and think to get the answer.
   - Investigate into the possibility to migrate our game to use Quest.
