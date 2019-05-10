@@ -252,6 +252,7 @@ We have finished our MVP! Here is a video of our MVP:
       - A small monitor to display what number the player chooses.
       - A handle that could be rotated only when the number is correct.
       - A door that could be opened only when the handle has been rotated 280 degree.
+    ![Safe front](pics/safe.PNG)
       
 Plans for next week:
 - TAs' suggestions from Thursday demo:
