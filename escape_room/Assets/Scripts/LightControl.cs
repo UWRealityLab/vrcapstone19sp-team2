@@ -6,6 +6,7 @@ public class LightControl : MonoBehaviour
 {
 
     public bool lightOn = false;
+    public AudioClip buttonSound;
 
     // public GameObject lamp1, lamp2, lamp3;
 
@@ -85,6 +86,9 @@ public class LightControl : MonoBehaviour
         if (AAtStart && BAtStart && CAtStart)
         {
             lightOn = true;
+            AudioSource audioSource = this.GetComponent<AudioSource>();
+            audioSource.clip = buttonSound;
+            audioSource.Play();
             foreach (GameObject l in allLights)
             {
                 l.GetComponent<Light>().enabled = lightOn;

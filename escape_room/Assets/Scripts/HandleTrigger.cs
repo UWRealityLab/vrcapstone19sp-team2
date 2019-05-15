@@ -34,6 +34,7 @@ public class HandleTrigger : MonoBehaviour
         {
             Debug.Log("Open");
             GetComponentInParent<Animator>().SetTrigger("Play");
+            this.GetComponent<AudioSource>().Play();
             this.gameObject.AddComponent<IgnoreHovering>();
         }
     }

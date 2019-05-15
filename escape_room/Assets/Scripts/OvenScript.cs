@@ -10,6 +10,8 @@ public class OvenScript : MonoBehaviour
     public GameObject key;
     public GameObject iceCubePos;
     public GameObject doorCollider;
+    public AudioClip ovenFinishedSound;
+    public AudioClip ovenDoorClosedSound;
 
     private bool cubeIn = false;
     private bool executed = false;
@@ -43,11 +45,17 @@ public class OvenScript : MonoBehaviour
         // Disable door circular drive
 
         // To disable hovering
+        AudioSource audioSource = this.GetComponent<AudioSource>();
+
+        audioSource.clip = ovenDoorClosedSound;
+        audioSource.Play();
         doorCollider.AddComponent<IgnoreHovering>();
         redLight.SetActive(true);
         greenLight.SetActive(false);
         yield return new WaitForSeconds(2);
         // To enable hovering:
+        audioSource.clip = ovenFinishedSound;
+        audioSource.Play();
         Destroy(doorCollider.GetComponent<IgnoreHovering>());
         redLight.SetActive(false);
         greenLight.SetActive(true);

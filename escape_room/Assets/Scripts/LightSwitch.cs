@@ -11,9 +11,11 @@ public class LightSwitch : MonoBehaviour
     public bool maintainMomemntum = true;
     public float momemtumDampenRate = 5.0f;
     public float initialMappingOffset;
+    public AudioClip switchSound;
 
     // public GameObject lamp;
-    // public float delta = 0.001f;
+    public float delta = 0.001f;
+    private float previousPosition;
 
     protected Hand.AttachmentFlags attachmentFlags = Hand.AttachmentFlags.DetachFromOtherHand;
 
@@ -31,9 +33,13 @@ public class LightSwitch : MonoBehaviour
     {
         mappingChangeSamples = new float[numMappingChangeSamples];
         interactable = GetComponent<Interactable>();
+
     }
-    protected virtual void Start()
+    void Start()
     {
+        previousPosition = endPosition.localPosition.y;
+        this.transform.localPosition = endPosition.localPosition;
+        //Debug.Log("start y: " + this.transform.localPosition.y);
     }
 
     // Hover, check & grab.
@@ -114,18 +120,34 @@ public class LightSwitch : MonoBehaviour
         }
     }
 
-    /*
+
     private void LateUpdate()
     {
-        if (startPosition.localPosition.y - this.transform.localPosition.y <= delta)
+        float currentPosition = this.transform.localPosition.y;
+        //Debug.Log(previousPosition + "*****" + currentPosition);
+        if (!floatEquals(previousPosition, currentPosition) 
+            && (floatEquals(currentPosition, startPosition.localPosition.y) || floatEquals(currentPosition, endPosition.localPosition.y)))
         {
-            lamp.GetComponentInChildren<Light>().enabled = true;
+            //Debug.Log("inside switch");
+            AudioSource audioSource = this.GetComponent<AudioSource>();
+            audioSource.clip = switchSound;
+            audioSource.Play();
+            previousPosition = currentPosition;
         }
+        //if (startPosition.localPosition.y - this.transform.localPosition.y <= delta)
+        //{
+        //    lamp.GetComponentInChildren<Light>().enabled = true;
+        //}
 
-        else if (this.transform.localPosition.y - endPosition.localPosition.y <= delta)
-        {
-            lamp.GetComponentInChildren<Light>().enabled = false;
-        }
+        //else if (this.transform.localPosition.y - endPosition.localPosition.y <= delta)
+        //{
+        //    lamp.GetComponentInChildren<Light>().enabled = false;
+        //}
     }
-    */
+
+
+    private bool floatEquals(float a, float b)
+    {
+        return Mathf.Abs(a - b) < 0.001f;
+    }
 }
