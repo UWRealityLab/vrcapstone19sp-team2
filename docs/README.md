@@ -305,3 +305,21 @@ Plans for next week:
   - Think more about the gameplay - how to better embed the hints in the scene to make the player observe/listen and think to get the answer.
   - Investigate into the possibility to migrate our game to use Quest.
 
+ ### Week 7
+ This week is a slow week after the hard-work week last week. In last week, we achieved our MVP and most of our target product. Following that is really thinking about what else we need to accomplish.
+ - Qian Yan
+   - Investigated into the possibilities to switch to Quest and we end up choose not to switch due to lack of interactive scripts.
+     - Our scene uses a lot of scripts that are based on the linear drive and circular drive. In these scripts, hand movements that converted to linear and circualr movements on the game object. But Oculus integration tool only have hand interface with raw input. It will too much work to write these versions of scripts for OVR.
+     - Members in the team are already familiar with the steamvr input library and are actively adding more interactions based on it. Switching involves too much effort.
+   - Think about the gameplay again with what we achieved and work on adding new game elements into the game to make the transition between puzzles more nature.
+     - a new puzzle as the starting puzzle:
+       - Player will be trapped in the bathroom with one hand cuffed to the electric heater. The room is all dark except the moon light shine through the window. Player will need to find the tool to set himself loose with only one hand. The telesport will also be disabled here.
+       - The tool, a key or a cutter, will be hidden inside the bath tube filled with water.
+     - TV in the room will be operable.
+       - it will play commercials in one channel and other channel will give player a hint to operate radio to seek for help.
+  - Plan for next week
+    - Finish the first puzzle.
+      - Give player hands
+      - Take care of the physics of the chain that cuffs the player's hand
+      - Finish the scripts that confine the movement of one hand.
+      
