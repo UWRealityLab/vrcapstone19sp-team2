@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 54000012251415654}
   - component: {fileID: 65000013865343832}
   - component: {fileID: 114402636573796330}
+  - component: {fileID: 5331718276489385449}
   m_Layer: 0
   m_Name: WPN_cal_9mm
   m_TagString: Untagged
@@ -170,7 +171,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -200,6 +201,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 114000013434662688}
+--- !u!111 &5331718276489385449
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000014027166902}
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 3973ddc613704464eb15411eb2bd7dab, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 3973ddc613704464eb15411eb2bd7dab, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &1834733724636016
 GameObject:
   m_ObjectHideFlags: 0
