@@ -324,6 +324,7 @@ This week is a slow week after the hard-work week last week. In last week, we ac
      - Secret door open/close
      - Fuse box "click" sound
    - Helicopter prototype: finished the animation of basic rotation and movement.
+ 
  -Yifan Xu
    - Updated the gun that allows the users to load the gun themselves in order to be able to shoot
     - Disable the shooting for the gun without magazine
