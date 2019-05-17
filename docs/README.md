@@ -324,7 +324,15 @@ This week is a slow week after the hard-work week last week. In last week, we ac
      - Secret door open/close
      - Fuse box "click" sound
    - Helicopter prototype: finished the animation of basic rotation and movement.
- 
+- Jiwen Wu
+  - Worked on improving the textures of some game objects:
+    - Instead of a button that is floating in mid-air, a real switch is now used to control the shutters. User can flip the switch by doing any action with the controller.
+    - Changed the fuse box script. Now, the player can turn off lights when all three switches are down or up. However, all switches must be at the up position in order to turn on lights.
+  - Did a lot of thinking for the game UI, the hint system, and how to end the game
+    - When player grabs a diary or an important piece of paper, a text box that shows the what the diary / paper says will be displayed.
+    - A timer that times how long the player has been playing. Give the user urgency.
+    - Hint system: we will give the player a fixed amount of hints. When user uses a hint, the game object the player should interact with will be highlighted.
+    - Exiting the game: instead of the under-water idea (too hard to model the physics of that), we will let the player contact the military rescue team using a radio / phone (another puzzle), and the rescue team will send a helicopter to rescue the player. When the helicopter is close, the player will need to find a flare gun and shoot flares into the sky for the helicopter to locate the player. Helicopter will then lower a rope / soft ladder, and the user will need to climb up to the helicopter to escape.
  - Yifan Xu
    - Updated the gun that allows the users to load the gun themselves in order to be able to shoot
      - Disable the shooting for the gun without magazine
@@ -343,6 +351,9 @@ This week is a slow week after the hard-work week last week. In last week, we ac
      - More sound effects:
        - Window blinds open and close sound, etc.
      - Since UI is an important element for us to demo our game, after finishing the tasks above, I will work with Jiwen on that. 
+  - Jiwen Wu
+    - Work on the UI and hint system described in the design I worked on this week.
+    - Experiment with climbing ropes in VR
   - Yifan Xu
     - Work on flare gun that allows the player to shoot and send signal to the helicopter
       - Find models of flare gun in asset store
