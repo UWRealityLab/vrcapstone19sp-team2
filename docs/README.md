@@ -306,6 +306,7 @@ Plans for next week:
   - Investigate into the possibility to migrate our game to use Quest.
 
  ### Week 7
+ 
  This week is a slow week after the hard-work week last week. In last week, we achieved our MVP and most of our target product. Following that is really thinking about what else we need to accomplish.
  - Qian Yan
    - Investigated into the possibilities to switch to Quest and we end up choose not to switch due to lack of interactive scripts.
@@ -317,9 +318,21 @@ Plans for next week:
        - The tool, a key or a cutter, will be hidden inside the bath tube filled with water.
      - TV in the room will be operable.
        - it will play commercials in one channel and other channel will give player a hint to operate radio to seek for help.
-  - Plan for next week
-    - Finish the first puzzle.
-      - Give player hands
-      - Take care of the physics of the chain that cuffs the player's hand
-      - Finish the scripts that confine the movement of one hand.
+ - Yexiang Shao
+   - Added sounds effect to most of the game components:
+     - Oven open and finished "ding" sound
+     - Music box music with audios for inserting keys
+     - Secret door open/close
+     - Fuse box "click" sound
+   - Helicopter prototype: finished the animation of basic rotation and movement.
+ - Plan for next week
+   - Qian Yan: Finish the first puzzle.
+     - Give player hands
+     - Take care of the physics of the chain that cuffs the player's hand
+     - Finish the scripts that confine the movement of one hand.
+   - Yexiang Shao:
+     - Finish helicopter mechanism. Now I need to find or create a rope or ladder that could be dropped down from the helicopter for players to climb and then escape. This requires Qian's work to be done because we may need mechanism from player's hands.
+     - More sound effects:
+       - Window blinds open and close sound, etc.
+     - Since UI is an important element for us to demo our game, after finishing the tasks above, I will work with Jiwen on that. 
       
