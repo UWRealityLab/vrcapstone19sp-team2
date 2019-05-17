@@ -327,10 +327,10 @@ This week is a slow week after the hard-work week last week. In last week, we ac
  
  - Yifan Xu
    - Updated the gun that allows the users to load the gun themselves in order to be able to shoot
-    - Disable the shooting for the gun without magazine
-    - When the player grabs the magazine and hover it close to the handler, the magazine will be attach to the gun automatically
-    - Created animation to assemble and load the gun
-    - Added an audio clips for assembling the magazine and loading the gun
+     - Disable the shooting for the gun without magazine
+     - When the player grabs the magazine and hover it close to the handler, the magazine will be attach to the gun automatically
+     - Created animation to assemble and load the gun
+     - Added an audio clips for assembling the magazine and loading the gun
 ![Gunshot](pics/gun_shot.gif)
  
  ### Plan for next week
