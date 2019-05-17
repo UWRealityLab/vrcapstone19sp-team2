@@ -16,6 +16,7 @@ public class LightControl : MonoBehaviour
 
     public GameObject switchA, switchB, switchC;
     public GameObject lightMapController;
+    private bool freelyOff = false;
 
     public string lightTagName;
     public string emissiveTagName;
@@ -56,16 +57,24 @@ public class LightControl : MonoBehaviour
 
     public void switchLight()
     {
-        bool AAtEnd = switchA.transform.localPosition.y - AEnd.localPosition.y <= delta;
-        bool BAtEnd = switchB.transform.localPosition.y - BEnd.localPosition.y <= delta;
-        bool CAtEnd = switchC.transform.localPosition.y - CEnd.localPosition.y <= delta;
-               
-        if (AAtEnd && BAtEnd && CAtEnd)
+        bool AAtEnd = Mathf.Abs(switchA.transform.localPosition.y - AEnd.localPosition.y) <= delta;
+        bool BAtEnd = Mathf.Abs(switchB.transform.localPosition.y - BEnd.localPosition.y) <= delta;
+        bool CAtEnd = Mathf.Abs(switchC.transform.localPosition.y - CEnd.localPosition.y) <= delta;
+
+        bool AAtStart = Mathf.Abs(AStart.transform.localPosition.y - switchA.transform.localPosition.y) <= delta;
+        bool BAtStart = Mathf.Abs(BStart.transform.localPosition.y - switchB.transform.localPosition.y) <= delta;
+        bool CAtStart = Mathf.Abs(CStart.transform.localPosition.y - switchC.transform.localPosition.y) <= delta;
+
+        if (freelyOff)
         {
+
             lightOn = false;
+            freelyOff = false;
             AudioSource audioSource = this.GetComponent<AudioSource>();
             audioSource.clip = buttonSound;
             audioSource.Play();
+
+            freelyOff = false;
             foreach (GameObject l in allLights)
             {
                 l.GetComponent<Light>().enabled = lightOn;
@@ -80,32 +89,33 @@ public class LightControl : MonoBehaviour
                 l.GetComponent<Light>().enabled = lightOn;
             }
             lightMapController.GetComponent<LightMapSwitcher>().SwapLightmaps(1);
-        }
-
-        bool AAtStart = AStart.transform.localPosition.y - switchA.transform.localPosition.y <= delta;
-        bool BAtStart = BStart.transform.localPosition.y - switchB.transform.localPosition.y <= delta;
-        bool CAtStart = CStart.transform.localPosition.y - switchC.transform.localPosition.y <= delta;
-
-        if (AAtStart && BAtStart && CAtStart)
+        } else
         {
-            lightOn = true;
-            AudioSource audioSource = this.GetComponent<AudioSource>();
-            audioSource.clip = buttonSound;
-            audioSource.Play();
-            foreach (GameObject l in allLights)
+            //    Debug.Log("mmp");
+            //    Debug.Log("AAtStart: " + AAtStart + ", BAtStart: " + BAtStart + ", CAtstart: " + CAtStart);
+            if (AAtStart && BAtStart && CAtStart)
             {
-                l.GetComponent<Light>().enabled = lightOn;
+                //Debug.Log("gtmdsb");
+                lightOn = true;
+                freelyOff = true;
+                AudioSource audioSource = this.GetComponent<AudioSource>();
+                audioSource.clip = buttonSound;
+                audioSource.Play();
+                foreach (GameObject l in allLights)
+                {
+                    l.GetComponent<Light>().enabled = lightOn;
+                }
+                foreach (GameObject l in allEmissives)
+                {
+                    l.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
+                }
+                foreach (GameObject l in LandE)
+                {
+                    l.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
+                    l.GetComponent<Light>().enabled = lightOn;
+                }
+                lightMapController.GetComponent<LightMapSwitcher>().SwapLightmaps(0);
             }
-            foreach (GameObject l in allEmissives)
-            {
-                l.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
-            }
-            foreach (GameObject l in LandE)
-            {
-                l.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
-                l.GetComponent<Light>().enabled = lightOn;
-            }
-            lightMapController.GetComponent<LightMapSwitcher>().SwapLightmaps(0);
         }
     }
 }
