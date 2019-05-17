@@ -217,7 +217,7 @@ This week, we have devided our work among the four of us. We will each focus on 
   - After being picked up, the gun will attach to the controller until the grip is grabbed again
   - User can fire the gun by grabbing the pinch. In current state, a light effect, a gunshot sound and a fire animation will launch but no bullet will come from the gun.
   - A breakable window which will break into pieces after detecting a collision is ready to be placed.
-  ![Gunshot](pics/gun_shot.gif)
+  ![Gunshot](pics/old_gun_shot.gif)
   
 Plans for next week:
 - Qian Yan: will work on the oven hint.
@@ -324,7 +324,15 @@ This week is a slow week after the hard-work week last week. In last week, we ac
      - Secret door open/close
      - Fuse box "click" sound
    - Helicopter prototype: finished the animation of basic rotation and movement.
- - Plan for next week
+ -Yifan Xu
+   - Updated the gun that allows the users to load the gun themselves in order to be able to shoot
+    - Disable the shooting for the gun without magazine
+    - When the player grabs the magazine and hover it close to the handler, the magazine will be attach to the gun automatically
+    - Created animation to assemble and load the gun
+    - Added an audio clips for assembling the magazine and loading the gun
+![Gunshot](pics/gun_shot.gif)
+ 
+ ### Plan for next week
    - Qian Yan: Finish the first puzzle.
      - Give player hands
      - Take care of the physics of the chain that cuffs the player's hand
@@ -334,4 +342,10 @@ This week is a slow week after the hard-work week last week. In last week, we ac
      - More sound effects:
        - Window blinds open and close sound, etc.
      - Since UI is an important element for us to demo our game, after finishing the tasks above, I will work with Jiwen on that. 
+  - Yifan Xu
+    - Work on flare gun that allows the player to shoot and send signal to the helicopter
+      - Find models of flare gun in asset store
+      - Allow the player to hold and shoot gun
+      - Add corresponding sound clips and light effects to the gun
+    - Display an [animated book](https://assetstore.unity.com/packages/3d/characters/3d-animated-book-67997) that introduces the storyline
       
