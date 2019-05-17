@@ -63,6 +63,9 @@ public class LightControl : MonoBehaviour
         if (AAtEnd && BAtEnd && CAtEnd)
         {
             lightOn = false;
+            AudioSource audioSource = this.GetComponent<AudioSource>();
+            audioSource.clip = buttonSound;
+            audioSource.Play();
             foreach (GameObject l in allLights)
             {
                 l.GetComponent<Light>().enabled = lightOn;

@@ -7,6 +7,7 @@ public class KeyHoldTrigger : MonoBehaviour
 {
     public GameObject keyPos;
     public GameObject key;
+    public AudioClip keyInsertionSound;
 
     private bool executed = false;
 
@@ -27,11 +28,14 @@ public class KeyHoldTrigger : MonoBehaviour
         if (!executed && other.name == key.name)
         {
             executed = true;
-            Debug.Log("entered");
+            //Debug.Log("entered");
             keyPos.SetActive(true);
             key.GetComponent<Interactable>().attachedToHand.DetachObject(key, false);
             key.SetActive(false);
             GetComponentInParent<Animator>().SetTrigger("Open");
+            //AudioSource audioSource = this.GetComponent<AudioSource>();
+            //audioSource.clip = keyInsertionSound;
+            //audioSource.Play();
             this.gameObject.AddComponent<IgnoreHovering>();
         }
     }
