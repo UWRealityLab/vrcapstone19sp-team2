@@ -5,6 +5,10 @@ using Valve.VR.InteractionSystem;
 
 public class HandleTrigger : MonoBehaviour
 {
+    public AudioClip musicBoxSound;
+    //public GameObject secretDoor;
+    //public AudioClip secretDoorOpenSound;
+
     private Interactable interactable;
     private bool open;
 
@@ -32,7 +36,11 @@ public class HandleTrigger : MonoBehaviour
 
         if (open && interactable.attachedToHand == null && startingGrabType != GrabTypes.None)
         {
-            Debug.Log("Open");
+            //Debug.Log("Open");
+            AudioSource audioSource = this.GetComponent<AudioSource>();
+            audioSource.clip = musicBoxSound;
+            audioSource.Play();
+
             GetComponentInParent<Animator>().SetTrigger("Play");
             this.gameObject.AddComponent<IgnoreHovering>();
         }
