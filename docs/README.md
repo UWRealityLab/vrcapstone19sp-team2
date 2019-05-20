@@ -217,7 +217,7 @@ This week, we have devided our work among the four of us. We will each focus on 
   - After being picked up, the gun will attach to the controller until the grip is grabbed again
   - User can fire the gun by grabbing the pinch. In current state, a light effect, a gunshot sound and a fire animation will launch but no bullet will come from the gun.
   - A breakable window which will break into pieces after detecting a collision is ready to be placed.
-  ![Gunshot](pics/gun_shot.gif)
+  ![Gunshot](pics/old_gun_shot.gif)
   
 Plans for next week:
 - Qian Yan: will work on the oven hint.
@@ -305,8 +305,8 @@ Plans for next week:
   - Think more about the gameplay - how to better embed the hints in the scene to make the player observe/listen and think to get the answer.
   - Investigate into the possibility to migrate our game to use Quest.
 
- ### Week 7
- This week is a slow week after the hard-work week last week. In last week, we achieved our MVP and most of our target product. Following that is really thinking about what else we need to accomplish.
+### Week 7
+This week is a slow week after the hard-work week last week. In last week, we achieved our MVP and most of our target product. Following that is really thinking about what else we need to accomplish.
  - Qian Yan
    - Investigated into the possibilities to switch to Quest and we end up choose not to switch due to lack of interactive scripts.
      - Our scene uses a lot of scripts that are based on the linear drive and circular drive. In these scripts, hand movements that converted to linear and circualr movements on the game object. But Oculus integration tool only have hand interface with raw input. It will too much work to write these versions of scripts for OVR.
@@ -317,9 +317,47 @@ Plans for next week:
        - The tool, a key or a cutter, will be hidden inside the bath tube filled with water.
      - TV in the room will be operable.
        - it will play commercials in one channel and other channel will give player a hint to operate radio to seek for help.
-  - Plan for next week
-    - Finish the first puzzle.
-      - Give player hands
-      - Take care of the physics of the chain that cuffs the player's hand
-      - Finish the scripts that confine the movement of one hand.
+ - Yexiang Shao
+   - Added sounds effect to most of the game components:
+     - Oven open and finished "ding" sound
+     - Music box music with audios for inserting keys
+     - Secret door open/close
+     - Fuse box "click" sound
+   - Helicopter prototype: finished the animation of basic rotation and movement.
+- Jiwen Wu
+  - Worked on improving the textures of some game objects:
+    - Instead of a button that is floating in mid-air, a real switch is now used to control the shutters. User can flip the switch by doing any action with the controller.
+    - Changed the fuse box script. Now, the player can turn off lights when all three switches are down or up. However, all switches must be at the up position in order to turn on lights.
+  - Did a lot of thinking for the game UI, the hint system, and how to end the game
+    - When player grabs a diary or an important piece of paper, a text box that shows the what the diary / paper says will be displayed.
+    - A timer that times how long the player has been playing. Give the user urgency.
+    - Hint system: we will give the player a fixed amount of hints. When user uses a hint, the game object the player should interact with will be highlighted.
+    - Exiting the game: instead of the under-water idea (too hard to model the physics of that), we will let the player contact the military rescue team using a radio / phone (another puzzle), and the rescue team will send a helicopter to rescue the player. When the helicopter is close, the player will need to find a flare gun and shoot flares into the sky for the helicopter to locate the player. Helicopter will then lower a rope / soft ladder, and the user will need to climb up to the helicopter to escape.
+ - Yifan Xu
+   - Updated the gun that allows the users to load the gun themselves in order to be able to shoot
+     - Disable the shooting for the gun without magazine
+     - When the player grabs the magazine and hover it close to the handler, the magazine will be attach to the gun automatically
+     - Created animation to assemble and load the gun
+     - Added an audio clips for assembling the magazine and loading the gun
+![Gunshot](pics/gun_shot.gif)
+ 
+ ### Plan for next week
+   - Qian Yan: Finish the first puzzle.
+     - Give player hands
+     - Take care of the physics of the chain that cuffs the player's hand
+     - Finish the scripts that confine the movement of one hand.
+   - Yexiang Shao:
+     - Finish helicopter mechanism. Now I need to find or create a rope or ladder that could be dropped down from the helicopter for players to climb and then escape. This requires Qian's work to be done because we may need mechanism from player's hands.
+     - More sound effects:
+       - Window blinds open and close sound, etc.
+     - Since UI is an important element for us to demo our game, after finishing the tasks above, I will work with Jiwen on that. 
+  - Jiwen Wu
+    - Work on the UI and hint system described in the design I worked on this week.
+    - Experiment with climbing ropes in VR
+  - Yifan Xu
+    - Work on flare gun that allows the player to shoot and send signal to the helicopter
+      - Find models of flare gun in asset store
+      - Allow the player to hold and shoot gun
+      - Add corresponding sound clips and light effects to the gun
+    - Display an [animated book](https://assetstore.unity.com/packages/3d/characters/3d-animated-book-67997) that introduces the storyline
       
