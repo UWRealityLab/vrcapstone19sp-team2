@@ -1,0 +1,32 @@
+Physics Chain by Nik Kraus
+
+
+Adjustments:
+
+Any of the physics or joint controller attributes, on the links, can be adjusted to alter the overall chain reactions. To make adjustments, expand the chain parent and select all the links within the Hierarchy view, then in the inspector window, change the physics or joint values one at a time.
+
+For any chains carrying a weight it is recommended to use Hinge Joint instead of Character Joint
+
+To stiffen the chain or make the chain physics more responsive there are two physics setting that can be adjusted. 
+
+
+
+Note: These two adjustments will affect the physics for the whole project.
+
+1. Physics iterations can be adjusted to a higher value. In the menu click on "Edit/Project settings/Physics/Solver Iteration Count" try playing with the values between 25 and 75. This should make the chain a bit stiffer.
+
+2. Fixed Timestep can be adjusted. In the menu click on “Edit/Project settings/Time/Fixed timestep" set this to a smaller value. This will increase physics stability, be careful though not to make this value too much smaller from its default, as it will affect performance.
+
+
+
+
+To Extend the Chain:
+
+In the Hierarchy view, expand the chain parent and select all the chain links. 
+Then use the duplicate command “Ctrl D” or in the menu go to Edit > Duplicate. You will now see a new group of chain links selected 
+in the Hierarchy and Game View windows. In the Game view, use the move tool to move all the new selected links down to almost below 
+the last link and then rotate along the world Y axis 90 degrees until the two parts match up. You will notice that there are two links 
+of the same name, you are welcome to rename them if needed. In the Game View select “ChainLink1” (top link) of the new chain section and in the 
+inspector window expand the “Character Joint” section. Then from the Hierarchy view drag and drop the top chain link named “ChainLink17” 
+into the “connected body” field. Uncheck the constraints of “ChainLink1” then Press play and the new extended chain is active.
+
