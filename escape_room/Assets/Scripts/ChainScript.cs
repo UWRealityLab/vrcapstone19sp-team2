@@ -44,11 +44,17 @@ public class ChainScript : MonoBehaviour
     {
         // Show hand
         Hand.GetComponent<Hand>().ShowController(true);
-        this.enabled = false;
+        // Disable kinemetics
+        this.GetComponent<Rigidbody>().isKinematic = false;
+        // disable self
+        this.GetComponent<ChainScript>().enabled = false;
     }
 
     private void Pulse()
     {
-        hapticAction.Execute(0, 100f / 1000000f, 1000000f / 100f, 1, SteamVR_Input_Sources.LeftHand);
+        if (enableHaptics)
+        {
+            hapticAction.Execute(0, 100f / 1000000f, 1000000f / 100f, 1, SteamVR_Input_Sources.LeftHand);
+        }
     }
 }

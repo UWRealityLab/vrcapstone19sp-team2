@@ -90,7 +90,7 @@ namespace Valve.VR.InteractionSystem
 
                 GrabTypes bestGrabType = hand.GetBestGrabbingType();
 
-                if (bestGrabType != GrabTypes.None)
+                if (bestGrabType == GrabTypes.Grip)
                 {
                     if (rigidbody.velocity.magnitude >= catchingThreshold)
                     {
@@ -121,7 +121,7 @@ namespace Valve.VR.InteractionSystem
         {
             GrabTypes startingGrabType = hand.GetGrabStarting();
 
-            if (startingGrabType != GrabTypes.None)
+            if (startingGrabType == GrabTypes.Grip)
             {
                 // Disable kinetic
                 GetComponent<Rigidbody>().isKinematic = false;
