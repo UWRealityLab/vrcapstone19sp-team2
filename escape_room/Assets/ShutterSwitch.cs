@@ -12,6 +12,8 @@ public class ShutterSwitch : MonoBehaviour
 
     private Interactable interactable;
 
+    public string trigger;
+
     private float delta = 1.0f;
 
     // Start is called before the first frame update
@@ -32,10 +34,8 @@ public class ShutterSwitch : MonoBehaviour
 
         if (interactable.attachedToHand == null && startingGrabType != GrabTypes.None)
         {           
-            shutter.GetComponent<Animator>().SetTrigger("control");
-
-
-
+            shutter.GetComponent<Animator>().SetTrigger(trigger);
+          
             if(Mathf.Abs(this.transform.localEulerAngles.x - onPosition.localEulerAngles.x) <= delta)
             {
                 this.transform.localEulerAngles = offPosition.localEulerAngles;

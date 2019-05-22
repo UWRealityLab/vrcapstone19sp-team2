@@ -15521,13 +15521,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LeftInputSource: 1
   RightInputSource: 2
+  fire: {fileID: 0}
+  mag: {fileID: 0}
+  sliderpull: {fileID: 0}
+  sliderrelease: {fileID: 0}
   muzzleflashPrefab: {fileID: 1000011950633266, guid: fd16f026e93064f46abf313307e9ecff,
     type: 3}
   muzzlePoint: {fileID: 914040826}
-  spawnedItem: {fileID: 0}
   attachmentFlags: 47
   theBullet: {fileID: 2109328286}
   barrelEnd: {fileID: 2108437268}
+  enable: 0
   bulletSpeed: 30
   despawnTime: 3
   shootAble: 1
@@ -28378,11 +28382,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 447954, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 153.3577
+      value: 164.75
       objectReference: {fileID: 0}
     - target: {fileID: 447954, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 199.34653
+      value: 194.525
       objectReference: {fileID: 0}
     - target: {fileID: 447954, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_LocalRotation.x
@@ -30004,7 +30008,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 83f569aee7823764288d579f95f8d303, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.13160668
+      value: -0.0061679613
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 83f569aee7823764288d579f95f8d303, type: 3}
       propertyPath: m_LocalRotation.y
@@ -30016,7 +30020,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 83f569aee7823764288d579f95f8d303, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.991302
+      value: 0.99998105
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 83f569aee7823764288d579f95f8d303, type: 3}
       propertyPath: m_RootOrder
@@ -30024,7 +30028,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 83f569aee7823764288d579f95f8d303, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -15.125001
+      value: -0.707
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 83f569aee7823764288d579f95f8d303, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -30036,19 +30040,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 83f569aee7823764288d579f95f8d303, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.000000040384066
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 83f569aee7823764288d579f95f8d303, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.9238797
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 83f569aee7823764288d579f95f8d303, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.38268307
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 83f569aee7823764288d579f95f8d303, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.000000016727608
+      value: 0.00000028088027
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 83f569aee7823764288d579f95f8d303, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -30056,7 +30060,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 83f569aee7823764288d579f95f8d303, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -179.99998
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 83f569aee7823764288d579f95f8d303, type: 3}
       propertyPath: m_LocalRotation.x
@@ -30105,6 +30109,10 @@ PrefabInstance:
     - target: {fileID: 400008, guid: 83f569aee7823764288d579f95f8d303, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 400008, guid: 83f569aee7823764288d579f95f8d303, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9500000, guid: 83f569aee7823764288d579f95f8d303, type: 3}
       propertyPath: m_Controller
