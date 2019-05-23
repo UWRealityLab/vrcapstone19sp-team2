@@ -9,8 +9,10 @@ public class ChainScript : MonoBehaviour
     public Transform ChainStart;
     public GameObject ChainEnd;
     public GameObject Hand;
+    public GameObject Teleport;
     public float LengthOffset = 0.0f;
     public bool enableHaptics = true;
+    public bool enableTeleport = false;
     public bool broke = false;
 
     // Haptics
@@ -22,6 +24,10 @@ public class ChainScript : MonoBehaviour
     void Start()
     {
         MaxLength = (ChainEnd.transform.position - ChainStart.position).magnitude + LengthOffset;
+        Teleport.GetComponent<Teleport>().enabled = enableTeleport;
+
+        // Cancel TeleportHint
+        Teleport.GetComponent<Teleport>().CancelTeleportHint();
     }
 
     // Update is called once per frame
@@ -51,8 +57,6 @@ public class ChainScript : MonoBehaviour
             broke = true;
             // Show hand
             Hand.GetComponent<Hand>().ShowController(true);
-            // Disable kinemetics
-            // this.GetComponent<Rigidbody>().isKinematic = false;
             // disable self
             this.GetComponent<ChainScript>().enabled = false;
             // Attach end to hand
@@ -60,6 +64,10 @@ public class ChainScript : MonoBehaviour
             ChainEnd.transform.parent = Hand.transform;
             ChainEnd.transform.localPosition = ChainEnd.transform.Find("AttachmentOffset").localPosition;
             ChainEnd.transform.localEulerAngles = ChainEnd.transform.Find("AttachmentOffset").localEulerAngles;
+            // Enable Teleport
+            Teleport.GetComponent<Teleport>().enabled = true;
+            // Enable Hint
+            Teleport.GetComponent<Teleport>().ShowTeleportHint();
         }
     }
 
