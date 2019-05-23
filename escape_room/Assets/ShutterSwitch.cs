@@ -43,10 +43,10 @@ public class ShutterSwitch : MonoBehaviour
             {
                 this.transform.localEulerAngles = onPosition.localEulerAngles;
             }
+            this.gameObject.AddComponent<IgnoreHovering>();
         }
 
-        this.gameObject.AddComponent<IgnoreHovering>();
-        Destroy(this.gameObject.GetComponent<IgnoreHovering>());
+        
         /*
         doorCollider.AddComponent<IgnoreHovering>();
         redLight.SetActive(true);

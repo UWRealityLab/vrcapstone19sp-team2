@@ -2204,6 +2204,7 @@ GameObject:
   - component: {fileID: 130776113}
   - component: {fileID: 130776112}
   - component: {fileID: 130776111}
+  - component: {fileID: 130776115}
   m_Layer: 0
   m_Name: LivingRoomTopShutter
   m_TagString: Untagged
@@ -2290,6 +2291,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0.522, y: 90.351006, z: -90.642006}
+--- !u!114 &130776115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 130776110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38c535f678ecb574481aa9221538c40d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shutterSwitch: {fileID: 924670584}
 --- !u!4 &131452750 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1743936319903520749, guid: 6cc4a87ea71fc064080fed18cd2a64ae,
@@ -33545,7 +33559,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a38442f792d06064c86ae2c1640ef93c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lightOn: 0
+  lightOn: 1
   buttonSound: {fileID: 0}
   switchA: {fileID: 1051894641}
   switchB: {fileID: 261714040}
@@ -36405,6 +36419,7 @@ GameObject:
   - component: {fileID: 1493807552}
   - component: {fileID: 1493807551}
   - component: {fileID: 1493807550}
+  - component: {fileID: 1493807554}
   m_Layer: 0
   m_Name: BathroomTopShutter
   m_TagString: Untagged
@@ -36491,6 +36506,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0.522, y: 90.351006, z: -90.642006}
+--- !u!114 &1493807554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1493807549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38c535f678ecb574481aa9221538c40d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shutterSwitch: {fileID: 1177767792}
 --- !u!1001 &1497719067
 PrefabInstance:
   m_ObjectHideFlags: 0
