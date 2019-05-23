@@ -24,11 +24,10 @@ namespace Valve.VR.InteractionSystem
                 //hand.DetachObject(gameObject, restoreOriginalParent);
                 Destroy(this.GetComponent<Pickable>());
                 Destroy(this.GetComponent<Rigidbody>());
+
                 if (this.GetComponent<Interactable>().attachedToHand)
                 {
                     //this.GetComponent<Rigidbody>();
-
- 
                     this.GetComponent<Interactable>().attachedToHand.DetachObject(this.gameObject, false);
   
                 }

@@ -32,22 +32,22 @@ namespace Valve.VR.InteractionSystem
 
             if (hand.GetGrabStarting() == GrabTypes.Pinch && !GetComponent<Animation>().isPlaying)
             {
-                Debug.Log("1");
+                // Debug.Log("1");
                 if (currentRound > 0)
                 {
-                    Debug.Log("2");
+                   // Debug.Log("2");
                     Shoot();
                 }
                 else
                 {
-                    Debug.Log("3");
+                    // Debug.Log("3");
                     GetComponent<Animation>().Play("noAmmo");
                     GetComponent<AudioSource>().PlayOneShot(noAmmoSound);
                 }
             }
             if (hand.GetGrabStarting() == GrabTypes.Grip && !GetComponent<Animation>().isPlaying)
             {
-                Debug.Log("4");
+                // Debug.Log("4");
                 Reload();
 
             }
