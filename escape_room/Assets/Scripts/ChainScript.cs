@@ -66,9 +66,15 @@ public class ChainScript : MonoBehaviour
             ChainEnd.transform.localEulerAngles = ChainEnd.transform.Find("AttachmentOffset").localEulerAngles;
             // Enable Teleport
             Teleport.GetComponent<Teleport>().enabled = true;
-            // Enable Hint
-            Teleport.GetComponent<Teleport>().ShowTeleportHint();
+            StartCoroutine(HintWait());
         }
+    }
+
+    IEnumerator HintWait()
+    {
+        yield return new WaitForSeconds(2);
+        // Enable Hint
+        Teleport.GetComponent<Teleport>().ShowTeleportHint();
     }
 
     private void Pulse()
