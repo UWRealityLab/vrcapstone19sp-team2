@@ -1021,17 +1021,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 70788553}
-  m_LocalRotation: {x: -0.7445297, y: -0, z: -0, w: -0.6675893}
-  m_LocalPosition: {x: 0, y: 0, z: 0.406}
+  m_LocalRotation: {x: 0.006394357, y: 0.8338135, z: 0.551998, w: 0.0035182629}
+  m_LocalPosition: {x: 0, y: 0, z: 0.262}
   m_LocalScale: {x: 1.0794951, y: 1.151355, z: 1.4394606}
   m_Children:
   - {fileID: 286087504}
   m_Father: {fileID: 863964818}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -263.763, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -113.003, y: 358.104, z: -177.867}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: -0.044}
+  m_AnchoredPosition: {x: 0.004, y: 0.108}
   m_SizeDelta: {x: 0.8691, y: 0.43455}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &70788555
@@ -6041,7 +6041,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Paxos
+  m_Text: Paxos | this is page 2 | this is page 3 | this is the last page
 --- !u!222 &286087507
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -17107,19 +17107,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6d0059639799cbe4ea996de11d12834b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.7071068
+      value: 0.0070871143
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6d0059639799cbe4ea996de11d12834b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0.70707136
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6d0059639799cbe4ea996de11d12834b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0.70707124
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6d0059639799cbe4ea996de11d12834b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: -0.0070870183
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6d0059639799cbe4ea996de11d12834b, type: 3}
       propertyPath: m_RootOrder
@@ -17127,7 +17127,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6d0059639799cbe4ea996de11d12834b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -90.00001
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6d0059639799cbe4ea996de11d12834b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -17135,7 +17135,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6d0059639799cbe4ea996de11d12834b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: 181.14899
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6d0059639799cbe4ea996de11d12834b, type: 3}
       propertyPath: m_LocalScale.x
@@ -20179,7 +20179,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1017109737
 RectTransform:
   m_ObjectHideFlags: 0
@@ -33093,25 +33093,25 @@ MonoBehaviour:
   onPickUp:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 806095232}
-        m_MethodName: EnablePaperHintTrigger
-        m_Mode: 1
+      - m_Target: {fileID: 1017109736}
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   onDetachFromHand:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 806095232}
-        m_MethodName: DisablePaperHintTrigger
-        m_Mode: 1
+      - m_Target: {fileID: 1017109736}
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

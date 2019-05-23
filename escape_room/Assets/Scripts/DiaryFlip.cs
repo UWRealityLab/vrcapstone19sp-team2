@@ -8,6 +8,8 @@ using Valve.VR.InteractionSystem;
 public class DiaryFlip : MonoBehaviour
 {
     public GameObject Text;
+
+    private string[] contents;
     private bool isOnRight;
     private bool isOnLeft;
     private int count = 0;
@@ -18,6 +20,8 @@ public class DiaryFlip : MonoBehaviour
     {
         isOnRight = false;
         isOnLeft = false;
+        contents = Text.GetComponent<Text>().text.Split('|');
+        Text.GetComponent<Text>().text = contents[0];
     }
 
     private void HandAttachedUpdate(Hand hand)
@@ -26,7 +30,9 @@ public class DiaryFlip : MonoBehaviour
             Debug.Log("HI");
             if (!isOnRight)
             {
-                Text.GetComponent<Text>().text = "Page " + ++count;
+                if (++count >= contents.Length)
+                    count = contents.Length - 1;
+                Text.GetComponent<Text>().text = contents[count];
                 isOnRight = true;
             }
         } else if (LeftTurn.GetState(hand.handType))
@@ -36,7 +42,7 @@ public class DiaryFlip : MonoBehaviour
             {
                 if (--count < 0)
                     count = 0;
-                Text.GetComponent<Text>().text = "Page " + count;
+                Text.GetComponent<Text>().text = contents[count];
                 
                 isOnLeft = true;
             }
