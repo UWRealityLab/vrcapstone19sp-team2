@@ -7,10 +7,11 @@ using Valve.VR.InteractionSystem;
 public class ChainScript : MonoBehaviour
 {
     public Transform ChainStart;
-    public Transform ChainEnd;
+    public GameObject ChainEnd;
     public GameObject Hand;
     public float LengthOffset = 0.0f;
     public bool enableHaptics = true;
+    public bool broke = false;
 
     // Haptics
     public SteamVR_Action_Vibration hapticAction;
@@ -20,34 +21,46 @@ public class ChainScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        MaxLength = (ChainEnd.position - ChainStart.position).magnitude + LengthOffset;
+        MaxLength = (ChainEnd.transform.position - ChainStart.position).magnitude + LengthOffset;
     }
 
     // Update is called once per frame
     void Update()
     {
-        // Hide Left Hand
-        Hand.GetComponent<Hand>().HideController(true);
-
-        Vector3 handDirection = (Hand.transform.position - ChainStart.position).normalized;
-        float handDistance = (Hand.transform.position - ChainStart.position).magnitude;
-
-        ChainEnd.position = ChainStart.position + handDirection * Mathf.Min(handDistance, MaxLength);
-
-        if (handDistance > MaxLength + LengthOffset)
+        if (!broke)
         {
-            Pulse();
+            // Hide Left Hand
+            Hand.GetComponent<Hand>().HideController(true);
+
+            Vector3 handDirection = (Hand.transform.position - ChainStart.position).normalized;
+            float handDistance = (Hand.transform.position - ChainStart.position).magnitude;
+
+            ChainEnd.transform.position = ChainStart.position + handDirection * Mathf.Min(handDistance, MaxLength);
+
+            if (handDistance > MaxLength + LengthOffset)
+            {
+                Pulse();
+            }
         }
     }
 
     public void Break()
     {
-        // Show hand
-        Hand.GetComponent<Hand>().ShowController(true);
-        // Disable kinemetics
-        this.GetComponent<Rigidbody>().isKinematic = false;
-        // disable self
-        this.GetComponent<ChainScript>().enabled = false;
+        if (!broke)
+        {
+            broke = true;
+            // Show hand
+            Hand.GetComponent<Hand>().ShowController(true);
+            // Disable kinemetics
+            // this.GetComponent<Rigidbody>().isKinematic = false;
+            // disable self
+            this.GetComponent<ChainScript>().enabled = false;
+            // Attach end to hand
+            //Hand.GetComponent<Hand>().AttachObject(ChainEnd, GrabTypes.Scripted, Valve.VR.InteractionSystem.Hand.AttachmentFlags.ParentToHand | Valve.VR.InteractionSystem.Hand.AttachmentFlags.DetachFromOtherHand | Valve.VR.InteractionSystem.Hand.AttachmentFlags.TurnOnKinematic, ChainEnd.transform.Find("AttachmentOffset"));
+            ChainEnd.transform.parent = Hand.transform;
+            ChainEnd.transform.localPosition = ChainEnd.transform.Find("AttachmentOffset").localPosition;
+            ChainEnd.transform.localEulerAngles = ChainEnd.transform.Find("AttachmentOffset").localEulerAngles;
+        }
     }
 
     private void Pulse()

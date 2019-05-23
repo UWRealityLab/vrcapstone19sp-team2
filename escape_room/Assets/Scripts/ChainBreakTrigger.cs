@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR.InteractionSystem;
 
-[RequireComponent(typeof(Interactable))]
 public class ChainBreakTrigger : MonoBehaviour
 {
-    public GameObject Cutter;
-    public ChainScript ChainScript;
+    public GameObject CutterTrigger;
+    public CutterScript CutterScript;
 
     // Start is called before the first frame update
     void Start()
@@ -23,11 +22,9 @@ public class ChainBreakTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.name == Cutter.name)
+        if (other.name == CutterTrigger.name)
         {
-            Debug.Log("cutted");
-            Destroy(this.GetComponent<CharacterJoint>());
-            ChainScript.Break();
+            CutterScript.ChainContacted = this.gameObject;
         }
     }
 }
