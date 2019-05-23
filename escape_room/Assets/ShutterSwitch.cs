@@ -44,5 +44,18 @@ public class ShutterSwitch : MonoBehaviour
                 this.transform.localEulerAngles = onPosition.localEulerAngles;
             }
         }
+
+        this.gameObject.AddComponent<IgnoreHovering>();
+        Destroy(this.gameObject.GetComponent<IgnoreHovering>());
+        /*
+        doorCollider.AddComponent<IgnoreHovering>();
+        redLight.SetActive(true);
+        greenLight.SetActive(false);
+        yield return new WaitForSeconds(2);
+        // To enable hovering:
+        audioSource.clip = ovenFinishedSound;
+        audioSource.Play();
+        Destroy(doorCollider.GetComponent<IgnoreHovering>());
+        */
     }
 }
