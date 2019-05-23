@@ -24,7 +24,7 @@ public class ChainScript : MonoBehaviour
     void Start()
     {
         MaxLength = (ChainEnd.transform.position - ChainStart.position).magnitude + LengthOffset;
-        Teleport.GetComponent<Teleport>().enabled = enableTeleport;
+        // Teleport.GetComponent<Teleport>().enabled = enableTeleport;
 
         // Cancel TeleportHint
         Teleport.GetComponent<Teleport>().CancelTeleportHint();
