@@ -13,12 +13,15 @@ public class CutterScript : MonoBehaviour
     public ChainScript ChainScript;
     public GameObject ChainContacted = null;
 
+    public bool passed;
+
     private float Joint1_Z_Length;
     private float Joint2_Z_Length;
 
     // Start is called before the first frame update
     void Start()
     {
+        passed = false;
         // Euler angle is between 0 - 360. Here, we need to convert this wisely to get the actual angle.
         Joint1_Z_Length = CutterClose.transform.Find("joint1").localEulerAngles.z - CutterOpen.transform.Find("joint1").localEulerAngles.z;
         Joint2_Z_Length = 360 - CutterClose.transform.Find("joint4").localEulerAngles.z + CutterOpen.transform.Find("joint4").localEulerAngles.z;
@@ -39,6 +42,7 @@ public class CutterScript : MonoBehaviour
         if (squeezeValue >= 0.99f && ChainContacted != null)
         {
             // Debug.Log("cutted");
+            passed = true;
             Destroy(ChainContacted.GetComponent<CharacterJoint>());
             ChainScript.Break();
         }
