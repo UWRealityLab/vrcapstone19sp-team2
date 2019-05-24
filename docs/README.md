@@ -365,9 +365,22 @@ This week is a slow week after the hard-work week last week. In last week, we ac
   - Yexiang Shao
     - Foucsed on integration, bug fixing and hint system.
     - UI Prototype.
+   
+  - Yifan Xu: Finish the flare gun that allows the player to shoot and send signal to the helicopter
+    - A delicate model of the flare gun can be picked up by the users by grabbing the grip
+    - After being picked up, the flare gun will attach to the controller like the normal gun
+    - User can fire the gun by grabbing the pinch and a signal will be shoot.
+    - Audio source and animations included when the flare gun is fired.
     
 ### Plan for next week
   - Yexiang Shao
     - Currently, "Who am I" is trivial and annoying, so plan to replace it with a smart and readable hint. This may require a lot of work, because we want our hints appear according to which puzzle the player has solved, which needs me to go over different gaming mechanism.
     - Give a background panel for displaying hints.
-      
+    
+  - Yifan Xu
+    - Find audio source for: 
+      - helicopter when it flyes into the scene
+      - safebox when it's unlocked
+      - chain shaking and hitting the other materials
+      - possibly the noise of the fridge
+    - Help on the UI and storyline design
