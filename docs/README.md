@@ -341,7 +341,7 @@ This week is a slow week after the hard-work week last week. In last week, we ac
      - Added an audio clips for assembling the magazine and loading the gun
 ![Gunshot](pics/gun_shot.gif)
  
- ### Plan for next week
+### Plan for next week
    - Qian Yan: Finish the first puzzle.
      - Give player hands
      - Take care of the physics of the chain that cuffs the player's hand
@@ -360,4 +360,14 @@ This week is a slow week after the hard-work week last week. In last week, we ac
       - Allow the player to hold and shoot gun
       - Add corresponding sound clips and light effects to the gun
     - Display an [animated book](https://assetstore.unity.com/packages/3d/characters/3d-animated-book-67997) that introduces the storyline
+    
+### Week 8
+  - Yexiang Shao
+    - Foucsed on integration, bug fixing and hint system.
+    - UI Prototype.
+    
+### Plan for next week
+  - Yexiang Shao
+    - Currently, "Who am I" is trivial and annoying, so plan to replace it with a smart and readable hint. This may require a lot of work, because we want our hints appear according to which puzzle the player has solved, which needs me to go over different gaming mechanism.
+    - Give a background panel for displaying hints.
       
