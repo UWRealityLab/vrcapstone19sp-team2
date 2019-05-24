@@ -372,6 +372,13 @@ This week is a slow week after the hard-work week last week. In last week, we ac
     - User can fire the gun by grabbing the pinch and a signal will be shoot.
     - Audio source and animations included when the flare gun is fired.
     
+  - Jiwen Wu
+    - Worked on the animation of the helicopter.
+      - Added animation for the helicopter propellers.
+      - Added the animation that the helicopter flies to rescue, and the animation that the helicopter flies away.
+      - Designed the animation controller of the helicopter, so that animations can be played simultaniously (such as the helicopter's propellers spinning and the helicopter moving at the same time)
+      - Added blinking signal light for the helicopter.
+    
 ### Plan for next week
   - Yexiang Shao
     - Currently, "Who am I" is trivial and annoying, so plan to replace it with a smart and readable hint. This may require a lot of work, because we want our hints appear according to which puzzle the player has solved, which needs me to go over different gaming mechanism.
@@ -384,3 +391,10 @@ This week is a slow week after the hard-work week last week. In last week, we ac
       - chain shaking and hitting the other materials
       - possibly the noise of the fridge
     - Help on the UI and storyline design
+   
+  - Jiwen Wu
+    - Work on a search light for the helicopter
+      - The animation that the light is searching around.
+    - Work on the storyline texts
+      - what will be displayed when player opens a diary, picks up a piece of paper, etc
+      - character soliloquy that helps the player understand what is goin on (possibly pointing the player to the puzzles)
