@@ -4,16 +4,11 @@ using System.Collections;
 
 namespace Valve.VR.InteractionSystem { 
     public class flareround : MonoBehaviour {
-        private GameObject flaregun;
-        private flaregun flare;
         public AudioClip pickupSound;
 
         // Use this for initialization
         void Start()
         {
-            flaregun = GameObject.Find("flaregun");
-            flare = flaregun.GetComponent<flaregun>();
-
 
         }
 
@@ -22,17 +17,16 @@ namespace Valve.VR.InteractionSystem {
 
         }
 
-        void OnTriggerEnter(Collider other)
+        protected virtual void HandHoverUpdate(Hand hand)
         {
+            GrabTypes startingGrabType = hand.GetGrabStarting();
 
-            if (other.tag == "Player" && flare.spareRounds < flare.maxSpareRounds)
+            if (startingGrabType == GrabTypes.Grip)
             {
                 GetComponent<AudioSource>().PlayOneShot(pickupSound);
-                flare.spareRounds++;
-                Destroy(this.gameObject, pickupSound.length);
             }
-
         }
+
     }
 }
 

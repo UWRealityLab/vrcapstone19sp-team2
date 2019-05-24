@@ -13,12 +13,8 @@ namespace Valve.VR.InteractionSystem
         public AudioClip noAmmoSound;
         public AudioClip reloadSound;
         public int bulletSpeed = 2000;
-        public int maxSpareRounds = 5;
         public int spareRounds = 3;
         public int currentRound = 5;
-
-
-
 
         // Use this for initialization
         void Start()
@@ -32,26 +28,16 @@ namespace Valve.VR.InteractionSystem
 
             if (hand.GetGrabStarting() == GrabTypes.Pinch && !GetComponent<Animation>().isPlaying)
             {
-                // Debug.Log("1");
                 if (currentRound > 0)
                 {
-                   // Debug.Log("2");
                     Shoot();
                 }
                 else
                 {
-                    // Debug.Log("3");
                     GetComponent<Animation>().Play("noAmmo");
                     GetComponent<AudioSource>().PlayOneShot(noAmmoSound);
                 }
             }
-            if (hand.GetGrabStarting() == GrabTypes.Grip && !GetComponent<Animation>().isPlaying)
-            {
-                // Debug.Log("4");
-                Reload();
-
-            }
-
         }
 
         void Shoot()
@@ -62,8 +48,6 @@ namespace Valve.VR.InteractionSystem
                 currentRound = 0;
             }
 
-
-
             GetComponent<Animation>().CrossFade("Shoot");
             GetComponent<AudioSource>().PlayOneShot(flareShotSound);
 
@@ -73,11 +57,9 @@ namespace Valve.VR.InteractionSystem
 
             bulletInstance.AddForce(barrelEnd.forward * bulletSpeed); //ADDING FORWARD FORCE TO THE FLARE PROJECTILE
             Instantiate(muzzleParticles, barrelEnd.position, barrelEnd.rotation);   //INSTANTIATING THE GUN'S MUZZLE SPARKS	
-
-
         }
 
-        void Reload()
+        bool Reload()
         {
             if (spareRounds >= 1 && currentRound == 0)
             {
@@ -85,8 +67,28 @@ namespace Valve.VR.InteractionSystem
                 spareRounds--;
                 currentRound++;
                 GetComponent<Animation>().CrossFade("Reload");
+                return true;
             }
+            return false;
+        }
 
+        private void OnTriggerEnter(Collider other)
+        {
+            if (GetComponent<Interactable>().attachedToHand)
+            {
+                if (other.name == "FlareRoundTrigger")
+                {
+                    if (Reload())
+                    {
+                        // Debug.Log("reload");
+                        if (other.GetComponentInParent<Interactable>().attachedToHand)
+                        {
+                            other.GetComponentInParent<Interactable>().attachedToHand.DetachObject(other.transform.parent.gameObject, false);
+                        }
+                        other.transform.parent.gameObject.SetActive(false);
+                    }
+                }
+            }
         }
     }
 }
