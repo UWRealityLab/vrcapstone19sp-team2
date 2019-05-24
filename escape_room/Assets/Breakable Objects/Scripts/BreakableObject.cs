@@ -23,11 +23,19 @@ public class BreakableObject:MonoBehaviour{
 
 	public void OnCollisionEnter(Collision collision) {
 	    if (collision.relativeVelocity.magnitude > durability) {
-	        triggerBreak();
-	    }
+            // triggerBreak();
+        }
 	}
-	
-	public void OnMouseDown() {
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.name == "Bullet(Clone)")
+        {
+            triggerBreak();
+        }
+    }
+
+    public void OnMouseDown() {
 		if(mouseClickDestroy){
 			triggerBreak();
 		}

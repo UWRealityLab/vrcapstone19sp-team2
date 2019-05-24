@@ -11129,6 +11129,7 @@ MonoBehaviour:
   CutterClose: {fileID: 951798441}
   ChainScript: {fileID: 220268010}
   ChainContacted: {fileID: 0}
+  passed: 0
 --- !u!114 &445411947
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57249,7 +57250,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4066303274537350, guid: 3c15408da260dd04bab3818dea62c250, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.26
+      value: 0.316
       objectReference: {fileID: 0}
     - target: {fileID: 4066303274537350, guid: 3c15408da260dd04bab3818dea62c250, type: 3}
       propertyPath: m_LocalPosition.y
@@ -57257,7 +57258,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4066303274537350, guid: 3c15408da260dd04bab3818dea62c250, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.69
+      value: 2.009
       objectReference: {fileID: 0}
     - target: {fileID: 4066303274537350, guid: 3c15408da260dd04bab3818dea62c250, type: 3}
       propertyPath: m_LocalRotation.x
@@ -57293,11 +57294,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4066303274537350, guid: 3c15408da260dd04bab3818dea62c250, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2.8970082
+      value: 3.1662507
       objectReference: {fileID: 0}
     - target: {fileID: 4066303274537350, guid: 3c15408da260dd04bab3818dea62c250, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2.8970082
+      value: 3.6151187
       objectReference: {fileID: 0}
     - target: {fileID: 4066303274537350, guid: 3c15408da260dd04bab3818dea62c250, type: 3}
       propertyPath: m_LocalScale.z
@@ -58721,7 +58722,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2109328286}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
