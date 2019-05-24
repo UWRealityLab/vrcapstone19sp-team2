@@ -378,6 +378,11 @@ This week is a slow week after the hard-work week last week. In last week, we ac
       - Added the animation that the helicopter flies to rescue, and the animation that the helicopter flies away.
       - Designed the animation controller of the helicopter, so that animations can be played simultaniously (such as the helicopter's propellers spinning and the helicopter moving at the same time)
       - Added blinking signal light for the helicopter.
+      
+  - Qian Yan
+    - Complete a new first puzzle
+    ![Handcoff](pics/handcoff.gif)
+    - Help with integration and bug fixing
     
 ### Plan for next week
   - Yexiang Shao
@@ -398,3 +403,7 @@ This week is a slow week after the hard-work week last week. In last week, we ac
     - Work on the storyline texts
       - what will be displayed when player opens a diary, picks up a piece of paper, etc
       - character soliloquy that helps the player understand what is goin on (possibly pointing the player to the puzzles)
+  - Qian Yan
+    - Work with Yexiang to integrate a game-progress-tracking script with the UI script to display the right message/hints at a given time.
+  
+
