@@ -1,0 +1,183 @@
+﻿
+/***************************************************************************
+*                                                                          *
+*  Copyright (c) Raphaël Ernaelsten (@RaphErnaelsten)                      *
+*  All Rights Reserved.                                                    *
+*                                                                          *
+*  NOTICE: Aura 2 is a commercial project.                                 * 
+*  All information contained herein is, and remains the property of        *
+*  Raphaël Ernaelsten.                                                     *
+*  The intellectual and technical concepts contained herein are            *
+*  proprietary to Raphaël Ernaelsten and are protected by copyright laws.  *
+*  Dissemination of this information or reproduction of this material      *
+*  is strictly forbidden.                                                  *
+*                                                                          *
+***************************************************************************/
+
+// Disables warning about maximum temporary regiters count reached
+#pragma warning( disable : 4714 3571 ) 
+
+#pragma kernel ComputeDataBuffer DIRECTIONAL_LIGHTS_SHADOWS_ONE_CASCADE
+#pragma kernel ComputeDataBuffer DIRECTIONAL_LIGHTS_SHADOWS_TWO_CASCADES
+#pragma kernel ComputeDataBuffer DIRECTIONAL_LIGHTS_SHADOWS_FOUR_CASCADES
+#pragma kernel ComputeDataBuffer SINGLE_PASS_STEREO DIRECTIONAL_LIGHTS_SHADOWS_ONE_CASCADE
+#pragma kernel ComputeDataBuffer SINGLE_PASS_STEREO DIRECTIONAL_LIGHTS_SHADOWS_TWO_CASCADES
+#pragma kernel ComputeDataBuffer SINGLE_PASS_STEREO DIRECTIONAL_LIGHTS_SHADOWS_FOUR_CASCADES
+
+// Includes all the common variables and functions
+#include "../Includes/Common.cginc"
+
+// Local variables
+uniform RWTexture3D<half4> textureBuffer;
+uniform half4 frustumCornersWorldPositionArray[8];
+uniform half4 secondaryFrustumCornersWorldPositionArray[8];
+uniform half baseDensity;
+uniform half densityFactor;
+uniform half baseScattering;
+uniform half4 baseColor;
+uniform half ambientLightingFactor;
+
+// Options
+uniform bool useReprojection;
+uniform bool useOcclusion;
+uniform bool useVolumes;
+uniform bool useTexture2DMasks;
+uniform bool useTexture3DMasks;
+uniform bool useVolumesNoise;
+uniform bool useAmbientLighting;
+uniform bool useLightProbes;
+uniform bool useDirectionalLights;
+uniform bool useDirectionalLightsShadows;
+uniform bool useSpotLights;
+uniform bool useSpotLightsShadows;
+uniform bool usePointLights;
+uniform bool usePointLightsShadows;
+uniform bool useLightsCookies;
+
+// Includes specific files
+#include "Includes/OcclusionCulling.cginc"
+#include "Includes/TemporalReprojection.cginc"
+#include "Includes/VolumeInjection.cginc"
+#include "Includes/AmbientLightingInjection.cginc"
+#include "Includes/LightProbesInjection.cginc"
+#include "Includes/DirectionalLightInjection.cginc"
+#include "Includes/SpotLightInjection.cginc"
+#include "Includes/PointLightInjection.cginc"
+
+// Local functions
+inline void FormatData(inout half4 accumulationColor, half density)
+{
+    accumulationColor.w = density * densityFactor;
+    accumulationColor.xyz = max(float3(0.0f, 0.0f, 0.0f), accumulationColor.xyz);
+}
+
+inline void WriteIntoTextureBuffer(half4 accumulationColor, uint3 id)
+{
+	textureBuffer[id] = accumulationColor;
+}
+
+// Main function
+[numthreads(NUM_THREAD_X,NUM_THREAD_Y,NUM_THREAD_Z)]
+void ComputeDataBuffer (uint3 id : SV_DispatchThreadID)
+{
+    float4 normalizedLocalPos; 
+    normalizedLocalPos.xyz = GetNormalizedLocalPosition(id);
+    normalizedLocalPos.w = 0.0f;
+
+    half4 frustumCorners[8] = frustumCornersWorldPositionArray;
+
+	bool isSecondaryFrustum = false;
+	#if defined(SINGLE_PASS_STEREO)
+	if (id.x > (uint)Aura_BufferResolution.x / 2)
+	{
+		isSecondaryFrustum = true;
+		frustumCorners = secondaryFrustumCornersWorldPositionArray;
+	}
+	normalizedLocalPos.x = frac(normalizedLocalPos.x * 2);
+	#endif
+	
+	// Check if jittering and reprojection should be performed
+	half4 unjitteredNormalizedLocalPos = normalizedLocalPos;
+    half3 unjitteredUnbiasedWorldPosition = GetWorldPosition(unjitteredNormalizedLocalPos.xyz, frustumCorners);
+    ApplyDepthBiasToNormalizedPosition(unjitteredNormalizedLocalPos);
+	[branch]
+    if(useReprojection)
+	{
+		JitterPosition(normalizedLocalPos.xyz, id);
+    }
+    ApplyDepthBiasToNormalizedPosition(normalizedLocalPos);
+	
+	half density = baseDensity;
+	half scattering = baseScattering;
+	half4 accumulationColor = baseColor;
+			
+	// Checks if the cell is occluded
+    [branch]
+    if (!useOcclusion || IsNotOccluded(normalizedLocalPos.z, id))
+	{
+        half3 jitteredWorldPosition = GetWorldPosition(normalizedLocalPos.xyz, frustumCorners);
+        half3 unjitteredWorldPosition = GetWorldPosition(unjitteredNormalizedLocalPos.xyz, frustumCorners);
+        half4 jitteredViewVector = half4(normalize(jitteredWorldPosition.xyz - cameraPosition.xyz), 1.0f);
+        half4 unjitteredViewVector = half4(normalize(unjitteredWorldPosition.xyz - cameraPosition.xyz), 1.0f);
+        half globalIlluminationMask = 0;
+        half lightProbesMultiplier = 0;
+        half ambientLightingMultiplier = ambientLightingFactor;
+
+		// Computes Volumes' contributions
+		[branch]
+        if (useVolumes)
+		{
+            ComputeVolumesInjection(jitteredWorldPosition, unjitteredWorldPosition, accumulationColor.xyz, density, scattering, globalIlluminationMask, lightProbesMultiplier, ambientLightingMultiplier); // Don't reproject volumes 
+        }
+		
+        half3 globalIlluminationColor = half3(0, 0, 0);
+		// Computes the ambient lighting's contribution
+		[branch]
+        if (useAmbientLighting)
+        {
+            globalIlluminationColor = ComputeAmbientLighting(unjitteredViewVector, scattering) * ambientLightingMultiplier;
+        }
+		// Computes the light probes' contribution
+		[branch]
+        if (useLightProbes && globalIlluminationMask > 0)
+        {
+            globalIlluminationColor += ComputeLightProbesInjection(unjitteredViewVector, unjitteredNormalizedLocalPos.xyz, scattering) * lightProbesMultiplier;
+        }
+        accumulationColor.xyz += globalIlluminationColor;
+                
+		// Computes Directional Lights' contribution
+		[branch]
+        if (useDirectionalLights)
+		{
+            half distanceToCam = GetCameraSpaceDepth(normalizedLocalPos.z);
+            ComputeDirectionalLightsInjection(jitteredWorldPosition, distanceToCam, jitteredViewVector.xyz, accumulationColor, scattering);
+        }
+        		
+		// Computes Spot Lights' contribution
+		[branch]
+        if (useSpotLights)
+		{
+            ComputeSpotLightsInjection(jitteredWorldPosition, jitteredViewVector.xyz, accumulationColor, scattering);
+        }
+                
+		// Computes Point Lights' contribution
+		[branch]
+        if (usePointLights)
+		{
+            ComputePointLightsInjection(jitteredWorldPosition, jitteredViewVector.xyz, accumulationColor, scattering);
+        }
+		
+		// Reprojects data onto previous frame
+		[branch]
+        if (useReprojection)
+        {
+            ReprojectPreviousFrame(accumulationColor.xyz, unjitteredUnbiasedWorldPosition, isSecondaryFrustum);
+        } 
+
+		// Formats light color and density
+        FormatData(accumulationColor, density);
+
+		// Writes data into the texture buffer
+		WriteIntoTextureBuffer(accumulationColor, id);
+    }
+} 
