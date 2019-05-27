@@ -24,6 +24,7 @@ public class LightControl : MonoBehaviour
     public Transform AStart, AEnd, BStart, BEnd, CStart, CEnd;
 
     public float delta = 0.001f;
+    public bool passed;
 
     private void Start()
     {
@@ -35,6 +36,7 @@ public class LightControl : MonoBehaviour
         {
             turnOff();
         }
+        passed = false;
     }
 
     private void turnOff()
@@ -96,6 +98,7 @@ public class LightControl : MonoBehaviour
             if (AAtStart && BAtStart && CAtStart)
             {
                 //Debug.Log("gtmdsb");
+                passed = true;
                 lightOn = true;
                 freelyOff = true;
                 AudioSource audioSource = this.GetComponent<AudioSource>();

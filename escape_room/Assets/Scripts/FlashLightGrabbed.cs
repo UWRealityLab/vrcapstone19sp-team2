@@ -24,10 +24,8 @@ public class FlashLightGrabbed : MonoBehaviour
     private void HandHoverUpdate(Hand hand)
     {
         GrabTypes startingGrabType = hand.GetGrabStarting();
-        Debug.Log("entering flashlight grabbed");
         if (interactable.attachedToHand != null && startingGrabType != GrabTypes.None)
         {
-            Debug.Log("is detected attachment");
             passed = true;
         }
     }

@@ -9,7 +9,7 @@ public class PlayerHeadUI : MonoBehaviour
     private string cutterDoneInstruction = "Go find Light";
 
     public GameObject flashLight;
-    private string flashLightGrabbedInstruction = "Do you find a fuse box on the wall?";
+    private string flashLightGrabbedInstruction = "Fuse box on the wall?";
 
     public GameObject fuseBoxButton;
     private string fuseBoxOpennedInstruction = "What's wrong with the radio?";

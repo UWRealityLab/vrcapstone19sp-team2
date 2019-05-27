@@ -20,14 +20,9 @@ public class RadioMonitor : MonoBehaviour
             return;
         if (text.text == null)
             text.text = "";
-        //string str = value.ToString("0.0");
-        //float flt = float.Parse(str, CultureInfo.InvariantCulture.NumberFormat);
-        //flt = flt * 25.0f + 85.0f;
-        //string res = flt.ToString().Contains(".") ? flt.ToString() : flt.ToString() + ".0";
         string res = FloatConversion.circularDriveValueToString(value, 1, 25.0f, 85.0f);
         if (res.Equals("110.0"))
             res = "85.0";
         text.text = res;
-        //Debug.Log("Radio Monitor done: " + res);
     }
 }

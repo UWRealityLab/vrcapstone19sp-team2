@@ -11,6 +11,7 @@ public class RadioAudio : MonoBehaviour
     public AudioClip audio3;
     public AudioSource audioSource;
     Text text;
+    public string currentChannel;
 
     // Update is called once per frame
     void Update()
@@ -27,6 +28,7 @@ public class RadioAudio : MonoBehaviour
                 {
                     audioSource.clip = audio1;
                     audioSource.Play();
+                    currentChannel = text.text;
                 }
             } else if (text.text.Equals("87.5"))
             {
@@ -34,6 +36,7 @@ public class RadioAudio : MonoBehaviour
                 {
                     audioSource.clip = audio2;
                     audioSource.Play();
+                    currentChannel = text.text;
                 }
             } else if (text.text.Equals("90.0"))
             {
@@ -41,6 +44,7 @@ public class RadioAudio : MonoBehaviour
                 {
                     audioSource.clip = audio3;
                     audioSource.Play();
+                    currentChannel = text.text;
                 }
             }
         }
