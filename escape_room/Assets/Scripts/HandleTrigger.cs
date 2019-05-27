@@ -40,11 +40,6 @@ public class HandleTrigger : MonoBehaviour
             AudioSource audioSource = this.GetComponent<AudioSource>();
             audioSource.clip = musicBoxSound;
             audioSource.Play();
-            
-            // Need to find where triggers door open
-            //AudioSource secretDoorAudioSource = secretDoor.GetComponent<AudioSource>();
-            //secretDoorAudioSource.clip = secretDoorOpenSound;
-            //secretDoorAudioSource.Play();
 
             GetComponentInParent<Animator>().SetTrigger("Play");
             this.gameObject.AddComponent<IgnoreHovering>();

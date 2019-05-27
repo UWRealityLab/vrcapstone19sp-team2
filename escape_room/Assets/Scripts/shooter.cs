@@ -13,21 +13,26 @@ namespace Valve.VR.InteractionSystem
         //[SerializeField]
         //private GameObject bullet;
         //[SerializeField]
-       // private Transform bulletPoint;
+        // private Transform bulletPoint;
         //private Animation anim;
 
         private AudioSource audiosource;
+        public AudioClip fire;
+        public AudioClip mag;
+        private Animation ani;
+        public AudioClip sliderpull;
+        public AudioClip sliderrelease;
+        public AudioClip dryfire;
+        public int currentRound = 1;
+
         [SerializeField]
         private GameObject muzzleflashPrefab;
         [SerializeField]
         private Transform muzzlePoint;
-        public GameObject spawnedItem;
-        [EnumFlags]
-        public Hand.AttachmentFlags attachmentFlags = Hand.defaultAttachmentFlags;
-        //attachedObject.originalParent = objectToAttach.transform.parent != null ? objectToAttach.transform.parent.gameObject : null;
+
         public GameObject theBullet;
         public Transform barrelEnd;
-
+        public bool enable;
         public int bulletSpeed;
         public float despawnTime = 3.0f;
 
@@ -35,21 +40,27 @@ namespace Valve.VR.InteractionSystem
         public float waitBeforeNextShot = 0.25f;
         private void HandAttachedUpdate(Hand hand)
         {
-
-            //Debug.Log("<b>[SteamVR Interaction]</b> Pickup: " + hand.GetGrabStarting().ToString());
-            //if (SteamVR_Actions._default.Squeeze.GetAxis(LeftInputSource).Equals(1))
-
-            if (hand.GetGrabStarting() == GrabTypes.Pinch)
+            if (enable)
             {
-                //shootBullet();
-                if (shootAble)
+                if (hand.GetGrabStarting() == GrabTypes.Pinch)
                 {
-                    shootAble = false;
-                    Shoot();
-                    StartCoroutine(ShootingYield());
+                    //shootBullet();
+                    if (shootAble)
+                    {
+                        if (currentRound > 0)
+                        {
+                            shootAble = false;
+                            Shoot();
+                            FireWeapon();
+                            StartCoroutine(ShootingYield());
+                        } else
+                        {
+                            playDryfire();
+                        }                        
+                    }
+                    
+
                 }
-                FireWeapon();
-                
             }
         }
 
@@ -60,6 +71,11 @@ namespace Valve.VR.InteractionSystem
         }
         void Shoot()
         {
+            currentRound--;
+            if (currentRound <= 0)
+            {
+                currentRound = 0;
+            }
             var bullet = Instantiate(theBullet, barrelEnd.position, barrelEnd.rotation);
             bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * bulletSpeed;
 
@@ -69,24 +85,40 @@ namespace Valve.VR.InteractionSystem
         private void Start()
         {
             audiosource = GetComponent<AudioSource>();
-            //anim = bullet.GetComponent<Animation>();
-
+            ani = GetComponent<Animation>();
         }
+
         private void FireWeapon()
         {
+            audiosource.clip = fire;
             audiosource.Play();
             var muzzleflash = Instantiate(muzzleflashPrefab, muzzlePoint.position, muzzlePoint.rotation);
             Destroy(muzzleflash.gameObject, 0.5f);
         }
 
-        //private void shootBullet()
-        //{
-            //var bull = Instantiate(bullet, bulletPoint.position, bulletPoint.rotation);
-            
-            //anim.Play();
-            //Destroy(bull.gameObject, 0.5f);
-        //}
+        public void loadMagazine()
+        {
+            ani.Play();
+            audiosource.clip = mag;
+            audiosource.Play();            
+        }
 
+        public void playPull()
+        {
+            audiosource.clip = sliderpull;
+            audiosource.Play();
+        }
 
+        public void playRelease()
+        {
+            audiosource.clip = sliderrelease;
+            audiosource.Play();
+        }
+
+        public void playDryfire()
+        {
+            audiosource.clip = dryfire;
+            audiosource.Play();
+        }
     }
 }

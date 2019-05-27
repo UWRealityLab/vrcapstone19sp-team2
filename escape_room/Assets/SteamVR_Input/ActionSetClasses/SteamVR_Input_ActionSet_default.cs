@@ -89,6 +89,30 @@ namespace Valve.VR
             }
         }
         
+        public virtual SteamVR_Action_Vector2 turnPage
+        {
+            get
+            {
+                return SteamVR_Actions.default_turnPage;
+            }
+        }
+        
+        public virtual SteamVR_Action_Boolean RightTurn
+        {
+            get
+            {
+                return SteamVR_Actions.default_RightTurn;
+            }
+        }
+        
+        public virtual SteamVR_Action_Boolean LeftTurn
+        {
+            get
+            {
+                return SteamVR_Actions.default_LeftTurn;
+            }
+        }
+        
         public virtual SteamVR_Action_Vibration Haptic
         {
             get

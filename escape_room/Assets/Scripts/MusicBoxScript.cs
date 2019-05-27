@@ -7,7 +7,7 @@ public class MusicBoxScript : MonoBehaviour
 {
     public GameObject HandleTrigger;
     public GameObject SecreteDoor;
-    public AudioClip SecretDoorMoveSound;
+    public AudioClip KeyInsertionSound;
 
     public void MusicBoxOpenTrigger()
     {
@@ -16,18 +16,19 @@ public class MusicBoxScript : MonoBehaviour
 
     public void SecreteDoorTrigger()
     {
-        AudioSource secretDoorAudioSource = SecreteDoor.GetComponent<AudioSource>();
-        secretDoorAudioSource.clip = SecretDoorMoveSound;
-        secretDoorAudioSource.Play();
         SecreteDoor.GetComponent<Animator>().SetTrigger("move");
     }
     
     public void EnableHandleTrigger()
     {
-        AudioSource secretDoorAudioSource = SecreteDoor.GetComponent<AudioSource>();
-        secretDoorAudioSource.clip = SecretDoorMoveSound;
-        secretDoorAudioSource.Play();
         SecreteDoor.GetComponent<Animator>().SetTrigger("move");
         Destroy(HandleTrigger.GetComponent<IgnoreHovering>());
+    }
+
+    public void KeyInsertionTrigger()
+    {
+        AudioSource audioSource = this.GetComponent<AudioSource>();
+        audioSource.clip = KeyInsertionSound;
+        audioSource.Play();
     }
 }

@@ -121,10 +121,11 @@ namespace Valve.VR.InteractionSystem
         protected virtual void HandHoverUpdate( Hand hand )
         {
             GrabTypes startingGrabType = hand.GetGrabStarting();
-            
-            if (startingGrabType != GrabTypes.None)
+
+            if (startingGrabType == GrabTypes.Grip)
+            // if (startingGrabType != GrabTypes.None)
             {
-				hand.AttachObject( gameObject, startingGrabType, attachmentFlags, attachmentOffset );
+                hand.AttachObject( gameObject, startingGrabType, attachmentFlags, attachmentOffset );
                 hand.HideGrabHint();
             }
 		}
@@ -209,7 +210,8 @@ namespace Valve.VR.InteractionSystem
         {
 
 
-            if (hand.IsGrabEnding(this.gameObject))
+            // if (hand.IsGrabEnding(this.gameObject))
+            if (hand.GetGrabStarting() == GrabTypes.Grip)
             {
                 hand.DetachObject(gameObject, restoreOriginalParent);
 

@@ -56,7 +56,7 @@ public class LightMapSwitcher : MonoBehaviour
         for (int i = 0; i < allReflectionProbes.Length; i++)
         {
             DayReflections[i] = allReflectionProbes[i].customBakedTexture;
-            Debug.Log(DayReflections[i].name);
+            // Debug.Log(DayReflections[i].name);
             NightReflections[i] = Resources.Load(nightpath + "/" + DayReflections[i].name) as Texture;
             allReflectionProbes[i].mode = ReflectionProbeMode.Custom;
             allReflectionProbes[i].customBakedTexture = DayReflections[i];

@@ -23,7 +23,6 @@ namespace Valve.VR.InteractionSystem
         [Tooltip("The local point which acts as a positional and rotational offset to use while held")]
         public Transform attachmentOffsetLeft;
         public Transform attachmentOffsetRight;
-
         [Tooltip("How fast must this object be moving to attach due to a trigger hold instead of a trigger press? (-1 to disable)")]
         public float catchingSpeedThreshold = -1;
 
@@ -36,9 +35,6 @@ namespace Valve.VR.InteractionSystem
 
         [Tooltip("When detaching the object, should it return to its original parent?")]
         public bool restoreOriginalParent = false;
-
-
-
         protected VelocityEstimator velocityEstimator;
         protected bool attached = false;
         protected float attachTime;
@@ -94,7 +90,7 @@ namespace Valve.VR.InteractionSystem
 
                 GrabTypes bestGrabType = hand.GetBestGrabbingType();
 
-                if (bestGrabType != GrabTypes.None)
+                if (bestGrabType == GrabTypes.Grip)
                 {
                     if (rigidbody.velocity.magnitude >= catchingThreshold)
                     {
@@ -125,12 +121,13 @@ namespace Valve.VR.InteractionSystem
         {
             GrabTypes startingGrabType = hand.GetGrabStarting();
 
-            if (startingGrabType != GrabTypes.None)
+            if (startingGrabType == GrabTypes.Grip)
             {
                 // Disable kinetic
                 GetComponent<Rigidbody>().isKinematic = false;
                 if (hand.handType.Equals(SteamVR_Input_Sources.LeftHand))
                 {
+
                     hand.AttachObject(gameObject, startingGrabType, attachmentFlags, attachmentOffsetLeft);
                 } else
                 {

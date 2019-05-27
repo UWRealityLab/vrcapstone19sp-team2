@@ -1,0 +1,94 @@
+﻿
+/***************************************************************************
+*                                                                          *
+*  Copyright (c) Raphaël Ernaelsten (@RaphErnaelsten)                      *
+*  All Rights Reserved.                                                    *
+*                                                                          *
+*  NOTICE: Aura 2 is a commercial project.                                 * 
+*  All information contained herein is, and remains the property of        *
+*  Raphaël Ernaelsten.                                                     *
+*  The intellectual and technical concepts contained herein are            *
+*  proprietary to Raphaël Ernaelsten and are protected by copyright laws.  *
+*  Dissemination of this information or reproduction of this material      *
+*  is strictly forbidden.                                                  *
+*                                                                          *
+***************************************************************************/
+
+#include "../Includes/Common.cginc"
+#include "Includes/OcclusionCulling.cginc"
+#include "Includes/DepthAccumulation.cginc"
+
+uniform Texture3D<half4> textureBuffer;
+uniform RWTexture3D<half4> fogVolumeTexture;
+uniform half4 frustumCornersWorldPositionArray[8];
+uniform half4 secondaryFrustumCornersWorldPositionArray[8];
+uniform float extinction;
+uniform bool useOcclusion;
+
+void WriteInOutputTexture(uint3 pos, half4 colorAndDensity)
+{
+    fogVolumeTexture[pos] = colorAndDensity;
+}
+
+half4 SampleLightingTexture(uint3 id)
+{
+    half4 data = textureBuffer[id];
+    return data;
+}
+
+#pragma kernel AccumulateLighting
+#pragma kernel AccumulateLighting SINGLE_PASS_STEREO
+
+[numthreads(NUM_THREAD_X,NUM_THREAD_Y,NUM_THREAD_Z)]
+void AccumulateLighting(uint3 id : SV_DispatchThreadID)
+{
+    half4 normalizedLocalPos = GetNormalizedLocalPositionWithDepthBias(id);
+	
+    half4 frustumCorners[8] = frustumCornersWorldPositionArray;
+	
+	bool isSecondaryFrustum = false;
+	#if defined(SINGLE_PASS_STEREO)
+	if (id.x > (uint)Aura_BufferResolution.x / 2)
+	{
+		isSecondaryFrustum = true;
+		frustumCorners = secondaryFrustumCornersWorldPositionArray;
+	}
+	normalizedLocalPos.x = frac(normalizedLocalPos.x * 2);
+	#endif
+	
+	half3 worldPosition = cameraPosition.xyz;
+	half3 previousWorldPosition = worldPosition;
+	half traveledDistance = 0.0f;
+	
+    [branch]
+    if (!useOcclusion || IsNotOccluded(normalizedLocalPos.z, id)) // TODO : MAYBE COULD BE OPTIMIZED BY USING A MASK VALUE IN THE DATA TEXTURE
+    {
+        half4 currentSliceValue = half4(0, 0, 0, 1);
+	    half4 nextValue = 0;  		
+		
+		[loop]
+		for(uint z = 0; z < id.z; ++z)
+		{
+			uint3 newId = uint3(id.xy, z);
+			nextValue = SampleLightingTexture(newId);
+			normalizedLocalPos = GetNormalizedLocalPositionWithDepthBias(newId);
+			#if defined(SINGLE_PASS_STEREO)
+			normalizedLocalPos.x = frac(normalizedLocalPos.x * 2);
+			#endif
+			worldPosition = GetWorldPosition(normalizedLocalPos.xyz, frustumCorners);
+			traveledDistance = distance(worldPosition, previousWorldPosition);
+			previousWorldPosition = worldPosition;
+            currentSliceValue = Accumulate(currentSliceValue, nextValue, traveledDistance, extinction);
+        }
+  		
+	    half4 valueAtCurrentZ = SampleLightingTexture(id);
+		normalizedLocalPos = GetNormalizedLocalPositionWithDepthBias(id);
+		#if defined(SINGLE_PASS_STEREO)
+		normalizedLocalPos.x = frac(normalizedLocalPos.x * 2);
+		#endif
+		worldPosition = GetWorldPosition(normalizedLocalPos.xyz, frustumCorners);
+		traveledDistance = distance(worldPosition, previousWorldPosition);
+        currentSliceValue = Accumulate(currentSliceValue, valueAtCurrentZ, traveledDistance, extinction);
+		WriteInOutputTexture(id, currentSliceValue);
+    }
+}
