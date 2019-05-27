@@ -371,6 +371,7 @@ This week is a slow week after the hard-work week last week. In last week, we ac
     - After being picked up, the flare gun will attach to the controller like the normal gun
     - User can fire the gun by grabbing the pinch and a signal will be shoot.
     - Audio source and animations included when the flare gun is fired.
+    ![FlareGun](pics/flare_gun.gif)
     
   - Jiwen Wu
     - Worked on the animation of the helicopter.
