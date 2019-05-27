@@ -78,7 +78,7 @@ public class AnimatedBookController : MonoBehaviour {
 	private Quaternion turnedLocalQuat;								// Local rotation for a turned page
 	private float t = 0;											// Used for animation progression
 	private float speed = 1;										// Speed of turning page animation
-	private int currentPage = 0;									// The index of the current page visible
+	public int currentPage = 0;									// The index of the current page visible
 	private PAGES_TRANSITIONS inTransition = PAGES_TRANSITIONS.NONE;// True when a page is being turned
 
 
@@ -246,7 +246,39 @@ public class AnimatedBookController : MonoBehaviour {
 			}
 		}
 	}
+    public void closeBook()
+    {
+        if (currentPage >= 0)
+        {
 
+            while (currentPage > 0)
+            {
+                Debug.Log(currentPage);
+                // If we asked another time to turn the page, double the transition speed
+                if (inTransition != PAGES_TRANSITIONS.NONE)
+                {
+                    ImproveTransitionSpeed();
+                }
+                // If we asked to turn the page, or turn the other side while in transition
+                else
+                {
+                    currentPage--;
+                    StopAllCoroutines();
+                    StartCoroutine("TurnToPreviousPageTransition");
+
+                }
+            }
+            // If we are in the first page and not in transition, close the book
+            if (currentPage == 0 && inTransition == PAGES_TRANSITIONS.NONE)
+            {
+                anim.SetTrigger("CloseBookRight");
+                
+            }
+            
+
+        }
+        return;
+    }
 	public void TurnToPreviousPage() {
 		// If book is closed, open it
 		if (state == BOOK_STATE.CLOSED) {

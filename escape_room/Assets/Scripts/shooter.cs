@@ -53,9 +53,14 @@ namespace Valve.VR.InteractionSystem
                             Shoot();
                             FireWeapon();
                             StartCoroutine(ShootingYield());
+                            if (currentRound == 0)
+                            {
+                                ani.Play("NoBulletPos");
+                            }
                         } else
                         {
                             playDryfire();
+                            ani.Play("NoBullet");
                         }                        
                     }
                     
@@ -90,6 +95,7 @@ namespace Valve.VR.InteractionSystem
 
         private void FireWeapon()
         {
+            ani.Play("TriggerWhenShot");
             audiosource.clip = fire;
             audiosource.Play();
             var muzzleflash = Instantiate(muzzleflashPrefab, muzzlePoint.position, muzzlePoint.rotation);
@@ -98,7 +104,7 @@ namespace Valve.VR.InteractionSystem
 
         public void loadMagazine()
         {
-            ani.Play();
+            ani.Play("M9Hammer");
             audiosource.clip = mag;
             audiosource.Play();            
         }
@@ -120,5 +126,6 @@ namespace Valve.VR.InteractionSystem
             audiosource.clip = dryfire;
             audiosource.Play();
         }
+
     }
 }
