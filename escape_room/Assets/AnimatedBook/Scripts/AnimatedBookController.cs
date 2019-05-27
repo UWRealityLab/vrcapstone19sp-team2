@@ -147,10 +147,10 @@ public class AnimatedBookController : MonoBehaviour {
 		bookPages = new PageObjects[3];
 		for(int i=0; i<3; i++) {
 			PageObjects page = new PageObjects();
-			Transform pageTransform = pagesParent.Find("Page" + i);
+			Transform pageTransform = pagesParent.FindChild("Page" + i);
 			page.page = pageTransform;
-			page.RectoImage = pageTransform.Find ("Recto").Find ("CanvasRecto").GetComponent<Image>();
-			page.VersoImage = pageTransform.Find ("Verso").Find ("CanvasVerso").GetComponent<Image>();
+			page.RectoImage = pageTransform.FindChild ("Recto").FindChild ("CanvasRecto").GetComponent<Image>();
+			page.VersoImage = pageTransform.FindChild ("Verso").FindChild ("CanvasVerso").GetComponent<Image>();
 			bookPages[i] = page;
 		}
 	}
@@ -246,39 +246,7 @@ public class AnimatedBookController : MonoBehaviour {
 			}
 		}
 	}
-    public void closeBook()
-    {
-        if (currentPage >= 0)
-        {
 
-            while (currentPage > 0)
-            {
-                Debug.Log(currentPage);
-                // If we asked another time to turn the page, double the transition speed
-                if (inTransition != PAGES_TRANSITIONS.NONE)
-                {
-                    ImproveTransitionSpeed();
-                }
-                // If we asked to turn the page, or turn the other side while in transition
-                else
-                {
-                    currentPage--;
-                    StopAllCoroutines();
-                    StartCoroutine("TurnToPreviousPageTransition");
-
-                }
-            }
-            // If we are in the first page and not in transition, close the book
-            if (currentPage == 0 && inTransition == PAGES_TRANSITIONS.NONE)
-            {
-                anim.SetTrigger("CloseBookRight");
-                
-            }
-            
-
-        }
-        return;
-    }
 	public void TurnToPreviousPage() {
 		// If book is closed, open it
 		if (state == BOOK_STATE.CLOSED) {

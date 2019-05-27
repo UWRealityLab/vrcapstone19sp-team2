@@ -11,7 +11,9 @@ public class DemoBookController : MonoBehaviour {
     public Hand.AttachmentFlags attachmentFlags = Hand.AttachmentFlags.ParentToHand | Hand.AttachmentFlags.DetachFromOtherHand | Hand.AttachmentFlags.TurnOnKinematic;
 
     [Tooltip("The local point which acts as a positional and rotational offset to use while held")]
-    public Transform attachmentOffset;
+    public Transform attachmentOffsetLeft;
+    public Transform attachmentOffsetRight;
+
 
     [Tooltip("How fast must this object be moving to attach due to a trigger hold instead of a trigger press? (-1 to disable)")]
     public float catchingSpeedThreshold = -1;
@@ -68,11 +70,6 @@ public class DemoBookController : MonoBehaviour {
         rigidbody.maxAngularVelocity = 50.0f;
 
 
-        if (attachmentOffset != null)
-        {
-            // remove?
-            //interactable.handFollowTransform = attachmentOffset;
-        }
 
     }
 
@@ -232,18 +229,18 @@ public class DemoBookController : MonoBehaviour {
         {
             // Disable kinetic
             GetComponent<Rigidbody>().isKinematic = false;
-            hand.AttachObject(gameObject, startingGrabType, attachmentFlags, attachmentOffset);
-            /*if (hand.handType.Equals(Valve.VR.SteamVR_Input_Sources.LeftHand))
+            //hand.AttachObject(gameObject, startingGrabType, attachmentFlags, attachmentOffset);
+            if (hand.handType.Equals(Valve.VR.SteamVR_Input_Sources.LeftHand))
             {
-                bookController.TurnToNextPage();
+                //bookController.TurnToNextPage();
 
-                //hand.AttachObject(gameObject, startingGrabType, attachmentFlags, attachmentOffsetLeft);
+                hand.AttachObject(gameObject, startingGrabType, attachmentFlags, attachmentOffsetLeft);
             }
             else
             {
-                bookController.TurnToNextPage();
-                //hand.AttachObject(gameObject, startingGrabType, attachmentFlags, attachmentOffsetRight);
-            }*/
+                //bookController.TurnToNextPage();
+                hand.AttachObject(gameObject, startingGrabType, attachmentFlags, attachmentOffsetRight);
+            }
             hand.HideGrabHint();
             
         }
