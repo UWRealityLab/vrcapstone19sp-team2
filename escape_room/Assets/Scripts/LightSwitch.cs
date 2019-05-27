@@ -38,7 +38,7 @@ public class LightSwitch : MonoBehaviour
     void Start()
     {
         previousPosition = endPosition.localPosition.y;
-        this.transform.localPosition = endPosition.localPosition;
+        // this.transform.localPosition = endPosition.localPosition;
         //Debug.Log("start y: " + this.transform.localPosition.y);
     }
 
