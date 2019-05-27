@@ -1,0 +1,257 @@
+fileFormatVersion: 2
+guid: 038d119383e4b044abdec62a7bbb607d
+timeCreated: 1465335336
+licenseType: Store
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: BookArmature
+    100002: Controller
+    100004: Cover
+    100006: Cover_L
+    100008: Cover_R
+    100010: DEF__Edge
+    100012: DEF_Cover_L
+    100014: DEF_Cover_R
+    100016: Edge_LRoll
+    100018: Edge_RRoll
+    100020: Hemi
+    100022: //RootNode
+    100024: Master
+    400000: BookArmature
+    400002: Controller
+    400004: Cover
+    400006: Cover_L
+    400008: Cover_R
+    400010: DEF__Edge
+    400012: DEF_Cover_L
+    400014: DEF_Cover_R
+    400016: Edge_LRoll
+    400018: Edge_RRoll
+    400020: Hemi
+    400022: //RootNode
+    400024: Master
+    4300000: Cover
+    7400000: Default Take
+    7400002: BookArmatureAction_001
+    7400004: ClosedRight
+    9500000: //RootNode
+    13700000: Cover
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 0
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Default Take
+      takeName: Default Take
+      firstFrame: 0
+      lastFrame: 84
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: BookArmature
+        weight: 1
+      - path: BookArmature/Master
+        weight: 1
+      - path: BookArmature/Master/Controller
+        weight: 1
+      - path: BookArmature/Master/Edge_LRoll
+        weight: 1
+      - path: BookArmature/Master/Edge_LRoll/Edge_RRoll
+        weight: 1
+      - path: BookArmature/Master/Edge_LRoll/Edge_RRoll/Cover_L
+        weight: 1
+      - path: BookArmature/Master/Edge_LRoll/Edge_RRoll/Cover_L/DEF_Cover_L
+        weight: 1
+      - path: BookArmature/Master/Edge_LRoll/Edge_RRoll/Cover_R
+        weight: 1
+      - path: BookArmature/Master/Edge_LRoll/Edge_RRoll/Cover_R/DEF_Cover_R
+        weight: 1
+      - path: BookArmature/Master/Edge_LRoll/Edge_RRoll/DEF__Edge
+        weight: 1
+      - path: Cover
+        weight: 1
+      - path: Hemi
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: BookArmatureAction_001
+      takeName: BookArmatureAction_001
+      firstFrame: 4
+      lastFrame: 79
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: BookArmature
+        weight: 1
+      - path: BookArmature/Master
+        weight: 1
+      - path: BookArmature/Master/Controller
+        weight: 1
+      - path: BookArmature/Master/Edge_LRoll
+        weight: 1
+      - path: BookArmature/Master/Edge_LRoll/Edge_RRoll
+        weight: 1
+      - path: BookArmature/Master/Edge_LRoll/Edge_RRoll/Cover_L
+        weight: 1
+      - path: BookArmature/Master/Edge_LRoll/Edge_RRoll/Cover_L/DEF_Cover_L
+        weight: 1
+      - path: BookArmature/Master/Edge_LRoll/Edge_RRoll/Cover_R
+        weight: 1
+      - path: BookArmature/Master/Edge_LRoll/Edge_RRoll/Cover_R/DEF_Cover_R
+        weight: 1
+      - path: BookArmature/Master/Edge_LRoll/Edge_RRoll/DEF__Edge
+        weight: 1
+      - path: Cover
+        weight: 1
+      - path: Hemi
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: ClosedRight
+      takeName: Default Take
+      firstFrame: 0
+      lastFrame: .100000001
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: BookArmature
+        weight: 1
+      - path: BookArmature/Master
+        weight: 1
+      - path: BookArmature/Master/Controller
+        weight: 1
+      - path: BookArmature/Master/Edge_LRoll
+        weight: 1
+      - path: BookArmature/Master/Edge_LRoll/Edge_RRoll
+        weight: 1
+      - path: BookArmature/Master/Edge_LRoll/Edge_RRoll/Cover_L
+        weight: 1
+      - path: BookArmature/Master/Edge_LRoll/Edge_RRoll/Cover_L/DEF_Cover_L
+        weight: 1
+      - path: BookArmature/Master/Edge_LRoll/Edge_RRoll/Cover_R
+        weight: 1
+      - path: BookArmature/Master/Edge_LRoll/Edge_RRoll/Cover_R/DEF_Cover_R
+        weight: 1
+      - path: BookArmature/Master/Edge_LRoll/Edge_RRoll/DEF__Edge
+        weight: 1
+      - path: Cover
+        weight: 1
+      - path: Hemi
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 100
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 0
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15
+    secondaryUVHardAngle: 19
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 1
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
