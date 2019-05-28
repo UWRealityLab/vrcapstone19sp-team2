@@ -4,12 +4,15 @@ using UnityEngine;
 using UnityEngine.UI;
 using static GameManagerScript;
 using System.Linq;
+using Valve.VR;
 
 public class HintsAndNarrativeScript : MonoBehaviour
 {
     public GameObject HeadUI;
     public GameObject WatchUiTaskList;
     public GameObject WatchUiNewTask;
+    // Haptics
+    public SteamVR_Action_Vibration hapticAction;
 
     private Text HeadHints;
     private Text WatchHints;
@@ -56,5 +59,8 @@ public class HintsAndNarrativeScript : MonoBehaviour
             msgList.RemoveAt(0);
         msgList.Add(header + UIContent.TaskToUI[task]);
         WatchNewTask.text = string.Join("\n", msgList);
+
+        // haptic
+        hapticAction.Execute(1, 5f, 100, 1, SteamVR_Input_Sources.RightHand);
     }
 }
