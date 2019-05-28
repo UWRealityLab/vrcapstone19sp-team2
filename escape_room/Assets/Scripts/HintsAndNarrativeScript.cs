@@ -14,6 +14,7 @@ public class HintsAndNarrativeScript : MonoBehaviour
     public GameObject WatchUiNewTask;
     public GameObject Watch;
     public AudioClip WatchNoticeSound;
+    //public GameObject CanvasBackground;
     // Haptics
     public SteamVR_Action_Vibration hapticAction;
     public Hand WatchHand;
@@ -45,9 +46,11 @@ public class HintsAndNarrativeScript : MonoBehaviour
 
     IEnumerator HeadHintsWait(string str, int seconds)
     {
+        //CanvasBackground.SetActive(true);
         HeadHints.text = str;
         yield return new WaitForSeconds(seconds);
         HeadHints.text = "";
+        //CanvasBackground.SetActive(false);
     }
 
     public void completeTask(string taskString, TaskTypes completedTask)
