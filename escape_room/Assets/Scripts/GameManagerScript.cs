@@ -25,6 +25,7 @@ public class GameManagerScript : MonoBehaviour
 
     public enum EventTypes
     {
+        NULL,
         WAKE_UP,
         CUTTER_CUT,
         AFTER_RADIO_MILITARY,
@@ -39,14 +40,14 @@ public class GameManagerScript : MonoBehaviour
         ICE_CUBE_TOUCHED,
         PICKED_UP_KEY,
         MUSIC_BOX_KEY_INSERTED,
-        MUSIC_BOX_FINISHED,
+        SECRETE_DOOR_OPEN, // When door open finishes
         ENTERED_SECRET_ROOM,
         PICKED_UP_GUN,
         EXITED_SECRET_ROOM,
-        SAFEBOX_CABINET_OPENED,
-        SAFEBOX_OPENED,
+        SAFEBOX_CABINET_OPEN,
+        SAFEBOX_OPEN,
         GUN_LOADED,
-        CURTAIN_OPENED,
+        CURTAIN_OPEN,
         GLASS_BROKEN,
         FLARE_GUN_FIRED,
         HELI_ARRIVED,
@@ -67,9 +68,9 @@ public class GameManagerScript : MonoBehaviour
         UIDisplay = UIDisplaySystem.GetComponent<HintsAndNarrativeScript>();
     }
 
-    public void TriggerTask(TaskTypes task, int delay=0)
+    public void TriggerTask(TaskTypes task, EventTypes afterUI=EventTypes.NULL, int extraDelay = 0)
     {
-        StartCoroutine(TriggerDelay(task, delay));
+        StartCoroutine(TriggerDelay(task, afterUI == EventTypes.NULL ? 0 + extraDelay : getUILength(afterUI) + extraDelay));
     }
 
     IEnumerator TriggerDelay(TaskTypes task, int delay)
@@ -126,6 +127,10 @@ public class GameManagerScript : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         string words = EventToUI[e];
-        UIDisplay.updateEventUI(words, Mathf.Max(words.Split(' ').Length / 2, UIContent.UI_DELAY_SECONDS));
+        UIDisplay.updateEventUI(words, getUILength(e));
+    }
+
+    public static int getUILength(EventTypes e) {
+        return Mathf.Max(EventToUI[e].Split(' ').Length / 2, UIContent.UI_MIN_DELAY_SECONDS);
     }
 }

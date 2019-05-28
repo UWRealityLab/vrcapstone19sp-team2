@@ -54,10 +54,11 @@ public class RadioAudio : MonoBehaviour
     }
     IEnumerator Wait()
     {
-        yield return new WaitForSeconds(3 + UIContent.UI_DELAY_SECONDS);
+        yield return new WaitForSeconds(5);
         knob.rotateGameObject = true;
         monitor.Freeze = false;
         manager.CompleteTask(GameManagerScript.TaskTypes.RADIO);
-        manager.TriggerTask(GameManagerScript.TaskTypes.DESK);
+        manager.TriggerTask(GameManagerScript.TaskTypes.DESK, GameManagerScript.EventTypes.AFTER_RADIO_MILITARY);
+        manager.TriggerEvent(GameManagerScript.EventTypes.AFTER_RADIO_MILITARY);
     }
 }

@@ -22,6 +22,8 @@ public class CurtainScript : MonoBehaviour
     {
         Destroy(shutterSwitch.GetComponent<IgnoreHovering>());
         // Trigger
-        GameObject.Find("GameManager").GetComponent<GameManagerScript>().CompleteTask(GameManagerScript.TaskTypes.CURTAIN);
+        GameManagerScript manager = GameObject.Find("GameManager").GetComponent<GameManagerScript>();
+        manager.CompleteTask(GameManagerScript.TaskTypes.CURTAIN);
+        manager.TriggerEvent(GameManagerScript.EventTypes.CURTAIN_OPEN);
     }
 }

@@ -6,7 +6,7 @@ using static GameManagerScript;
 public class UIContent : MonoBehaviour
 {
 
-    public static int UI_DELAY_SECONDS = 3;
+    public static int UI_MIN_DELAY_SECONDS = 3;
 
     public static Dictionary<TaskTypes, string> TaskToUI = 
         new Dictionary<TaskTypes, string>()
@@ -30,26 +30,31 @@ public class UIContent : MonoBehaviour
         {
             { EventTypes.WAKE_UP, "Ahhh my head hurts..but where am I? My hand is cuffed to the heater. better uncuff myself first." },
             { EventTypes.CUTTER_CUT, "Something is making a noise. Let’s take a look. Hmnn. There is a radio here. Let’s see what is being broadcasted here." },
-            { EventTypes.AFTER_RADIO_MILITARY, "The military is evacuating the area here. Need to send a signal that can be seen from miles away.\n It seems like there are more stuff on the desk." },
+            { EventTypes.AFTER_RADIO_MILITARY, "The military is evacuating the area here. Need to send a signal that can be seen from miles away.\n It seems like there are more stuff in the drawer." },
             { EventTypes.AFTER_FLASHLIGHT, "Nice. I can finally see things with the flashlight." },
             { EventTypes.AFTER_PICK_UP_DIARY, "This should give me some information about this place." },
             { EventTypes.AFTER_DIARY_FUSE_PAGE, "This could be the reason that the electricity is out - the circuit breaker is tripped." },
             { EventTypes.AFTER_DIARY_MUSIC_PAGE, "The music box must be of some importance. I should find it soon. " },
             { EventTypes.AFTER_DIARY_FLARE_GUN, "The owner mentions that he received a flare gun too. This can be used to signal the military." },
-            { EventTypes.AFTER_LIGHT_ON, "Nice. Now I can see everything. Let us find some information… the bookshelf can be a good start" },
+            { EventTypes.AFTER_LIGHT_ON, "Nice. Now I can see everything. Let me find some information… the bookshelf can be a good start" },
             { EventTypes.MUSIC_BOX_TOUCHED, "There is the music box. The music box is locked. I will need to find the key. There is a clipboard here with some words. Let me take a look" },
             { EventTypes.AFTER_CLIP_BOARD, "\"The key to the truth is buried in the ice\" In the ice? What does that mean? Let me look around further. Maybe the fridge" },
             { EventTypes.ICE_CUBE_TOUCHED, "nteresting. An ice cube with a key inside it! Let me melt the ice cube and retrieve the key" },
             { EventTypes.PICKED_UP_KEY, "Let’s open the music box now" },
             { EventTypes.MUSIC_BOX_KEY_INSERTED, "wind it once.." },
-            { EventTypes.MUSIC_BOX_FINISHED, "whoa! There is a secret chamber! There must be something inside" },
-            { EventTypes.ENTERED_SECRET_ROOM, "That’s my informant!!! How did he end up over here?? He has a gun in his hands.. did he kill himself? The barrel is still hot, so this is not long ago. Let us keep the gun" },
+            { EventTypes.SECRETE_DOOR_OPEN, "whoa! There is a secret chamber! There must be something inside" },
+            //
+            { EventTypes.ENTERED_SECRET_ROOM, "That’s my informant!!! How did he end up over here?? He has a gun in his hands.. did he kill himself? The barrel is still hot, so this is not long ago. I should keep the gun" },
+
             { EventTypes.PICKED_UP_GUN, "The magazine is missing. Maybe hidden somewhere safe. Also, there is a something written in blood here" },
+            
+            //
             { EventTypes.EXITED_SECRET_ROOM, "That was a close one. The writing must be a password of some sort. Let’s see if I can find something. I haven’t check the cabinets below the TV. Let me take a look." },
-            { EventTypes.SAFEBOX_CABINET_OPENED, "A safe! Let’s try the number here, and twist the bottom handle a few times clockwise" },
-            { EventTypes.SAFEBOX_OPENED, "There is the magazine and bullets. Now lets load the gun" },
+            { EventTypes.SAFEBOX_CABINET_OPEN, "A safe! Let’s try the number here, and twist the bottom handle a few times clockwise" },
+            { EventTypes.SAFEBOX_OPEN, "There is the magazine and bullets. Now lets load the gun" },
+
             { EventTypes.GUN_LOADED, "Now the gun can be used… but what to do with the gun? Here is a switch, let\'s see if it does something" },
-            { EventTypes.CURTAIN_OPENED, "\"This way\"?Maybe I can break the window with the gun"},
+            { EventTypes.CURTAIN_OPEN, "\"This way\"?Maybe I can break the window with the gun"},
             { EventTypes.GLASS_BROKEN, "Nice! The glass is broken. Let’s fire the flare up the window. Hopefully the military evac team will see me!" },
             { EventTypes.FLARE_GUN_FIRED, "The flare is up in the sky. If the military is near, they should be able to see it" },
             { EventTypes.HELI_ARRIVED, "Finally! There is the helicopter! I am out of here! What a strange night" },

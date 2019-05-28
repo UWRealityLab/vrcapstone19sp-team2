@@ -369,16 +369,22 @@ public class AnimatedBookController : MonoBehaviour {
 
         // Trigger
         // Debug.Log(currentPage);
-        if (currentPage == 0)
+        if (currentPage == 1)
         {
             manager.CompleteTask(GameManagerScript.TaskTypes.DESK);
-        } else if (currentPage == 1)
+
+            manager.TriggerEvent(GameManagerScript.EventTypes.AFTER_DIARY_FUSE_PAGE, UIContent.UI_MIN_DELAY_SECONDS);
+            manager.TriggerTask(GameManagerScript.TaskTypes.FIND_FUSE, GameManagerScript.EventTypes.AFTER_DIARY_FUSE_PAGE, UIContent.UI_MIN_DELAY_SECONDS);
+        }
+        else if (currentPage == 2)
         {
-            manager.TriggerTask(GameManagerScript.TaskTypes.FIND_FUSE, UIContent.UI_DELAY_SECONDS);
-        } else if (currentPage == 2)
+            manager.TriggerEvent(GameManagerScript.EventTypes.AFTER_DIARY_MUSIC_PAGE, UIContent.UI_MIN_DELAY_SECONDS);
+            manager.TriggerTask(GameManagerScript.TaskTypes.FIND_MUSIC_BOX, GameManagerScript.EventTypes.AFTER_DIARY_MUSIC_PAGE, UIContent.UI_MIN_DELAY_SECONDS);
+        }
+        else if (currentPage == 3)
         {
-            manager.TriggerTask(GameManagerScript.TaskTypes.FIND_MUSIC_BOX, UIContent.UI_DELAY_SECONDS);
-            manager.TriggerTask(GameManagerScript.TaskTypes.FIND_FLARE, UIContent.UI_DELAY_SECONDS);
+            manager.TriggerEvent(GameManagerScript.EventTypes.AFTER_DIARY_FLARE_GUN, UIContent.UI_MIN_DELAY_SECONDS);
+            manager.TriggerTask(GameManagerScript.TaskTypes.FIND_FLARE, GameManagerScript.EventTypes.AFTER_DIARY_FLARE_GUN, UIContent.UI_MIN_DELAY_SECONDS);
         }
     }
 }

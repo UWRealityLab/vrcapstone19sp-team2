@@ -12,6 +12,10 @@ public class MusicBoxScript : MonoBehaviour
     public void MusicBoxOpenTrigger()
     {
         HandleTrigger.GetComponent<HandleTrigger>().MusicBoxOpen();
+
+        // trigger
+        GameManagerScript manager = GameObject.Find("GameManager").GetComponent<GameManagerScript>();
+        manager.TriggerEvent(GameManagerScript.EventTypes.MUSIC_BOX_KEY_INSERTED);
     }
 
     public void SecreteDoorTrigger()

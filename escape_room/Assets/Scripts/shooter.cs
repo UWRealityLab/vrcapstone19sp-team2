@@ -104,6 +104,9 @@ namespace Valve.VR.InteractionSystem
 
         public void loadMagazine()
         {
+            // Turn off shootable while loading
+            shootAble = false;
+
             ani.Play("M9Hammer");
             audiosource.clip = mag;
             audiosource.Play();            
@@ -127,5 +130,13 @@ namespace Valve.VR.InteractionSystem
             audiosource.Play();
         }
 
+        public void loadedTrigger()
+        {
+            shootAble = true;
+
+            // trigger
+            GameManagerScript manager = GameObject.Find("GameManager").GetComponent<GameManagerScript>();
+            manager.TriggerEvent(GameManagerScript.EventTypes.GUN_LOADED);
+        }
     }
 }

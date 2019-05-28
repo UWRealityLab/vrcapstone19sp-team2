@@ -43,7 +43,7 @@ public class ChainScript : MonoBehaviour
         {
             executed = true;
             // Trigger
-            manager.TriggerTask(TaskTypes.RELEASE, UI_DELAY_SECONDS + 1);
+            manager.TriggerTask(TaskTypes.RELEASE, EventTypes.WAKE_UP, 1);
             manager.TriggerEvent(EventTypes.WAKE_UP, 1);
         }
 
@@ -83,13 +83,14 @@ public class ChainScript : MonoBehaviour
             StartCoroutine(HintWait());
             // Trigger
             manager.CompleteTask(TaskTypes.RELEASE);
-            manager.TriggerTask(TaskTypes.RADIO, UI_DELAY_SECONDS);
+            manager.TriggerTask(TaskTypes.RADIO, EventTypes.CUTTER_CUT);
+            manager.TriggerEvent(EventTypes.CUTTER_CUT);
         }
     }
 
     IEnumerator HintWait()
     {
-        yield return new WaitForSeconds(UI_DELAY_SECONDS);
+        yield return new WaitForSeconds(getUILength(EventTypes.CUTTER_CUT));
         // Enable Hint
         Teleport.GetComponent<Teleport>().ShowTeleportHint();
     }

@@ -123,6 +123,7 @@ public class LightControl : MonoBehaviour
 
                 // Trigger
                 manager.CompleteTask(GameManagerScript.TaskTypes.LIGHT);
+                manager.TriggerEvent(GameManagerScript.EventTypes.AFTER_LIGHT_ON);
             }
         }
     }

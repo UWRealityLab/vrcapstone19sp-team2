@@ -12,12 +12,12 @@ public class DoorIsOpen : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        if (this.gameObject.transform.position.Equals(open.position))
-        {
-            //Debug.Log("Door is at open position");
-            this.GetComponent<AudioSource>().enabled = false;
-        }
+    public void doorOpen() {
+        //Debug.Log("Door is at open position");
+        this.GetComponent<AudioSource>().enabled = false;
+
+        // Trigger
+        GameManagerScript manager = GameObject.Find("GameManager").GetComponent<GameManagerScript>();
+        manager.TriggerEvent(GameManagerScript.EventTypes.SECRETE_DOOR_OPEN);
     }
 }
