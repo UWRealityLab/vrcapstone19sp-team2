@@ -5,6 +5,8 @@ using System.Collections.Generic;
 
 public class AnimatedBookController : MonoBehaviour {
 
+    public GameManagerScript manager;
+
 	public enum BOOK_STATE
 	{
 		CLOSED,
@@ -364,5 +366,19 @@ public class AnimatedBookController : MonoBehaviour {
 		t = 0;
 		inTransition = PAGES_TRANSITIONS.NONE;
 		speed = 1;
-	}
+
+        // Trigger
+        // Debug.Log(currentPage);
+        if (currentPage == 0)
+        {
+            manager.CompleteTask(GameManagerScript.TaskTypes.DESK);
+        } else if (currentPage == 1)
+        {
+            manager.TriggerTask(GameManagerScript.TaskTypes.FIND_FUSE, UIContent.UI_DELAY_SECONDS);
+        } else if (currentPage == 2)
+        {
+            manager.TriggerTask(GameManagerScript.TaskTypes.FIND_MUSIC_BOX, UIContent.UI_DELAY_SECONDS);
+            manager.TriggerTask(GameManagerScript.TaskTypes.FIND_FLARE, UIContent.UI_DELAY_SECONDS);
+        }
+    }
 }
