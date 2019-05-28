@@ -87,10 +87,13 @@ public class GameManagerScript : MonoBehaviour
 
     public void CompleteTask(TaskTypes task)
     {
-        log("Complete: " + task.ToString());
-        activeTasks.Remove(task);
-        completedTasks.Add(task);
-        UIDisplay.completeTask(GetTasks(), task);
+        if (!completedTasks.Contains(task))
+        {
+            log("Complete: " + task.ToString());
+            activeTasks.Remove(task);
+            completedTasks.Add(task);
+            UIDisplay.completeTask(GetTasks(), task);
+        }
     }
 
     public string GetTasks()

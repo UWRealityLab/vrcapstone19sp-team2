@@ -58,5 +58,6 @@ public class RadioAudio : MonoBehaviour
         knob.rotateGameObject = true;
         monitor.Freeze = false;
         manager.CompleteTask(GameManagerScript.TaskTypes.RADIO);
+        manager.TriggerTask(GameManagerScript.TaskTypes.DESK);
     }
 }

@@ -29,6 +29,7 @@ public class InteractTaskTrigger : MonoBehaviour
             if (name == "MusicBox" || name == "HandleTrigger" || name == "KeyHole")
             {
                 manager.CompleteTask(GameManagerScript.TaskTypes.FIND_MUSIC_BOX);
+                manager.TriggerTask(GameManagerScript.TaskTypes.KEY_HINT, UIContent.UI_DELAY_SECONDS);
             } else if (name == "IceCubeWithKey")
             {
                 manager.CompleteTask(GameManagerScript.TaskTypes.KEY);
@@ -39,7 +40,9 @@ public class InteractTaskTrigger : MonoBehaviour
             } else if (name == "flaregun")
             {
                 manager.CompleteTask(GameManagerScript.TaskTypes.FIND_FLARE);
-            } else if (name == "WPN_M9_Magazine_new")
+                manager.TriggerTask(GameManagerScript.TaskTypes.CURTAIN);
+            }
+            else if (name == "WPN_M9_Magazine_new")
             {
                 manager.CompleteTask(GameManagerScript.TaskTypes.AMMO);
             } else if (name == "WPN_M9_Laser_new")
@@ -48,6 +51,10 @@ public class InteractTaskTrigger : MonoBehaviour
             } else if (name == "fusebox_cover")
             {
                 manager.CompleteTask(GameManagerScript.TaskTypes.FIND_FUSE);
+            } else if (name == "Clipboard")
+            {
+                manager.CompleteTask(GameManagerScript.TaskTypes.KEY_HINT);
+                manager.TriggerTask(GameManagerScript.TaskTypes.KEY, UIContent.UI_DELAY_SECONDS);
             }
         }
     }
