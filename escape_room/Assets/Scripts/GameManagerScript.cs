@@ -49,6 +49,7 @@ public class GameManagerScript : MonoBehaviour
         CURTAIN_OPENED,
         GLASS_BROKEN,
         FLARE_GUN_FIRED,
+        HELI_ARRIVED,
         ESCAPED
     }
 

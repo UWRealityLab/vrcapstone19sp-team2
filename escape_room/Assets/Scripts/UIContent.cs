@@ -51,7 +51,8 @@ public class UIContent : MonoBehaviour
             { EventTypes.GUN_LOADED, "Now the gun can be used… but what to do with the gun? Here is a switch, let\'s see if it does something" },
             { EventTypes.CURTAIN_OPENED, "\"This way\"?Maybe I can break the window with the gun"},
             { EventTypes.GLASS_BROKEN, "Nice! The glass is broken. Let’s fire the flare up the window. Hopefully the military evac team will see me!" },
-            { EventTypes.FLARE_GUN_FIRED, "Finally! There is the helicopter! I am out of here! What a strange night" },
+            { EventTypes.FLARE_GUN_FIRED, "The flare is up in the sky. If the military is near, they should be able to see it" },
+            { EventTypes.HELI_ARRIVED, "Finally! There is the helicopter! I am out of here! What a strange night" },
             { EventTypes.ESCAPED, "Game over" },
         };
 }
