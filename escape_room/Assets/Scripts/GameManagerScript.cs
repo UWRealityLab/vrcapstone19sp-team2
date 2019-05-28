@@ -75,7 +75,7 @@ public class GameManagerScript : MonoBehaviour
     IEnumerator TriggerDelay(TaskTypes task, int delay)
     {
         yield return new WaitForSeconds(delay);
-        if (!completedTasks.Contains(task))
+        if (!activeTasks.Contains(task) && !completedTasks.Contains(task))
         {
             log("Trigger: " + task.ToString());
 

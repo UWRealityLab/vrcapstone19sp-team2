@@ -11973,7 +11973,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4822941029238526, guid: 364cd80dd15813c489c2cf397edd494d, type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4822941029238526, guid: 364cd80dd15813c489c2cf397edd494d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -23590,7 +23590,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4822941029238526, guid: 364cd80dd15813c489c2cf397edd494d, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4822941029238526, guid: 364cd80dd15813c489c2cf397edd494d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -27551,7 +27551,7 @@ PrefabInstance:
     - target: {fileID: 6033960863867863504, guid: 56037a3eda1fd76499d33670c807cb4d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.345844
+      value: -1.666
       objectReference: {fileID: 0}
     - target: {fileID: 6033960863867863504, guid: 56037a3eda1fd76499d33670c807cb4d,
         type: 3}
@@ -31228,6 +31228,40 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1046437528}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!84 &1049511225
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 'Spot Light : Shadow Map Render Texture'
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  serializedVersion: 3
+  m_Width: 256
+  m_Height: 256
+  m_AntiAliasing: 1
+  m_DepthFormat: 0
+  m_ColorFormat: 52
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1001 &1050733704
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33174,6 +33208,40 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1095819070}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!84 &1097109852
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 'Spot Light : Cookie Map Render Texture'
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  serializedVersion: 3
+  m_Width: 256
+  m_Height: 256
+  m_AntiAliasing: 1
+  m_DepthFormat: 0
+  m_ColorFormat: 5
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1001 &1100045902
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36430,31 +36498,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000010824048654, guid: 9d8f7a34c7def6349b8410493f27550e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.0406
+      value: -0.0365
       objectReference: {fileID: 0}
     - target: {fileID: 4000010824048654, guid: 9d8f7a34c7def6349b8410493f27550e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.4493328
+      value: 0.4286
       objectReference: {fileID: 0}
     - target: {fileID: 4000010824048654, guid: 9d8f7a34c7def6349b8410493f27550e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.145
+      value: 0.055
       objectReference: {fileID: 0}
     - target: {fileID: 4000010824048654, guid: 9d8f7a34c7def6349b8410493f27550e, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.706373
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 4000010824048654, guid: 9d8f7a34c7def6349b8410493f27550e, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.7063716
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 4000010824048654, guid: 9d8f7a34c7def6349b8410493f27550e, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0322211
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4000010824048654, guid: 9d8f7a34c7def6349b8410493f27550e, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.032221355
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4000010824048654, guid: 9d8f7a34c7def6349b8410493f27550e, type: 3}
       propertyPath: m_RootOrder
@@ -36466,11 +36534,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000010824048654, guid: 9d8f7a34c7def6349b8410493f27550e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 185.22299
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 4000010824048654, guid: 9d8f7a34c7def6349b8410493f27550e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -90.00001
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 4000010824048654, guid: 9d8f7a34c7def6349b8410493f27550e, type: 3}
       propertyPath: m_LocalScale.x
@@ -46086,40 +46154,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!84 &1493389376
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 'Spot Light : Cookie Map Render Texture'
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  serializedVersion: 3
-  m_Width: 256
-  m_Height: 256
-  m_AntiAliasing: 1
-  m_DepthFormat: 0
-  m_ColorFormat: 5
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!1 &1493807549
 GameObject:
   m_ObjectHideFlags: 0
@@ -51456,17 +51490,17 @@ PrefabInstance:
     - target: {fileID: 3177467090583363532, guid: 5d60029a469539a4bb250abdf0648069,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.8250825
+      value: -2.327
       objectReference: {fileID: 0}
     - target: {fileID: 3177467090583363532, guid: 5d60029a469539a4bb250abdf0648069,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.2383278
+      value: 0.348
       objectReference: {fileID: 0}
     - target: {fileID: 3177467090583363532, guid: 5d60029a469539a4bb250abdf0648069,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.7530246
+      value: 0.211
       objectReference: {fileID: 0}
     - target: {fileID: 3177467090583363532, guid: 5d60029a469539a4bb250abdf0648069,
         type: 3}
@@ -60098,7 +60132,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000010824048654, guid: 9d8f7a34c7def6349b8410493f27550e, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4000010824048654, guid: 9d8f7a34c7def6349b8410493f27550e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -62403,9 +62437,9 @@ MonoBehaviour:
   overrideColor: 0
   overridingColor: {r: 0.999999, g: 0.999998, b: 0.999998, a: 1}
   useShadow: 1
-  shadowMapRenderTexture: {fileID: 2097986876}
+  shadowMapRenderTexture: {fileID: 1049511225}
   useCookie: 1
-  cookieMapRenderTexture: {fileID: 1493389376}
+  cookieMapRenderTexture: {fileID: 1097109852}
   enableOutOfPhaseColor: 0
   outOfPhaseColorStrength: 0.1
   outOfPhaseColor: {r: 0, g: 1, b: 1, a: 1}
@@ -63306,40 +63340,6 @@ Transform:
   m_Father: {fileID: 1146373273}
   m_RootOrder: 44
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!84 &2097986876
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 'Spot Light : Shadow Map Render Texture'
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  serializedVersion: 3
-  m_Width: 256
-  m_Height: 256
-  m_AntiAliasing: 1
-  m_DepthFormat: 0
-  m_ColorFormat: 52
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!1001 &2099508464
 PrefabInstance:
   m_ObjectHideFlags: 0
