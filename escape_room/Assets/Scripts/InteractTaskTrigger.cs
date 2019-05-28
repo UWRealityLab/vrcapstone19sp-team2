@@ -26,7 +26,7 @@ public class InteractTaskTrigger : MonoBehaviour
             GameManagerScript manager = GameObject.Find("GameManager").GetComponent<GameManagerScript>();
             string name = this.gameObject.name;
             
-            if (name == "MusicBox")
+            if (name == "MusicBox" || name == "HandleTrigger" || name == "KeyHole")
             {
                 manager.CompleteTask(GameManagerScript.TaskTypes.FIND_MUSIC_BOX);
             } else if (name == "IceCubeWithKey")
@@ -45,6 +45,9 @@ public class InteractTaskTrigger : MonoBehaviour
             } else if (name == "WPN_M9_Laser_new")
             {
                 manager.TriggerTask(GameManagerScript.TaskTypes.AMMO);
+            } else if (name == "fusebox_cover")
+            {
+                manager.CompleteTask(GameManagerScript.TaskTypes.FIND_FUSE);
             }
         }
     }
