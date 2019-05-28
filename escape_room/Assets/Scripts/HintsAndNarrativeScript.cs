@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using static GameManagerScript;
 using System.Linq;
 using Valve.VR;
+using Valve.VR.InteractionSystem;
 
 public class HintsAndNarrativeScript : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class HintsAndNarrativeScript : MonoBehaviour
     public GameObject WatchUiNewTask;
     // Haptics
     public SteamVR_Action_Vibration hapticAction;
+    public Hand WatchHand;
 
     private Text HeadHints;
     private Text WatchHints;
@@ -61,6 +63,13 @@ public class HintsAndNarrativeScript : MonoBehaviour
         WatchNewTask.text = string.Join("\n", msgList);
 
         // haptic
-        hapticAction.Execute(1, 5f, 100, 1, SteamVR_Input_Sources.RightHand);
+        WatchHand.TriggerHapticPulse(500);
+        StartCoroutine(PulseCoroutine());
+    }
+
+    private IEnumerator PulseCoroutine()
+    {
+        yield return new WaitForSeconds(0.2f);
+        WatchHand.TriggerHapticPulse(500);
     }
 }
