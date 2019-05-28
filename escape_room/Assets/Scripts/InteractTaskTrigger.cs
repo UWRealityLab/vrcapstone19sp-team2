@@ -13,10 +13,6 @@ public class InteractTaskTrigger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-    }
 
-    void TriggerTask()
-    {
-        GameObject.Find("GameManager").gameObject
     }
 }
