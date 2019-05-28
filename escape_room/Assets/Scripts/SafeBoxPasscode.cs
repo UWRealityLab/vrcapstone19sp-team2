@@ -20,14 +20,6 @@ public class SafeBoxPasscode : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!this.gameObject.transform.parent.parent.gameObject.GetComponent<SafeboxSwitch>().isOn)
-        {
-            circularDrive.limited = true;
-            return;
-        } else
-        {
-            circularDrive.limited = false;
-        }
         Text text = this.gameObject.transform.parent.GetChild(4).GetComponentInChildren<Text>();
         //Debug.Log("mmp " + this.gameObject.transform.parent.GetChild(4).name);
         int adjustedCode = int.Parse(text.text);
