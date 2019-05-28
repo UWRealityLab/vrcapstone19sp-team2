@@ -6,7 +6,8 @@ using Valve.VR.InteractionSystem;
 public class ShutterSwitch : MonoBehaviour
 {
 
-    public GameObject shutter;
+    public GameObject shutter1;
+    public GameObject shutter2;
 
     public Transform onPosition, offPosition;
 
@@ -34,9 +35,10 @@ public class ShutterSwitch : MonoBehaviour
 
         if (interactable.attachedToHand == null && startingGrabType != GrabTypes.None)
         {           
-            shutter.GetComponent<Animator>().SetTrigger(trigger);
-          
-            if(Mathf.Abs(this.transform.localEulerAngles.x - onPosition.localEulerAngles.x) <= delta)
+            shutter1.GetComponent<Animator>().SetTrigger(trigger);
+            shutter2.GetComponent<Animator>().SetTrigger(trigger);
+
+            if (Mathf.Abs(this.transform.localEulerAngles.x - onPosition.localEulerAngles.x) <= delta)
             {
                 this.transform.localEulerAngles = offPosition.localEulerAngles;
             } else if (Mathf.Abs(this.transform.localEulerAngles.x - offPosition.localEulerAngles.x) <= delta)

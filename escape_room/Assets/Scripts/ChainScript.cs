@@ -24,6 +24,7 @@ public class ChainScript : MonoBehaviour
     public GameManagerScript manager;
 
     protected float MaxLength;
+    private bool executed = false;
 
     // Start is called before the first frame update
     void Start()
@@ -33,14 +34,18 @@ public class ChainScript : MonoBehaviour
 
         // Cancel TeleportHint
         Teleport.GetComponent<Teleport>().CancelTeleportHint();
-
-        // Trigger
-        manager.TriggerTask(TaskTypes.RELEASE, UI_DELAY_SECONDS);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!executed)
+        {
+            executed = true;
+            // Trigger
+            manager.TriggerTask(TaskTypes.RELEASE, UI_DELAY_SECONDS);
+        }
+
         if (!broke)
         {
             // Hide Left Hand
