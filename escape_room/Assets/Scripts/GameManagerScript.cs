@@ -81,7 +81,7 @@ public class GameManagerScript : MonoBehaviour
 
             activeTasks.Add(task);
         }
-        // UIDisplay.updateTasksUI(task);
+        UIDisplay.addTask(task);
     }
 
     public void CompleteTask(TaskTypes task)
@@ -89,6 +89,7 @@ public class GameManagerScript : MonoBehaviour
         log("Complete: " + task.ToString());
         activeTasks.Remove(task);
         completedTasks.Add(task);
+        UIDisplay.completeTask(task);
     }
 
     public string GetTasks()

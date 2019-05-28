@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using static GameManagerScript;
+using System.Linq;
 
 public class HintsAndNarrativeScript : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class HintsAndNarrativeScript : MonoBehaviour
     private Text WatchHints;
     private Text WatchNewTask;
     private List<TaskTypes> currentTasks;
-    private List<TaskTypes> msgList;
+    private List<string> msgList;
 
     void Start()
     {
@@ -22,7 +23,7 @@ public class HintsAndNarrativeScript : MonoBehaviour
         WatchHints = WatchUI_TaskList.GetComponentInChildren<Text>();
         WatchNewTask = WatchUI_NewTask.GetComponentInChildren<Text>();
         currentTasks = new List<TaskTypes>();
-        msgList = new List<TaskTypes>();
+        msgList = new List<string>();
     }
 
     public void addTask(TaskTypes task)
@@ -51,10 +52,18 @@ public class HintsAndNarrativeScript : MonoBehaviour
 
     private void refreshWatchUI(string header, TaskTypes task)
     {
-        string hint = string.Join("\n", currentTasks);
-        WatchHints.text = hint;
-        WatchNewTask.text = header + UIContent.TaskToUI[task];
+        // update tasks list
+        List<string> tmp = new List<string>();
+        foreach (TaskTypes t in currentTasks)
+        {
+            tmp.Add(UIContent.TaskToUI[t]);
+        }
+        WatchHints.text = string.Join("\n", tmp);
+
+        // update message
+        if (msgList.Count >= 2)
+            msgList.RemoveAt(0);
+        msgList.Add(header + UIContent.TaskToUI[task]);
+        WatchNewTask.text = string.Join("\n", msgList);
     }
-
-
 }
