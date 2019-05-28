@@ -25,25 +25,22 @@ public class SafeboxOpener : MonoBehaviour
         passcodeGood = sib.GetComponent<SafeBoxPasscode>().pass;
         if (passcodeGood)
         {
-            circularDrive.limited = false;
+            Destroy(GetComponent<IgnoreHovering>());
         }
-        else
+        else if (!this.gameObject.GetComponent<IgnoreHovering>())
         {
-            float currentRotation = this.gameObject.transform.localEulerAngles.z;
-            circularDrive.minAngle = currentRotation;
-            circularDrive.maxAngle = currentRotation + 1.0f;
-            circularDrive.limited = true;
+            this.gameObject.AddComponent<IgnoreHovering>();
         }
-
     }
 
     private void LateUpdate()
     {
         float rotation = float.Parse(this.GetComponent<LinearMapping>().value.ToString("0.00"));
-        //Debug.Log("opener rotation: " + this.gameObject.transform.localEulerAngles.z);
+        // Debug.Log("opener rotation: " + this.gameObject.transform.localEulerAngles.z);
 
-        if (this.gameObject.transform.localEulerAngles.z > 280.0f && passcodeGood)
+        if (this.gameObject.transform.localEulerAngles.z > 90.0f && passcodeGood)
         {
+            // TODO add open sound
             okToOpenDoor = true;
         } else
         {
