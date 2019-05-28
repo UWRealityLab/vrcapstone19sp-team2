@@ -63,8 +63,8 @@ public class GameManagerScript : MonoBehaviour
     void Start()
     {
         completedTasks = new HashSet<TaskTypes>();
-        UIDisplay = UIDisplaySystem.GetComponent<HintsAndNarrativeScript>();
         activeTasks = new HashSet<TaskTypes>();
+        UIDisplay = UIDisplaySystem.GetComponent<HintsAndNarrativeScript>();
     }
 
     public void TriggerTask(TaskTypes task, int delay=0)
