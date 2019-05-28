@@ -115,6 +115,7 @@ public class GameManagerScript : MonoBehaviour
     IEnumerator TriggerEventDelay(EventTypes e, int delay)
     {
         yield return new WaitForSeconds(delay);
-        UIDisplay.updateEventUI(EventToUI[e]);
+        string words = EventToUI[e];
+        UIDisplay.updateEventUI(words, words.Split(' ').Length / 2);
     }
 }

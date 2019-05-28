@@ -6221,6 +6221,7 @@ MonoBehaviour:
   hapticAction:
     actionPath: /actions/default/out/Haptic
     needsReinit: 0
+  manager: {fileID: 0}
 --- !u!65 &220268011
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8213,6 +8214,7 @@ MonoBehaviour:
   hapticAction:
     actionPath: /actions/default/out/Haptic
     needsReinit: 0
+  manager: {fileID: 0}
 --- !u!65 &305807171
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12683,7 +12685,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: \
+  m_Text: 
 --- !u!222 &492350101
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -61947,7 +61949,9 @@ MonoBehaviour:
   audio2: {fileID: 8300000, guid: 8576d4dc07224d549a3d8588c1ad399e, type: 3}
   audio3: {fileID: 8300000, guid: e7cdfaef6bb881b4ba1e079803138480, type: 3}
   audioSource: {fileID: 3856810236476877403}
-  currentChannel: 
+  knob: {fileID: 0}
+  monitor: {fileID: 0}
+  manager: {fileID: 0}
 --- !u!114 &3856810236476877405
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61960,6 +61964,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa75ae7ff801ff741919603604a274b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Freeze: 0
 --- !u!224 &3856810236476877406
 RectTransform:
   m_ObjectHideFlags: 0
