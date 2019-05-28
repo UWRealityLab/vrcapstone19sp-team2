@@ -12,6 +12,8 @@ public class HintsAndNarrativeScript : MonoBehaviour
     public GameObject HeadUI;
     public GameObject WatchUiTaskList;
     public GameObject WatchUiNewTask;
+    public GameObject Watch;
+    public AudioClip WatchNoticeSound;
     // Haptics
     public SteamVR_Action_Vibration hapticAction;
     public Hand WatchHand;
@@ -20,6 +22,7 @@ public class HintsAndNarrativeScript : MonoBehaviour
     private Text WatchHints;
     private Text WatchNewTask;
     private List<string> msgList;
+    private AudioSource WatchAudioSource;
 
     void Start()
     {
@@ -27,6 +30,7 @@ public class HintsAndNarrativeScript : MonoBehaviour
         WatchHints = WatchUiTaskList.GetComponentInChildren<Text>();
         WatchNewTask = WatchUiNewTask.GetComponentInChildren<Text>();
         msgList = new List<string>();
+        WatchAudioSource = Watch.GetComponent<AudioSource>();
     }
 
     public void updateTasks(string tasksString, TaskTypes task)
@@ -62,7 +66,10 @@ public class HintsAndNarrativeScript : MonoBehaviour
         msgList.Add(header + UIContent.TaskToUI[task]);
         WatchNewTask.text = string.Join("\n", msgList);
 
-        // haptic
+        // haptic and sound
+        if (WatchAudioSource.clip == null)
+            WatchAudioSource.clip = WatchNoticeSound;
+        WatchAudioSource.Play();
         WatchHand.TriggerHapticPulse(500);
         StartCoroutine(PulseCoroutine());
     }
