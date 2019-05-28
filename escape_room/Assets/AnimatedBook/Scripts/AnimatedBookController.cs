@@ -147,10 +147,10 @@ public class AnimatedBookController : MonoBehaviour {
 		bookPages = new PageObjects[3];
 		for(int i=0; i<3; i++) {
 			PageObjects page = new PageObjects();
-			Transform pageTransform = pagesParent.FindChild("Page" + i);
+			Transform pageTransform = pagesParent.Find("Page" + i);
 			page.page = pageTransform;
-			page.RectoImage = pageTransform.FindChild ("Recto").FindChild ("CanvasRecto").GetComponent<Image>();
-			page.VersoImage = pageTransform.FindChild ("Verso").FindChild ("CanvasVerso").GetComponent<Image>();
+			page.RectoImage = pageTransform.Find ("Recto").Find ("CanvasRecto").GetComponent<Image>();
+			page.VersoImage = pageTransform.Find ("Verso").Find ("CanvasVerso").GetComponent<Image>();
 			bookPages[i] = page;
 		}
 	}
