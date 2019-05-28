@@ -5,6 +5,9 @@ using static GameManagerScript;
 
 public class UIContent : MonoBehaviour
 {
+
+    public static int UI_DELAY_SECONDS = 3;
+
     public static Hashtable TaskToUI = new Hashtable()
     {
         { TaskTypes.RELEASE, "Release yourself"},

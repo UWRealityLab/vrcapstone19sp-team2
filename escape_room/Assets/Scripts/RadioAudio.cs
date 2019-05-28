@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using Valve.VR.InteractionSystem;
 
 public class RadioAudio : MonoBehaviour
 {
@@ -11,32 +11,25 @@ public class RadioAudio : MonoBehaviour
     public AudioClip audio3;
     public AudioSource audioSource;
     Text text;
-    public string currentChannel;
+
+    public CircularDrive knob;
+    public RadioMonitor monitor;
+    public GameManagerScript manager;
 
     // Update is called once per frame
     void Update()
     {
         Text text = this.GetComponent<Text>();
-        //Debug.Log("entering audio");
-        //Debug.Log(text);
-        //Debug.Log(text.text);
+
         if (text != null && text.text != null)
         {
-            if (text.text.Equals("85.0"))
-            {
-                if (audioSource.clip == null || !audioSource.clip.Equals(audio1))
-                {
-                    audioSource.clip = audio1;
-                    audioSource.Play();
-                    currentChannel = text.text;
-                }
-            } else if (text.text.Equals("87.5"))
+
+            if (text.text.Equals("87.5"))
             {
                 if (audioSource.clip == null || !audioSource.clip.Equals(audio2))
                 {
                     audioSource.clip = audio2;
                     audioSource.Play();
-                    currentChannel = text.text;
                 }
             } else if (text.text.Equals("90.0"))
             {
@@ -44,11 +37,26 @@ public class RadioAudio : MonoBehaviour
                 {
                     audioSource.clip = audio3;
                     audioSource.Play();
-                    currentChannel = text.text;
+
+                    knob.rotateGameObject = false;
+                    monitor.Freeze = true;
+                    StartCoroutine(Wait());
+                }
+            } else
+            {
+                if (audioSource.clip == null || !audioSource.clip.Equals(audio1))
+                {
+                    audioSource.clip = audio1;
+                    audioSource.Play();
                 }
             }
         }
     }
-
-
+    IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(3 + UIContent.UI_DELAY_SECONDS);
+        knob.rotateGameObject = true;
+        monitor.Freeze = false;
+        manager.CompleteTask(GameManagerScript.TaskTypes.RADIO);
+    }
 }

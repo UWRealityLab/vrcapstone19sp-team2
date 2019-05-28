@@ -5,6 +5,8 @@ using static UIContent;
 
 public class GameManagerScript : MonoBehaviour
 {
+    public bool debug = false;
+
     public enum TaskTypes
     {
         RELEASE,
@@ -37,16 +39,25 @@ public class GameManagerScript : MonoBehaviour
         activeTasks = new HashSet<TaskTypes>();
     }
 
-    public void TriggerTask(TaskTypes task)
+    public void TriggerTask(TaskTypes task, int delay=0)
     {
+        StartCoroutine(TriggerDelay(task, delay));
+    }
+
+    IEnumerator TriggerDelay(TaskTypes task, int delay)
+    {
+        yield return new WaitForSeconds(delay);
         if (!completedTasks.Contains(task))
         {
+            log("Trigger: " + task.ToString());
+
             activeTasks.Add(task);
         }
     }
 
     public void CompleteTask(TaskTypes task)
     {
+        log("Complete: " + task.ToString());
         activeTasks.Remove(task);
         completedTasks.Add(task);
     }
@@ -59,5 +70,13 @@ public class GameManagerScript : MonoBehaviour
             tasks += TaskToUI[task] + "\n";
         }
         return tasks.Substring(tasks.Length - 1);
+    }
+
+    private void log(string s)
+    {
+        if (debug)
+        {
+            Debug.Log(s);
+        }
     }
 }

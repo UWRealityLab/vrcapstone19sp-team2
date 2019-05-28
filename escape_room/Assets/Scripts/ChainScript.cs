@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR;
 using Valve.VR.InteractionSystem;
+using static GameManagerScript;
+using static UIContent;
+
 
 public class ChainScript : MonoBehaviour
 {
@@ -18,6 +21,8 @@ public class ChainScript : MonoBehaviour
     // Haptics
     public SteamVR_Action_Vibration hapticAction;
 
+    public GameManagerScript manager;
+
     protected float MaxLength;
 
     // Start is called before the first frame update
@@ -28,6 +33,9 @@ public class ChainScript : MonoBehaviour
 
         // Cancel TeleportHint
         Teleport.GetComponent<Teleport>().CancelTeleportHint();
+
+        // Trigger
+        manager.TriggerTask(TaskTypes.RELEASE, UI_DELAY_SECONDS);
     }
 
     // Update is called once per frame
@@ -67,12 +75,15 @@ public class ChainScript : MonoBehaviour
             // Enable Teleport
             Teleport.GetComponent<Teleport>().enabled = true;
             StartCoroutine(HintWait());
+            // Trigger
+            manager.CompleteTask(TaskTypes.RELEASE);
+            manager.TriggerTask(TaskTypes.RADIO, UI_DELAY_SECONDS);
         }
     }
 
     IEnumerator HintWait()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(UI_DELAY_SECONDS);
         // Enable Hint
         Teleport.GetComponent<Teleport>().ShowTeleportHint();
     }

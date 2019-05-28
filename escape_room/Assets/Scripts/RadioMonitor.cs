@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class RadioMonitor : MonoBehaviour
 {
     Text text;
+    public bool Freeze = false;
     // Update is called once per frame
     void Update()
     {
@@ -23,6 +24,9 @@ public class RadioMonitor : MonoBehaviour
         string res = FloatConversion.circularDriveValueToString(value, 1, 25.0f, 85.0f);
         if (res.Equals("110.0"))
             res = "85.0";
-        text.text = res;
+        if (!Freeze)
+        {
+            text.text = res;
+        }
     }
 }

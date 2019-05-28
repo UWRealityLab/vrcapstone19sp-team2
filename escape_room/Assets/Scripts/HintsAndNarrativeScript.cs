@@ -44,44 +44,7 @@ public class HintsAndNarrativeScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (cutter.GetComponent<CutterScript>().passed)
-        {
-            //HeadHints.text = cutterHeadText;
-            WatchHints.text = cutterWatchText;
-            StartCoroutine(HeadHintsWait(cutterHeadText));
-            cutter.GetComponent<CutterScript>().passed = false;
-        }
-
-        if (flashLight.GetComponent<FlashLightGrabbed>().passed)
-        {
-            StartCoroutine(HeadHintsWait(flashLightHeadText));
-            WatchHints.text = flashLightWatchText;
-            flashLight.GetComponent<FlashLightGrabbed>().passed = false;
-        }
-
-        if (fuseBoxButton.GetComponent<LightControl>().passed)
-        {
-            StartCoroutine(HeadHintsWait(fuseBoxButtonHeadText));
-            WatchHints.text = fuseBoxButtonWatchText;
-            fuseBoxButton.GetComponent<LightControl>().passed = false;
-        }
-
-        if (radioKnob.GetComponent<RadioAudio>().currentChannel.Equals("87.5"))
-        {
-            StartCoroutine(HeadHintsWait(radioAtSecondChannelHeadText));
-            WatchHints.text = radioAtSecondChannelWatchText;
-            radioKnob.GetComponent<RadioAudio>().currentChannel = "0.0";
-        } else if (radioKnob.GetComponent<RadioAudio>().currentChannel.Equals("90.0"))
-        {
-            StartCoroutine(HeadHintsWait(radioAtThirdChannelHeadText));
-            WatchHints.text = radioAtThirdChannelWatchText;
-            radioKnob.GetComponent<RadioAudio>().currentChannel = "0.0";
-        } else if (radioKnob.GetComponent<RadioAudio>().currentChannel.Equals("85.0"))
-        {
-            StartCoroutine(HeadHintsWait(fuseBoxButtonHeadText));
-            WatchHints.text = fuseBoxButtonWatchText;
-            radioKnob.GetComponent<RadioAudio>().currentChannel = "0.0";
-        }
+ 
 
 
     }
