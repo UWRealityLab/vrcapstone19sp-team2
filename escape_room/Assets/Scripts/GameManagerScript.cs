@@ -81,7 +81,7 @@ public class GameManagerScript : MonoBehaviour
 
             activeTasks.Add(task);
         }
-        UIDisplay.updateTasksUI(task);
+        // UIDisplay.updateTasksUI(task);
     }
 
     public void CompleteTask(TaskTypes task)
