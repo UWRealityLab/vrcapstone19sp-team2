@@ -2,30 +2,33 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static GameManagerScript;
 
 public class HintsAndNarrativeScript : MonoBehaviour
 {
     public GameObject HeadUI;
-    public GameObject WatchUI;
+    public GameObject WatchUI_TaskList;
+    public GameObject WatchUI_NewTask;
 
     private Text HeadHints;
     private Text WatchHints;
+    private Text WatchNewTask;
+    private List<TaskTypes> currentTasks;
+    private List<TaskTypes> msgList;
 
     void Start()
     {
         HeadHints = HeadUI.GetComponentInChildren<Text>();
-        WatchHints = WatchUI.GetComponentInChildren<Text>();
+        WatchHints = WatchUI_TaskList.GetComponentInChildren<Text>();
+        WatchNewTask = WatchUI_NewTask.GetComponentInChildren<Text>();
+        currentTasks = new List<TaskTypes>();
+        msgList = new List<TaskTypes>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void addTask(TaskTypes task)
     {
-        
-    }
-
-    public void updateTasksUI(string hint)
-    {
-        WatchHints.text = hint;
+        currentTasks.Add(task);
+        refreshWatchUI("New: ", task);
     }
 
     public void updateEventUI(string hint, int delay)
@@ -38,6 +41,19 @@ public class HintsAndNarrativeScript : MonoBehaviour
         HeadHints.text = str;
         yield return new WaitForSeconds(seconds);
         HeadHints.text = "";
+    }
+
+    public void completeTask(TaskTypes completedTask)
+    {
+        currentTasks.Remove(completedTask);
+        refreshWatchUI("Completed: ", completedTask);
+    }
+
+    private void refreshWatchUI(string header, TaskTypes task)
+    {
+        string hint = string.Join("\n", currentTasks);
+        WatchHints.text = hint;
+        WatchNewTask.text = header + UIContent.TaskToUI[task];
     }
 
 
