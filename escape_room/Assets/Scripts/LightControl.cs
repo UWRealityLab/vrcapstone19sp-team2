@@ -26,6 +26,8 @@ public class LightControl : MonoBehaviour
     public float delta = 0.001f;
     public bool passed;
 
+    public GameManagerScript manager;
+
     private void Start()
     {
         allLights = GameObject.FindGameObjectsWithTag(lightTagName);
@@ -118,6 +120,9 @@ public class LightControl : MonoBehaviour
                     l.GetComponent<Light>().enabled = lightOn;
                 }
                 lightMapController.GetComponent<LightMapSwitcher>().SwapLightmaps(0);
+
+                // Trigger
+                manager.CompleteTask(GameManagerScript.TaskTypes.LIGHT);
             }
         }
     }
