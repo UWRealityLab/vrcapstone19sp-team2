@@ -25,6 +25,7 @@ public class RoofTrigger : MonoBehaviour
         {
             executed = true;
             Helicopter.SetTrigger("Fly");
+            this.gameObject.SetActive(false);
         }
     }
 }
