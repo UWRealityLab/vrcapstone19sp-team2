@@ -43,7 +43,8 @@ public class ChainScript : MonoBehaviour
         {
             executed = true;
             // Trigger
-            manager.TriggerTask(TaskTypes.RELEASE, UI_DELAY_SECONDS);
+            manager.TriggerTask(TaskTypes.RELEASE, UI_DELAY_SECONDS + 1);
+            manager.TriggerEvent(EventTypes.WAKE_UP, 1);
         }
 
         if (!broke)

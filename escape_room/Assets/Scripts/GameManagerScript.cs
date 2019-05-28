@@ -118,14 +118,14 @@ public class GameManagerScript : MonoBehaviour
         }
     }
     
-    public void TiggerEvent(EventTypes e, int delay) {
+    public void TriggerEvent(EventTypes e, int delay = 0) {
         StartCoroutine(TriggerEventDelay(e, delay));
     }
 
-    IEnumerator TriggerEventDelay(EventTypes e, int delay)
+    IEnumerator TriggerEventDelay(EventTypes e, int delay=0)
     {
         yield return new WaitForSeconds(delay);
         string words = EventToUI[e];
-        UIDisplay.updateEventUI(words, words.Split(' ').Length / 2);
+        UIDisplay.updateEventUI(words, Mathf.Max(words.Split(' ').Length / 2, UIContent.UI_DELAY_SECONDS));
     }
 }

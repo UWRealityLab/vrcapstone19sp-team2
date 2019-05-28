@@ -36,7 +36,7 @@ public class HintsAndNarrativeScript : MonoBehaviour
 
     public void updateEventUI(string hint, int delay)
     {
-        StartCoroutine(hint, delay);
+        StartCoroutine(HeadHintsWait(hint, delay));
     }
 
     IEnumerator HeadHintsWait(string str, int seconds)
