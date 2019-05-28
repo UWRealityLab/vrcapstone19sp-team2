@@ -8,28 +8,25 @@ using System.Linq;
 public class HintsAndNarrativeScript : MonoBehaviour
 {
     public GameObject HeadUI;
-    public GameObject WatchUI_TaskList;
-    public GameObject WatchUI_NewTask;
+    public GameObject WatchUiTaskList;
+    public GameObject WatchUiNewTask;
 
     private Text HeadHints;
     private Text WatchHints;
     private Text WatchNewTask;
-    private List<TaskTypes> currentTasks;
     private List<string> msgList;
 
     void Start()
     {
         HeadHints = HeadUI.GetComponentInChildren<Text>();
-        WatchHints = WatchUI_TaskList.GetComponentInChildren<Text>();
-        WatchNewTask = WatchUI_NewTask.GetComponentInChildren<Text>();
-        currentTasks = new List<TaskTypes>();
+        WatchHints = WatchUiTaskList.GetComponentInChildren<Text>();
+        WatchNewTask = WatchUiNewTask.GetComponentInChildren<Text>();
         msgList = new List<string>();
     }
 
-    public void addTask(TaskTypes task)
+    public void updateTasks(string tasksString, TaskTypes task)
     {
-        currentTasks.Add(task);
-        refreshWatchUI("New: ", task);
+        refreshWatchUI(tasksString, "New: ", task);
     }
 
     public void updateEventUI(string hint, int delay)
@@ -44,21 +41,15 @@ public class HintsAndNarrativeScript : MonoBehaviour
         HeadHints.text = "";
     }
 
-    public void completeTask(TaskTypes completedTask)
+    public void completeTask(string taskString, TaskTypes completedTask)
     {
-        currentTasks.Remove(completedTask);
-        refreshWatchUI("Completed: ", completedTask);
+        refreshWatchUI(taskString, "Completed: ", completedTask);
     }
 
-    private void refreshWatchUI(string header, TaskTypes task)
+    private void refreshWatchUI(string tasksString, string header, TaskTypes task)
     {
         // update tasks list
-        List<string> tmp = new List<string>();
-        foreach (TaskTypes t in currentTasks)
-        {
-            tmp.Add(UIContent.TaskToUI[t]);
-        }
-        WatchHints.text = string.Join("\n", tmp);
+        WatchHints.text = tasksString;
 
         // update message
         if (msgList.Count >= 2)

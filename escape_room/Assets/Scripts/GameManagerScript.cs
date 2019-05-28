@@ -80,8 +80,9 @@ public class GameManagerScript : MonoBehaviour
             log("Trigger: " + task.ToString());
 
             activeTasks.Add(task);
+            UIDisplay.updateTasks(GetTasks(), task);
         }
-        UIDisplay.addTask(task);
+        
     }
 
     public void CompleteTask(TaskTypes task)
@@ -89,7 +90,7 @@ public class GameManagerScript : MonoBehaviour
         log("Complete: " + task.ToString());
         activeTasks.Remove(task);
         completedTasks.Add(task);
-        UIDisplay.completeTask(task);
+        UIDisplay.completeTask(GetTasks(), task);
     }
 
     public string GetTasks()
@@ -97,9 +98,13 @@ public class GameManagerScript : MonoBehaviour
         string tasks = "";
         foreach (TaskTypes task in activeTasks)
         {
-            tasks += TaskToUI[task] + "\n";
+            tasks += " - " + TaskToUI[task] + "\n";
         }
-        return tasks.Substring(tasks.Length - 1);
+        if (activeTasks.Count == 0)
+        {
+            return "";
+        }
+        return tasks.Substring(0, tasks.Length - 1);
     }
 
     private void log(string s)
