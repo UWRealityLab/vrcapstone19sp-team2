@@ -43,20 +43,22 @@ public class UIContent : MonoBehaviour
             { EventTypes.PICKED_UP_KEY, "Let’s open the music box now" },
             { EventTypes.MUSIC_BOX_KEY_INSERTED, "wind it once.." },
             { EventTypes.SECRETE_DOOR_OPEN, "whoa! There is a secret chamber! There must be something inside" },
-            //
             { EventTypes.ENTERED_SECRET_ROOM, "That’s my informant!!! How did he end up over here?? He has a gun in his hands.. did he kill himself? The barrel is still hot, so this is not long ago. I should keep the gun" },
 
             { EventTypes.PICKED_UP_GUN, "The magazine is missing. Maybe hidden somewhere safe. Also, there is a something written in blood here" },
             
-            //
-            { EventTypes.EXITED_SECRET_ROOM, "That was a close one. The writing must be a password of some sort. Let’s see if I can find something. I haven’t check the cabinets below the TV. Let me take a look." },
+            // TODO add this
+            { EventTypes.DOOR_CLOSED_WHILE_IN, "DOOR_CLOSED_WHILE_IN" },
+
+            { EventTypes.EXIT_SECRET_ROOM, "That was a close one. The writing must be a password of some sort. Let’s see if I can find something. I haven’t check the cabinets below the TV. Let me take a look." },
             { EventTypes.SAFEBOX_CABINET_OPEN, "A safe! Let’s try the number here, and twist the bottom handle a few times clockwise" },
             { EventTypes.SAFEBOX_OPEN, "There is the magazine and bullets. Now lets load the gun" },
-
             { EventTypes.GUN_LOADED, "Now the gun can be used… but what to do with the gun? Here is a switch, let\'s see if it does something" },
             { EventTypes.CURTAIN_OPEN, "\"This way\"?Maybe I can break the window with the gun"},
             { EventTypes.GLASS_BROKEN, "Nice! The glass is broken. Let’s fire the flare up the window. Hopefully the military evac team will see me!" },
             { EventTypes.FLARE_GUN_FIRED, "The flare is up in the sky. If the military is near, they should be able to see it" },
+            
+            // TODO
             { EventTypes.HELI_ARRIVED, "Finally! There is the helicopter! I am out of here! What a strange night" },
             { EventTypes.ESCAPED, "Game over" },
         };

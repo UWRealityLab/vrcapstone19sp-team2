@@ -43,7 +43,8 @@ public class GameManagerScript : MonoBehaviour
         SECRETE_DOOR_OPEN, // When door open finishes
         ENTERED_SECRET_ROOM,
         PICKED_UP_GUN,
-        EXITED_SECRET_ROOM,
+        DOOR_CLOSED_WHILE_IN,
+        EXIT_SECRET_ROOM,
         SAFEBOX_CABINET_OPEN,
         SAFEBOX_OPEN,
         GUN_LOADED,
@@ -58,6 +59,7 @@ public class GameManagerScript : MonoBehaviour
     public HashSet<TaskTypes> activeTasks;
     public GameObject UIDisplaySystem;
 
+    private HashSet<EventTypes> triggeredEvents;
     private HintsAndNarrativeScript UIDisplay;
 
     // Start is called before the first frame update
@@ -65,6 +67,7 @@ public class GameManagerScript : MonoBehaviour
     {
         completedTasks = new HashSet<TaskTypes>();
         activeTasks = new HashSet<TaskTypes>();
+        triggeredEvents = new HashSet<EventTypes>();
         UIDisplay = UIDisplaySystem.GetComponent<HintsAndNarrativeScript>();
     }
 
@@ -120,7 +123,11 @@ public class GameManagerScript : MonoBehaviour
     }
     
     public void TriggerEvent(EventTypes e, int delay = 0) {
-        StartCoroutine(TriggerEventDelay(e, delay));
+        if (!triggeredEvents.Contains(e))
+        {
+            triggeredEvents.Add(e);
+            StartCoroutine(TriggerEventDelay(e, delay));
+        }
     }
 
     IEnumerator TriggerEventDelay(EventTypes e, int delay=0)

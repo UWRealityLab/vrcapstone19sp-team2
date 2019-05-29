@@ -5,10 +5,12 @@ using UnityEngine;
 public class DoorIsOpen : MonoBehaviour
 {
     public Transform open;
+
+    private SecretRoomEnterTrigger enterTrigger;
     // Start is called before the first frame update
     void Start()
     {
-        
+        enterTrigger = GameObject.Find("EnterCollider").GetComponent<SecretRoomEnterTrigger>();
     }
 
     // Update is called once per frame
@@ -19,5 +21,14 @@ public class DoorIsOpen : MonoBehaviour
         // Trigger
         GameManagerScript manager = GameObject.Find("GameManager").GetComponent<GameManagerScript>();
         manager.TriggerEvent(GameManagerScript.EventTypes.SECRETE_DOOR_OPEN);
+    }
+
+    public void doorClose()
+    {
+        if (enterTrigger.entered)
+        {
+            GameManagerScript manager = GameObject.Find("GameManager").GetComponent<GameManagerScript>();
+            manager.TriggerEvent(GameManagerScript.EventTypes.DOOR_CLOSED_WHILE_IN);
+        }
     }
 }
