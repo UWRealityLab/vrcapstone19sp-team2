@@ -66,6 +66,12 @@ public class InteractTaskTrigger : MonoBehaviour
             } else if (name == "Main Book")
             {
                 manager.TriggerEvent(GameManagerScript.EventTypes.AFTER_PICK_UP_DIARY);
+            } else if (name == "RFAIP_Cupboard_Door_Right")
+            {
+                manager.TriggerEvent(GameManagerScript.EventTypes.SAFEBOX_CABINET_OPEN, 1);
+            } else if (name == "Safe_Door_LOD0")
+            {
+                manager.TriggerEvent(GameManagerScript.EventTypes.SAFEBOX_OPEN, 1);
             }
         }
     }

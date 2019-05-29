@@ -51,6 +51,10 @@ public class BreakableObject:MonoBehaviour{
 	// breaks object
 	public IEnumerator breakObject() {
 	    if (!broken) {
+            // Trigger
+            GameManagerScript manager = GameObject.Find("GameManager").GetComponent<GameManagerScript>();
+            manager.TriggerEvent(GameManagerScript.EventTypes.GLASS_BROKEN);
+
             // Remove hint
             GameObject.Find("BloodDecal_ThisWay").SetActive(false);
 
