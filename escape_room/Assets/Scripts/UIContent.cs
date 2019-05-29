@@ -43,7 +43,6 @@ public class UIContent : MonoBehaviour
             { EventTypes.PICKED_UP_KEY, "Let’s open the music box now" },
             { EventTypes.MUSIC_BOX_KEY_INSERTED, "wind it once.." },
             { EventTypes.SECRETE_DOOR_OPEN, "whoa! There is a secret chamber! There must be something inside" },
-            //
             { EventTypes.ENTERED_SECRET_ROOM, "That’s my informant!!! How did he end up over here?? He has a gun in his hands.. did he kill himself? The barrel is still hot, so this is not long ago. I should keep the gun" },
 
             { EventTypes.PICKED_UP_GUN, "The magazine is missing. Maybe hidden somewhere safe. Also, there is a something written in blood here" },
