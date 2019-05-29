@@ -18,7 +18,7 @@ public class SafeBoxMonitor : MonoBehaviour
         if (text == null)
             return;
         if (text.text == null)
-            text.text = "";
+            text.text = "0";
         string currentCode =
             FloatConversion.circularDriveValueToString(value, 3, 100f, 0f);
         int currentCodeNum = int.Parse(currentCode.Substring(0, currentCode.IndexOf(".")));
