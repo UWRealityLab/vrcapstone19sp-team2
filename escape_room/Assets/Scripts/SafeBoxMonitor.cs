@@ -19,18 +19,6 @@ public class SafeBoxMonitor : MonoBehaviour
             return;
         if (text.text == null)
             text.text = "";
-        if (!this.gameObject.transform.parent.parent.parent.gameObject.GetComponent<SafeboxSwitch>().isOn)
-        {
-            text.text = "";
-            return;
-        } else
-        {
-            text.text = "0";
-        }
-        //string str = value.ToString("0.0");
-        //float flt = float.Parse(str, CultureInfo.InvariantCulture.NumberFormat);
-        //flt = flt * 25.0f + 85.0f;
-        //string res = flt.ToString().Contains(".") ? flt.ToString() : flt.ToString() + ".0";
         string currentCode =
             FloatConversion.circularDriveValueToString(value, 3, 100f, 0f);
         int currentCodeNum = int.Parse(currentCode.Substring(0, currentCode.IndexOf(".")));
@@ -38,6 +26,5 @@ public class SafeBoxMonitor : MonoBehaviour
         if (adjustedCode == 100)
             adjustedCode = 0;
         text.text = adjustedCode.ToString();
-        //Debug.Log("Radio Monitor done: " + res);
     }
 }
