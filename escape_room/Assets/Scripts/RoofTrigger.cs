@@ -19,7 +19,7 @@ public class RoofTrigger : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.name);
+        // Debug.Log(other.name);
 
         if (!executed && other.name == "flarebullet(Clone)")
         {
