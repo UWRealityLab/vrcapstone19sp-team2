@@ -14,6 +14,7 @@ public class HintsAndNarrativeScript : MonoBehaviour
     public GameObject WatchUiNewTask;
     public GameObject Watch;
     public AudioClip WatchNoticeSound;
+    public AudioSource HeadSetAudioSource;
     //public GameObject CanvasBackground;
     // Haptics
     public SteamVR_Action_Vibration hapticAction;
@@ -42,6 +43,12 @@ public class HintsAndNarrativeScript : MonoBehaviour
     public void updateEventUI(string hint, int delay)
     {
         StartCoroutine(HeadHintsWait(hint, delay));
+    }
+
+    public void updateEventNarrative(AudioClip audio)
+    {
+        HeadSetAudioSource.clip = audio;
+        HeadSetAudioSource.Play();
     }
 
     IEnumerator HeadHintsWait(string str, int seconds)

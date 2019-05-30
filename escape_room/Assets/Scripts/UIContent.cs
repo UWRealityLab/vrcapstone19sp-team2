@@ -5,7 +5,7 @@ using static GameManagerScript;
 
 public class UIContent : MonoBehaviour
 {
-
+    public List<AudioClip> audios;
     public static int UI_MIN_DELAY_SECONDS = 3;
 
     public static Dictionary<TaskTypes, string> TaskToUI = 
@@ -62,4 +62,45 @@ public class UIContent : MonoBehaviour
             { EventTypes.HELI_ARRIVED, "Finally! There is the helicopter! I am out of here! What a strange night" },
             { EventTypes.ESCAPED, "Game over" },
         };
+
+    public static Dictionary<EventTypes, AudioClip> EventToVoice;
+
+    public void Start()
+    {
+        EventToVoice = new Dictionary<EventTypes, AudioClip>() {
+        { EventTypes.WAKE_UP, audios[0] },
+            { EventTypes.CUTTER_CUT, audios[3] },
+            { EventTypes.AFTER_RADIO_MILITARY,audios[4] },
+            { EventTypes.AFTER_FLASHLIGHT, audios[6] },
+            { EventTypes.AFTER_PICK_UP_DIARY, audios[7] },
+            { EventTypes.AFTER_DIARY_FUSE_PAGE, audios[8] },
+            { EventTypes.AFTER_DIARY_MUSIC_PAGE, audios[9] },
+            { EventTypes.AFTER_DIARY_FLARE_GUN, audios[10] },
+            { EventTypes.AFTER_LIGHT_ON, audios[12] },
+            { EventTypes.MUSIC_BOX_TOUCHED,audios[14] },
+            { EventTypes.AFTER_CLIP_BOARD, audios[13] },
+            { EventTypes.ICE_CUBE_TOUCHED,audios[16] },
+            { EventTypes.PICKED_UP_KEY,audios[17] },
+            { EventTypes.MUSIC_BOX_KEY_INSERTED, audios[18]},
+            { EventTypes.SECRETE_DOOR_OPEN, audios[19] },
+            { EventTypes.ENTERED_SECRET_ROOM, audios[20] },
+
+            { EventTypes.PICKED_UP_GUN, audios[21] },
+            
+            // TODO add this
+            { EventTypes.DOOR_CLOSED_WHILE_IN,audios[23] },
+
+            { EventTypes.EXIT_SECRET_ROOM, audios[24]},
+            { EventTypes.SAFEBOX_CABINET_OPEN, audios[25] },
+            { EventTypes.SAFEBOX_OPEN, audios[26] },
+            { EventTypes.GUN_LOADED, audios[27] },
+            { EventTypes.CURTAIN_OPEN, audios[29]},
+            { EventTypes.GLASS_BROKEN, audios[31] },
+            //{ EventTypes.FLARE_GUN_FIRED, audios[31] },
+            
+            // TODO
+            { EventTypes.HELI_ARRIVED, audios[32] },
+            //{ EventTypes.ESCAPED, audios[0]},
+    };
+    }
 }

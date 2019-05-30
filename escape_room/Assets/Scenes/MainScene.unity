@@ -6687,8 +6687,8 @@ MonoBehaviour:
   Hand: {fileID: 1453200343}
   Teleport: {fileID: 624102898}
   LengthOffset: 0
-  enableHaptics: 0
-  enableTeleport: 1
+  enableHaptics: 1
+  enableTeleport: 0
   broke: 0
   hapticAction:
     actionPath: /actions/default/out/Haptic
@@ -14390,6 +14390,40 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 477388513}
   m_PrefabAsset: {fileID: 0}
+--- !u!84 &479807701
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 'Spot Light : Cookie Map Render Texture'
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  serializedVersion: 3
+  m_Width: 256
+  m_Height: 256
+  m_AntiAliasing: 1
+  m_DepthFormat: 0
+  m_ColorFormat: 5
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1 &480534161
 GameObject:
   m_ObjectHideFlags: 0
@@ -22875,40 +22909,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 734582209}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!84 &736676888
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 'Spot Light : Cookie Map Render Texture'
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  serializedVersion: 3
-  m_Width: 256
-  m_Height: 256
-  m_AntiAliasing: 1
-  m_DepthFormat: 0
-  m_ColorFormat: 5
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!4 &737955962 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4054847164910826, guid: dcf6c723c76e2914680a80e0760a52fd,
@@ -27433,6 +27433,40 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 854642318}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!84 &856701239
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 'Spot Light : Shadow Map Render Texture'
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  serializedVersion: 3
+  m_Width: 256
+  m_Height: 256
+  m_AntiAliasing: 1
+  m_DepthFormat: 0
+  m_ColorFormat: 52
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1 &860966884
 GameObject:
   m_ObjectHideFlags: 0
@@ -27520,6 +27554,7 @@ GameObject:
   m_Component:
   - component: {fileID: 861361975}
   - component: {fileID: 861361976}
+  - component: {fileID: 861361977}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -27553,8 +27588,54 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dc936970c89abc4bbf6c4915b9860e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debug: 1
+  debug: 0
   UIDisplaySystem: {fileID: 1453170365}
+--- !u!114 &861361977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 861361974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81ed51688bbb55a4ca11d1f470a378e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audios:
+  - {fileID: 8300000, guid: 7412a3dddeaed9242b8b8671ba11beb6, type: 3}
+  - {fileID: 8300000, guid: 5e3847f9b71b7fe4daac6593fe74bd1f, type: 3}
+  - {fileID: 8300000, guid: 32b15ffc5eb4d9945b9723ddbe3588b5, type: 3}
+  - {fileID: 8300000, guid: 7cae1cbd9a3ee1b4fb1c04175173b26c, type: 3}
+  - {fileID: 8300000, guid: 496cde63060822e44aac94aedb10ddda, type: 3}
+  - {fileID: 8300000, guid: 2c0b951941e2aff408584495eae72b1a, type: 3}
+  - {fileID: 8300000, guid: 324561ba5de653f428f4e1faf687f011, type: 3}
+  - {fileID: 8300000, guid: b4a5898c290cb7746a64ed35ac0b5133, type: 3}
+  - {fileID: 8300000, guid: f313c73626d02494d9b968237ec8dbbf, type: 3}
+  - {fileID: 8300000, guid: d6f2b71cf9ff11d4a9ceb6056f21329e, type: 3}
+  - {fileID: 8300000, guid: 46d7c6eecbb66674893f7d41dcbb38f7, type: 3}
+  - {fileID: 8300000, guid: e3226ddd0fac15e45a0dbcfa0e37fa74, type: 3}
+  - {fileID: 8300000, guid: 5a44dcc35fc4eef4dbe1d1a97a36e340, type: 3}
+  - {fileID: 8300000, guid: 461c64d7166ec2c4693b3eca214635af, type: 3}
+  - {fileID: 8300000, guid: d2e1c085ac7a61549adb3878ba1c09bd, type: 3}
+  - {fileID: 8300000, guid: f369e3adfb7ee6246a279c12c5e4c5f7, type: 3}
+  - {fileID: 8300000, guid: 41f0cd077c5117940983012713a4fc0e, type: 3}
+  - {fileID: 8300000, guid: 18b746e96fac3a94a980b9401d9d5f06, type: 3}
+  - {fileID: 8300000, guid: f543b438efbc9d5489f821428edd6f91, type: 3}
+  - {fileID: 8300000, guid: 21788bb1d123dbd4a8c35b9d63bf1d67, type: 3}
+  - {fileID: 8300000, guid: 017485ee58896e04e8f45be93441e670, type: 3}
+  - {fileID: 8300000, guid: 7dfc6b4544f66e7408659a485e256ca6, type: 3}
+  - {fileID: 8300000, guid: 94113bcc8f6370340a86bdcbb8e61e4e, type: 3}
+  - {fileID: 8300000, guid: f4929d3188fa63047906a39a76635d1c, type: 3}
+  - {fileID: 8300000, guid: dc5951792dc43a94ea4700af514a0546, type: 3}
+  - {fileID: 8300000, guid: e4b051df0efaf4c439fe336ff4054c28, type: 3}
+  - {fileID: 8300000, guid: 40eb154139b6bef4397aa76ce30d3e98, type: 3}
+  - {fileID: 8300000, guid: 038286fe7220b784b8b815f3ecdaaec0, type: 3}
+  - {fileID: 8300000, guid: 7191240ef77fdef4899761a6c26bd0e9, type: 3}
+  - {fileID: 8300000, guid: 9f0696a3d6fc7d84d8cebeb14f42ac69, type: 3}
+  - {fileID: 8300000, guid: a0de72b5ad981ad47a0faba664f0d0ea, type: 3}
+  - {fileID: 8300000, guid: 9dc3243b618d0234aaace0610ef2838c, type: 3}
+  - {fileID: 8300000, guid: 9501ec715b9ed9342a44543ae8caa133, type: 3}
 --- !u!1 &862860952
 GameObject:
   m_ObjectHideFlags: 0
@@ -39417,7 +39498,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a38442f792d06064c86ae2c1640ef93c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lightOn: 1
+  lightOn: 0
   buttonSound: {fileID: 8300000, guid: 56f3b42c48ec3bc4b96b88cea9e2ade6, type: 3}
   switchA: {fileID: 2059970986}
   switchB: {fileID: 1852265279}
@@ -51573,6 +51654,7 @@ MonoBehaviour:
   WatchUiNewTask: {fileID: 1858452113}
   Watch: {fileID: 1381254307}
   WatchNoticeSound: {fileID: 8300000, guid: 34a2cf258ba475c418103d7999c5a6ca, type: 3}
+  HeadSetAudioSource: {fileID: 1453173790}
   hapticAction:
     actionPath: /actions/default/out/Haptic
     needsReinit: 0
@@ -51603,6 +51685,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1453003291}
   - component: {fileID: 1457596765}
+  - component: {fileID: 1453173790}
   m_Layer: 0
   m_Name: FollowHead
   m_TagString: Untagged
@@ -51610,6 +51693,102 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!82 &1453173790
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1453173789}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1453177801
 GameObject:
   m_ObjectHideFlags: 0
@@ -61798,40 +61977,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3d34be79692ce4468812aa97bacfbdf, type: 3}
---- !u!84 &1787534993
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 'Spot Light : Shadow Map Render Texture'
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  serializedVersion: 3
-  m_Width: 256
-  m_Height: 256
-  m_AntiAliasing: 1
-  m_DepthFormat: 0
-  m_ColorFormat: 52
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!1 &1787659571
 GameObject:
   m_ObjectHideFlags: 0
@@ -69844,9 +69989,9 @@ MonoBehaviour:
   overrideColor: 0
   overridingColor: {r: 0.999999, g: 0.999998, b: 0.999998, a: 1}
   useShadow: 1
-  shadowMapRenderTexture: {fileID: 1787534993}
+  shadowMapRenderTexture: {fileID: 856701239}
   useCookie: 1
-  cookieMapRenderTexture: {fileID: 736676888}
+  cookieMapRenderTexture: {fileID: 479807701}
   enableOutOfPhaseColor: 0
   outOfPhaseColorStrength: 0.1
   outOfPhaseColor: {r: 0, g: 1, b: 1, a: 1}

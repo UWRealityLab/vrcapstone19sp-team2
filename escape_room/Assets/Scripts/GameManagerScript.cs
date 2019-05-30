@@ -7,6 +7,7 @@ public class GameManagerScript : MonoBehaviour
 {
     public bool debug = false;
 
+
     public enum TaskTypes
     {
         RELEASE,
@@ -126,7 +127,9 @@ public class GameManagerScript : MonoBehaviour
         if (!triggeredEvents.Contains(e))
         {
             triggeredEvents.Add(e);
-            StartCoroutine(TriggerEventDelay(e, delay));
+            //UIDisplay.updateEventNarrative(EventToVoice[e]);
+            //StartCoroutine(TriggerEventDelay(e, delay));
+            StartCoroutine(TriggerEventVoiceDelay(e, delay));
         }
     }
 
@@ -135,6 +138,12 @@ public class GameManagerScript : MonoBehaviour
         yield return new WaitForSeconds(delay);
         string words = EventToUI[e];
         UIDisplay.updateEventUI(words, getUILength(e));
+    }
+
+    IEnumerator TriggerEventVoiceDelay(EventTypes e, int delay=0)
+    {
+        yield return new WaitForSeconds(delay);
+        UIDisplay.updateEventNarrative(EventToVoice[e]);
     }
 
     public static int getUILength(EventTypes e) {
