@@ -5,22 +5,20 @@ using Valve.VR.InteractionSystem;
 
 public class SafeBoxOpenDoor : MonoBehaviour
 {
-    // Start is called before the first frame update
-    bool pass;
-    CircularDrive circularDrive;
-    void Start()
-    {
-        pass = false;
-        circularDrive = this.GetComponent<CircularDrive>();
-    }
-
     // Update is called once per frame
     void Update()
     {
-        pass = this.GetComponentInChildren<SafeboxOpener>().okToOpenDoor;
-        if (pass)
+        if (this.GetComponentInChildren<SafeboxOpener>().okToOpenDoor)
         {
-            Destroy(GetComponent<IgnoreHovering>());
+
+            //Destroy(GetComponent<IgnoreHovering>());
+            GetComponent<Animator>().SetTrigger("OpenDoor");
         }
+    }
+
+    public void DoorRotationTrigger()
+    {
+        Destroy(GetComponent<IgnoreHovering>());
+        this.GetComponent<CircularDrive>().enabled = true;
     }
 }

@@ -11,6 +11,8 @@ public class SafeBoxPasscode : MonoBehaviour
     public int code;
     CircularDrive circularDrive;
 
+    public GameObject SafeOpener;
+
     void Start()
     {
         pass = false;
