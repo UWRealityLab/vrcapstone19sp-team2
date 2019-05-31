@@ -424,6 +424,13 @@ This week, we finished the UI elements for the game, and were able to build the 
     - Fixed safe box bug. 
       - When the door was rotated 90 degree, it was distorted, because safe box is the parent which was scaled. The solution is to rescale the whole safe box. 
       - There were some bugs in the circular drive, so I replaced it with animation and added sounds.
+    
+  - Qian Yan
+    - Hook up lots of triggers to game objects and interactive scripts to trigger the right task to show up on player's watch and trigger the right UI event at the right time.
+      - These triggers work closely with the storyline written by Jiwen and the Watch UI by Yexiang.
+      - We together defined dozens of events that can happen in the game and I am in charge of hooking these events to the game while they finish up the actual text & the look of the UI.
+    - Worked on improving flare gun module of the game.
+      - flare gun now has limited rounds and animation to load rounds
       
 ### Plan for next week
   - Jiwen Wu
@@ -436,3 +443,7 @@ This week, we finished the UI elements for the game, and were able to build the 
     - Debug!
     - Finalize UI with Qian. We need to add more events and tasks, and some narratives should be adjusted. Watch display should be further simplified.
     - We will bring about a running, executable version.
+    
+  - Qian Yan
+    - Final bug fixes - play through the game over and over trying to spot any flaws that remain.
+    - As the scene is finalized, re-generate the baked lightmap for the game.
