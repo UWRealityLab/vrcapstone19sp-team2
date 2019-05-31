@@ -406,5 +406,20 @@ This week is a slow week after the hard-work week last week. In last week, we ac
       - character soliloquy that helps the player understand what is goin on (possibly pointing the player to the puzzles)
   - Qian Yan
     - Work with Yexiang to integrate a game-progress-tracking script with the UI script to display the right message/hints at a given time.
-  
 
+### Week 9
+This week, we finished the UI elements for the game, and were able to build the game into an executable. However, we were not able to demo our project due to a malfunction of our headset/computer (problem with the headset movement tracking.
+
+  - Jiwen Wu
+    - Continued work on the animation of the helicopter.
+      - Added animation that when the helicopter is hovering above the house, a chain is lowered to rescue the player
+      - Fixed the physics for the chain so that it will not be "blocked" by the invisible colliders on the roof (that is used for detecting whether the flare is fired to the sky)
+      - Made the chain interactable when lowered, so that the player can grab it.
+    - Finished storyline texts and recorded the audio for the player soliloquy.
+      
+### Plan for next week
+  - Jiwen Wu
+    - Work on a search light for the helicopter
+      - The animation that the light is searching around.
+      - Add some details for the inside of the helicopter (right now is too dark to see anything)
+      - Think about how to improve the end game experience
