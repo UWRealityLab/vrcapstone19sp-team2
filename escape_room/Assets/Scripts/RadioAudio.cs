@@ -29,6 +29,7 @@ public class RadioAudio : MonoBehaviour
                 if (audioSource.clip == null || !audioSource.clip.Equals(audio2))
                 {
                     audioSource.clip = audio2;
+                    audioSource.volume = 0.1f;
                     audioSource.Play();
                 }
             } else if (text.text.Equals("90.0"))
@@ -36,6 +37,7 @@ public class RadioAudio : MonoBehaviour
                 if (audioSource.clip == null || !audioSource.clip.Equals(audio3))
                 {
                     audioSource.clip = audio3;
+                    audioSource.volume = 0.1f;
                     audioSource.Play();
 
                     knob.rotateGameObject = false;
@@ -47,6 +49,7 @@ public class RadioAudio : MonoBehaviour
                 if (audioSource.clip == null || !audioSource.clip.Equals(audio1))
                 {
                     audioSource.clip = audio1;
+                    audioSource.volume = 0.007f;
                     audioSource.Play();
                 }
             }

@@ -8344,7 +8344,7 @@ GameObject:
   - component: {fileID: 235489326}
   - component: {fileID: 235489325}
   - component: {fileID: 235489328}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: EnterCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11730,6 +11730,40 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 360175635}
   m_CullTransparentMesh: 0
+--- !u!84 &360417375
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 'Spot Light : Shadow Map Render Texture'
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  serializedVersion: 3
+  m_Width: 256
+  m_Height: 256
+  m_AntiAliasing: 1
+  m_DepthFormat: 0
+  m_ColorFormat: 52
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1 &363601560
 GameObject:
   m_ObjectHideFlags: 0
@@ -21795,6 +21829,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11445746, guid: 7a135b1a2cb9c8f488d4dd00c55ab283, type: 3}
+      propertyPath: traceLayerMask.m_Bits
+      value: 311
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a135b1a2cb9c8f488d4dd00c55ab283, type: 3}
 --- !u!4 &624102897 stripped
@@ -22864,6 +22902,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Paper_X
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 7b695195a3489644fb26ba3bcaa0aee9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 7b695195a3489644fb26ba3bcaa0aee9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -23475,6 +23518,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Paper_B (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 6a66aec8396ee4a488155d554d901965,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 6a66aec8396ee4a488155d554d901965,
         type: 3}
@@ -31129,6 +31177,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Paper_A
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8b7208db1ab74e24d805c08d0cc0dade,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 8b7208db1ab74e24d805c08d0cc0dade,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -32928,6 +32981,40 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 959934136}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!84 &961678710
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 'Spot Light : Cookie Map Render Texture'
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  serializedVersion: 3
+  m_Width: 256
+  m_Height: 256
+  m_AntiAliasing: 1
+  m_DepthFormat: 0
+  m_ColorFormat: 5
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1 &965324685
 GameObject:
   m_ObjectHideFlags: 0
@@ -34947,7 +35034,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.589
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -35133,6 +35220,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Paper_I
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 29b318a3fc1814e46bf26260e02d2446,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 29b318a3fc1814e46bf26260e02d2446,
         type: 3}
@@ -39388,40 +39480,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 498444409}
   m_PrefabAsset: {fileID: 0}
---- !u!84 &1111947130
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 'Spot Light : Shadow Map Render Texture'
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  serializedVersion: 3
-  m_Width: 256
-  m_Height: 256
-  m_AntiAliasing: 1
-  m_DepthFormat: 0
-  m_ColorFormat: 52
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!1 &1111985035
 GameObject:
   m_ObjectHideFlags: 0
@@ -41650,7 +41708,7 @@ MonoBehaviour:
   CEnd: {fileID: 568483951}
   delta: 0.001
   passed: 0
-  manager: {fileID: 0}
+  manager: {fileID: 861361976}
 --- !u!114 &1174567895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46885,6 +46943,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: cardboardbox08
       objectReference: {fileID: 0}
+    - target: {fileID: 7735577745901566158, guid: 6cc4a87ea71fc064080fed18cd2a64ae,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 1743936319903520749, guid: 6cc4a87ea71fc064080fed18cd2a64ae,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -51748,6 +51811,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Paper_K
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 5c7bd6da6a2c5164391b291c44dad2bd,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 5c7bd6da6a2c5164391b291c44dad2bd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -56282,40 +56350,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!84 &1515344471
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 'Spot Light : Cookie Map Render Texture'
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  serializedVersion: 3
-  m_Width: 256
-  m_Height: 256
-  m_AntiAliasing: 1
-  m_DepthFormat: 0
-  m_ColorFormat: 5
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!1 &1516886934
 GameObject:
   m_ObjectHideFlags: 0
@@ -58839,6 +58873,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Paper_N
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 6cf8f68abc964764cb010a5560edfaad,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 6cf8f68abc964764cb010a5560edfaad,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -60230,6 +60269,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Paper_B
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 6a66aec8396ee4a488155d554d901965,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 6a66aec8396ee4a488155d554d901965,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -61307,20 +61351,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: CardboardDocument03_lid
       objectReference: {fileID: 0}
+    - target: {fileID: 2096839886613638750, guid: 5d60029a469539a4bb250abdf0648069,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 3177467090583363532, guid: 5d60029a469539a4bb250abdf0648069,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.327
+      value: -2.475
       objectReference: {fileID: 0}
     - target: {fileID: 3177467090583363532, guid: 5d60029a469539a4bb250abdf0648069,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.348
+      value: -0.235
       objectReference: {fileID: 0}
     - target: {fileID: 3177467090583363532, guid: 5d60029a469539a4bb250abdf0648069,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.211
+      value: 1.15
       objectReference: {fileID: 0}
     - target: {fileID: 3177467090583363532, guid: 5d60029a469539a4bb250abdf0648069,
         type: 3}
@@ -73328,9 +73377,9 @@ MonoBehaviour:
   overrideColor: 0
   overridingColor: {r: 0.999999, g: 0.999998, b: 0.999998, a: 1}
   useShadow: 1
-  shadowMapRenderTexture: {fileID: 1111947130}
+  shadowMapRenderTexture: {fileID: 360417375}
   useCookie: 1
-  cookieMapRenderTexture: {fileID: 1515344471}
+  cookieMapRenderTexture: {fileID: 961678710}
   enableOutOfPhaseColor: 0
   outOfPhaseColorStrength: 0.1
   outOfPhaseColor: {r: 0, g: 1, b: 1, a: 1}
@@ -77900,7 +77949,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.2
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -77911,7 +77960,7 @@ AudioSource:
   MinDistance: 6.478484
   MaxDistance: 50
   Pan2D: 0
-  rolloffMode: 2
+  rolloffMode: 0
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -77919,19 +77968,10 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0.008700866
-      value: 0.5083313
+      time: 0
+      value: 0.9959259
       inSlope: -25.00996
       outSlope: -25.00996
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 0.01
-      value: 1
-      inSlope: -100.03984
-      outSlope: -100.03984
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
@@ -77950,6 +77990,15 @@ AudioSource:
       value: 0.125
       inSlope: -1.5631225
       outSlope: -1.5631225
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.10018516
+      value: 0.9219856
+      inSlope: -100.03984
+      outSlope: -100.03984
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
