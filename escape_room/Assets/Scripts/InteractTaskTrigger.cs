@@ -55,11 +55,13 @@ public class InteractTaskTrigger : MonoBehaviour
             } else if (name == "fusebox_cover")
             {
                 manager.CompleteTask(GameManagerScript.TaskTypes.FIND_FUSE);
-            } else if (name == "Clipboard")
+                manager.TriggerEvent(GameManagerScript.EventTypes.OPENED_FUSE_COVER);
+            }
+            else if (name == "Clipboard")
             {
                 manager.CompleteTask(GameManagerScript.TaskTypes.KEY_HINT);
-                manager.TriggerEvent(GameManagerScript.EventTypes.AFTER_CLIP_BOARD);
-                manager.TriggerTask(GameManagerScript.TaskTypes.KEY, GameManagerScript.EventTypes.AFTER_CLIP_BOARD);
+                manager.TriggerEvent(GameManagerScript.EventTypes.PICKED_UP_CLIPBOARD);
+                manager.TriggerTask(GameManagerScript.TaskTypes.KEY, GameManagerScript.EventTypes.PICKED_UP_CLIPBOARD);
             } else if (name == "Flashlight")
             {
                 manager.TriggerEvent(GameManagerScript.EventTypes.AFTER_FLASHLIGHT);
@@ -72,6 +74,9 @@ public class InteractTaskTrigger : MonoBehaviour
             } else if (name == "Safe_Door_LOD0")
             {
                 manager.TriggerEvent(GameManagerScript.EventTypes.SAFEBOX_OPEN, 1);
+            } else if (name == "Cutter_skinned")
+            {
+                manager.TriggerEvent(GameManagerScript.EventTypes.PICKUP_CUTTER);
             }
         }
     }

@@ -69,7 +69,7 @@ public class UIContent : MonoBehaviour
     {
         EventToVoice = new Dictionary<EventTypes, AudioClip>() {
         { EventTypes.WAKE_UP, audios[0] },
-            { EventTypes.PICKUP_CUTTER, audios[1] }, // need trigger
+            { EventTypes.PICKUP_CUTTER, audios[1] },
             { EventTypes.CUTTER_CUT, audios[2] },
             { EventTypes.EXIT_BATHROOM, audios[3] }, // need trigger
             { EventTypes.AFTER_RADIO_MILITARY,audios[4] },
@@ -78,11 +78,11 @@ public class UIContent : MonoBehaviour
             { EventTypes.AFTER_DIARY_FUSE_PAGE, audios[8] },
             { EventTypes.AFTER_DIARY_MUSIC_PAGE, audios[9] },
             { EventTypes.AFTER_DIARY_FLARE_GUN, audios[10] },
-            { EventTypes.OPENED_FUSE_COVER, audios[11] }, // need trigger
+            { EventTypes.OPENED_FUSE_COVER, audios[11] }, 
             { EventTypes.AFTER_LIGHT_ON, audios[12] },
             { EventTypes.MUSIC_BOX_TOUCHED,audios[13] },
-            { EventTypes.PICKED_UP_CLIPBOARD, audios[14] }, // need trigger
-            { EventTypes.AFTER_CLIP_BOARD, audios[15] },
+            { EventTypes.PICKED_UP_CLIPBOARD, audios[14] }, 
+            { EventTypes.AFTER_CLIP_BOARD, audios[15] },  // need change
             { EventTypes.ICE_CUBE_TOUCHED,audios[16] },
             { EventTypes.PICKED_UP_KEY,audios[17] },
             { EventTypes.MUSIC_BOX_KEY_INSERTED, audios[18]},
