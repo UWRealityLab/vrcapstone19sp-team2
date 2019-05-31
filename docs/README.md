@@ -408,7 +408,7 @@ This week is a slow week after the hard-work week last week. In last week, we ac
     - Work with Yexiang to integrate a game-progress-tracking script with the UI script to display the right message/hints at a given time.
 
 ### Week 9
-This week, we finished the UI elements for the game, and were able to build the game into an executable. However, we were not able to demo our project due to a malfunction of our headset/computer (problem with the headset movement tracking.
+This week, we finished the UI elements for the game, and were able to build the game into an executable. However, we were not able to demo our project due to a malfunction of our headset/computer (problem with the headset movement tracking).
 
   - Jiwen Wu
     - Continued work on the animation of the helicopter.
@@ -416,6 +416,14 @@ This week, we finished the UI elements for the game, and were able to build the 
       - Fixed the physics for the chain so that it will not be "blocked" by the invisible colliders on the roof (that is used for detecting whether the flare is fired to the sky)
       - Made the chain interactable when lowered, so that the player can grab it.
     - Finished storyline texts and recorded the audio for the player soliloquy.
+    
+  - Yexiang Shao
+    - Created a "Watch" for UI. Created and improved a UI system with Qian. 
+      - UI for displaying current task in the watch. It will pop up the latest tasks to be finished and the current completed task.
+      - UI for narratives. Previously, these narratives were words displayed in front of the headset. Now, we replaced them with human voice which makes it more immersive. 
+    - Fixed safe box bug. 
+      - When the door was rotated 90 degree, it was distorted, because safe box is the parent which was scaled. The solution is to rescale the whole safe box. 
+      - There were some bugs in the circular drive, so I replaced it with animation and added sounds.
       
 ### Plan for next week
   - Jiwen Wu
@@ -423,3 +431,8 @@ This week, we finished the UI elements for the game, and were able to build the 
       - The animation that the light is searching around.
       - Add some details for the inside of the helicopter (right now is too dark to see anything)
       - Think about how to improve the end game experience
+      
+  - Yexiang Shao
+    - Debug!
+    - Finalize UI with Qian. We need to add more events and tasks, and some narratives should be adjusted. Watch display should be further simplified.
+    - We will bring about a running, executable version.
