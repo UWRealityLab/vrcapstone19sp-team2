@@ -432,6 +432,14 @@ This week, we finished the UI elements for the game, and were able to build the 
     - Worked on improving flare gun module of the game.
       - flare gun now has limited rounds and animation to load rounds
       
+  - Yifan Xu
+    - Created an anmimated book that shows some parts of the storyline
+      - Player can pick up the book, open and flip the pages by rotating the joystick
+    - Made some improments on the gun
+      - Added the movements of each compoment of the gun when shooting (including the barrel, piviot, trigger)
+      - Added an animation of piviot and trigger when firing with no bullet
+    - Helped with end scene by transfering the player into the helicopter after he grab the chain
+    
 ### Plan for next week
   - Jiwen Wu
     - Work on a search light for the helicopter
@@ -447,3 +455,8 @@ This week, we finished the UI elements for the game, and were able to build the 
   - Qian Yan
     - Final bug fixes - play through the game over and over trying to spot any flaws that remain.
     - As the scene is finalized, re-generate the baked lightmap for the game.
+    
+  - Yifan Xu
+    - Write the contents in the animated book (storyline with tasks embedded in it)
+    - Edit the tasks and hints we have to make them doable in 5 minutes
+    - Try to find and fix bugs as well
