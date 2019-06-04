@@ -70,7 +70,7 @@ public class UIContent : MonoBehaviour
     {
         EventToVoice = new Dictionary<EventTypes, AudioClip>() {
         { EventTypes.WAKE_UP, audios[0] },
-            { EventTypes.PICKUP_CUTTER, audios[1] },
+            { EventTypes.TRY_TO_RELEASE, audios[1] },
             { EventTypes.CUTTER_CUT, audios[2] },
             { EventTypes.EXIT_BATHROOM, audios[3] }, // need trigger
             { EventTypes.AFTER_RADIO_MILITARY,audios[4] },

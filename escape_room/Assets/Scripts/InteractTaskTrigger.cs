@@ -74,9 +74,6 @@ public class InteractTaskTrigger : MonoBehaviour
             } else if (name == "Safe_Door_LOD0")
             {
                 manager.TriggerEvent(GameManagerScript.EventTypes.SAFEBOX_OPEN, 1);
-            } else if (name == "Cutter_skinned")
-            {
-                manager.TriggerEvent(GameManagerScript.EventTypes.PICKUP_CUTTER);
             }
         }
     }
