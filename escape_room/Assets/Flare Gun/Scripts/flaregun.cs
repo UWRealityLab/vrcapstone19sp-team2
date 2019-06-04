@@ -48,6 +48,12 @@ namespace Valve.VR.InteractionSystem
                 currentRound = 0;
             }
 
+            if (spareRounds == 0)
+            {
+                GameManagerScript manager = GameObject.Find("GameManager").GetComponent<GameManagerScript>();
+                manager.TriggerEvent(GameManagerScript.EventTypes.FAILED);
+            }
+
             GetComponent<Animation>().CrossFade("Shoot");
             GetComponent<AudioSource>().PlayOneShot(flareShotSound);
 
