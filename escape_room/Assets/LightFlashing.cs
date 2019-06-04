@@ -7,6 +7,7 @@ public class LightFlashing : MonoBehaviour
     // Start is called before the first frame update
 
     public GameObject redLight, blueLight;
+    public GameObject UICanvas;
 
     private float intensity;    
     void Start()
@@ -29,6 +30,11 @@ public class LightFlashing : MonoBehaviour
         {
             intensity = 0f;
         }
+    }
+
+    public void EnableGameOverCanvas()
+    {
+        UICanvas.SetActive(true);
     }
     
 }
