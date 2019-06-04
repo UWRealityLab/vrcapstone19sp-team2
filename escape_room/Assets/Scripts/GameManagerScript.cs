@@ -133,7 +133,7 @@ public class GameManagerScript : MonoBehaviour
         {
             triggeredEvents.Add(e);
             //UIDisplay.updateEventNarrative(EventToVoice[e]);
-            if (e == EventTypes.ESCAPED)
+            if (e == EventTypes.ESCAPED || e == EventTypes.FAILED)
             {
                 StartCoroutine(TriggerEventDelay(e, delay));
             }
