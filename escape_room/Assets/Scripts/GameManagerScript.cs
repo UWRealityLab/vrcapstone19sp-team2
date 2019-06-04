@@ -57,7 +57,8 @@ public class GameManagerScript : MonoBehaviour
         GLASS_BROKEN,
         FLARE_GUN_FIRED,
         HELI_ARRIVED,
-        ESCAPED
+        ESCAPED,
+        FAILED
     }
 
     public HashSet<TaskTypes> completedTasks;
@@ -132,8 +133,14 @@ public class GameManagerScript : MonoBehaviour
         {
             triggeredEvents.Add(e);
             //UIDisplay.updateEventNarrative(EventToVoice[e]);
-            //StartCoroutine(TriggerEventDelay(e, delay));
-            StartCoroutine(TriggerEventVoiceDelay(e, delay));
+            if (e == EventTypes.ESCAPED)
+            {
+                StartCoroutine(TriggerEventDelay(e, delay));
+            }
+            else
+            {
+                StartCoroutine(TriggerEventVoiceDelay(e, delay));
+            }
         }
     }
 
@@ -141,7 +148,13 @@ public class GameManagerScript : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         string words = EventToUI[e];
-        UIDisplay.updateEventUI(words, getUILength(e));
+        if (e == EventTypes.ESCAPED)
+        {
+            UIDisplay.updateEventUI(words, getUILength(e), false);
+        } else
+        {
+            UIDisplay.updateEventUI(words, getUILength(e), true);
+        }
     }
 
     IEnumerator TriggerEventVoiceDelay(EventTypes e, int delay=0)

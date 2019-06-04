@@ -26,6 +26,9 @@ public class HintsAndNarrativeScript : MonoBehaviour
     private List<string> msgList;
     private AudioSource WatchAudioSource;
 
+    private static Color RED = new Color(173, 0, 38, 255);
+    private static Color YELLOW = new Color(203, 246, 53, 255);
+
     void Start()
     {
         HeadHints = HeadUI.GetComponentInChildren<Text>();
@@ -40,8 +43,15 @@ public class HintsAndNarrativeScript : MonoBehaviour
         refreshWatchUI(tasksString, "New: ", task);
     }
 
-    public void updateEventUI(string hint, int delay)
+    public void updateEventUI(string hint, int delay, bool red)
     {
+        if (red)
+        {
+            HeadHints.color = RED;
+        } else
+        {
+            HeadHints.color = YELLOW;
+        }
         StartCoroutine(HeadHintsWait(hint, delay));
     }
 

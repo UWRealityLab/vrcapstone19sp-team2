@@ -60,7 +60,8 @@ public class UIContent : MonoBehaviour
             
             // TODO
             { EventTypes.HELI_ARRIVED, "Finally! There is the helicopter! I am out of here! What a strange night" },
-            { EventTypes.ESCAPED, "Game over" },
+            { EventTypes.ESCAPED, "You Escaped!" },
+            { EventTypes.FAILED, "You Failed!" },
         };
 
     public static Dictionary<EventTypes, AudioClip> EventToVoice;
