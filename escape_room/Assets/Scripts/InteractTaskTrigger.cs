@@ -26,8 +26,11 @@ public class InteractTaskTrigger : MonoBehaviour
             GameManagerScript manager = GameObject.Find("GameManager").GetComponent<GameManagerScript>();
             string name = this.gameObject.name;
             
-            if (name == "MusicBox" || name == "HandleTrigger" || name == "KeyHole")
+            if (name == "MusicboxInteractionTrigger" || name == "HandleTrigger" || name == "KeyHole")
             {
+                // Disable the trigger
+                GameObject.Find("MusicboxInteractionTrigger").SetActive(false);
+
                 manager.CompleteTask(GameManagerScript.TaskTypes.FIND_MUSIC_BOX);
                 manager.TriggerEvent(GameManagerScript.EventTypes.MUSIC_BOX_TOUCHED);
                 manager.TriggerTask(GameManagerScript.TaskTypes.KEY_HINT, GameManagerScript.EventTypes.MUSIC_BOX_TOUCHED);
