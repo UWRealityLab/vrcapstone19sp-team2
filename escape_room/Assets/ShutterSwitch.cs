@@ -8,10 +8,9 @@ public class ShutterSwitch : MonoBehaviour
 
     public GameObject shutter1;
     public GameObject shutter2;
+    public GameObject switchObject;
 
     public Transform onPosition, offPosition;
-
-    private Interactable interactable;
 
     public string trigger;
 
@@ -20,7 +19,6 @@ public class ShutterSwitch : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        interactable = this.GetComponent<Interactable>();
     }
 
     // Update is called once per frame
@@ -33,17 +31,17 @@ public class ShutterSwitch : MonoBehaviour
     {
         GrabTypes startingGrabType = hand.GetGrabStarting();
 
-        if (interactable.attachedToHand == null && startingGrabType != GrabTypes.None)
+        if (startingGrabType != GrabTypes.None)
         {           
             shutter1.GetComponent<Animator>().SetTrigger(trigger);
             shutter2.GetComponent<Animator>().SetTrigger(trigger);
 
-            if (Mathf.Abs(this.transform.localEulerAngles.x - onPosition.localEulerAngles.x) <= delta)
+            if (Mathf.Abs(switchObject.transform.localEulerAngles.x - onPosition.localEulerAngles.x) <= delta)
             {
-                this.transform.localEulerAngles = offPosition.localEulerAngles;
-            } else if (Mathf.Abs(this.transform.localEulerAngles.x - offPosition.localEulerAngles.x) <= delta)
+                switchObject.transform.localEulerAngles = offPosition.localEulerAngles;
+            } else if (Mathf.Abs(switchObject.transform.localEulerAngles.x - offPosition.localEulerAngles.x) <= delta)
             {
-                this.transform.localEulerAngles = onPosition.localEulerAngles;
+                switchObject.transform.localEulerAngles = onPosition.localEulerAngles;
             }
             this.gameObject.AddComponent<IgnoreHovering>();
         }
