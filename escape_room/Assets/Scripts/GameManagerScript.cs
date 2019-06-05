@@ -135,7 +135,7 @@ public class GameManagerScript : MonoBehaviour
             //UIDisplay.updateEventNarrative(EventToVoice[e]);
             if (e == EventTypes.ESCAPED || e == EventTypes.FAILED)
             {
-                StartCoroutine(TriggerEventDelay(e, delay));
+                StartCoroutine(TriggerUIEventDelay(e, delay));
             }
             else
             {
@@ -144,7 +144,7 @@ public class GameManagerScript : MonoBehaviour
         }
     }
 
-    IEnumerator TriggerEventDelay(EventTypes e, float delay=0)
+    IEnumerator TriggerUIEventDelay(EventTypes e, float delay=0)
     {
         yield return new WaitForSeconds(delay);
         string words = EventToUI[e];
