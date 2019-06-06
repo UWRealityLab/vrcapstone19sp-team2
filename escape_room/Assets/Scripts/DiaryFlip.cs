@@ -27,7 +27,7 @@ public class DiaryFlip : MonoBehaviour
     private void HandAttachedUpdate(Hand hand)
     {
         if (RightTurn.GetState(hand.handType)) {
-            Debug.Log("HI");
+            // Debug.Log("HI");
             if (!isOnRight)
             {
                 if (++count >= contents.Length)
@@ -37,7 +37,7 @@ public class DiaryFlip : MonoBehaviour
             }
         } else if (LeftTurn.GetState(hand.handType))
         {
-            Debug.Log("HI");
+            // Debug.Log("HI");
             if (!isOnLeft)
             {
                 if (--count < 0)

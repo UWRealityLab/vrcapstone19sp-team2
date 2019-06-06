@@ -21,16 +21,9 @@ public class BreakableObject:MonoBehaviour{
 	bool broken;                                    //Determines if the object has been broken or not 
 	Transform frags;
 
-	public void OnCollisionEnter(Collision collision) {
-	    if (collision.relativeVelocity.magnitude > durability) {
-            // triggerBreak();
-        }
-	}
-
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision c)
     {
-        Debug.Log(other.name);
-        if (other.name == "Bullet(Clone)")
+        if (c.collider.name == "Bullet(Clone)")
         {
             triggerBreak();
         }

@@ -37,7 +37,7 @@ namespace Valve.VR.InteractionSystem
         public float despawnTime = 3.0f;
 
         public bool shootAble = true;
-        public float waitBeforeNextShot = 0.25f;
+        public float waitBeforeNextShot = 0.20f;
         private void HandAttachedUpdate(Hand hand)
         {
             if (enable)
@@ -109,7 +109,9 @@ namespace Valve.VR.InteractionSystem
 
             ani.Play("M9Hammer");
             audiosource.clip = mag;
-            audiosource.Play();            
+            audiosource.Play();
+
+            currentRound = 7;
         }
 
         public void playPull()

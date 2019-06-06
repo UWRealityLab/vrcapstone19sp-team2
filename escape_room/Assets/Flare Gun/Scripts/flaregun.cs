@@ -82,7 +82,7 @@ namespace Valve.VR.InteractionSystem
         {
             if (GetComponent<Interactable>().attachedToHand)
             {
-                if (other.name == "FlareRoundTrigger")
+                if (other.name == "FlareRoundTrigger" && other.gameObject.GetComponentInParent<Interactable>().attachedToHand)
                 {
                     if (Reload())
                     {

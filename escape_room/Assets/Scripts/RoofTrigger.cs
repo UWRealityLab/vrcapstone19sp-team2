@@ -17,11 +17,11 @@ public class RoofTrigger : MonoBehaviour
     {
         
     }
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision c)
     {
         // Debug.Log(other.name);
 
-        if (!executed && other.name == "flarebullet(Clone)")
+        if (!executed && c.collider.name == "flarebullet(Clone)")
         {
             executed = true;
             Helicopter.SetTrigger("Fly");
