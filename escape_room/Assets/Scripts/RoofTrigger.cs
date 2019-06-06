@@ -17,11 +17,9 @@ public class RoofTrigger : MonoBehaviour
     {
         
     }
-    private void OnCollisionEnter(Collision c)
+    private void OnTriggerEnter(Collider c)
     {
-        // Debug.Log(other.name);
-
-        if (!executed && c.collider.name == "flarebullet(Clone)")
+        if (!executed && c.name == "flarebullet(Clone)")
         {
             executed = true;
             Helicopter.SetTrigger("Fly");

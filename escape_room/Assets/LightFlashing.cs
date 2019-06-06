@@ -8,6 +8,7 @@ public class LightFlashing : MonoBehaviour
 
     public GameObject redLight, blueLight;
     public GameObject UICanvas;
+    public float maxIntensity = 3f;
 
     private float intensity;    
     void Start()
@@ -23,8 +24,8 @@ public class LightFlashing : MonoBehaviour
 
     private void FixedUpdate()
     {
-        redLight.GetComponent<Light>().intensity = Mathf.Abs(Mathf.Sin(intensity)) * 3f;
-        blueLight.GetComponent<Light>().intensity = Mathf.Abs(Mathf.Cos(intensity)) * 3f;
+        redLight.GetComponent<Light>().intensity = Mathf.Abs(Mathf.Sin(intensity)) * maxIntensity;
+        blueLight.GetComponent<Light>().intensity = Mathf.Abs(Mathf.Cos(intensity)) * maxIntensity;
         intensity += 0.023f;
         if(intensity >= 10000 * Mathf.PI)
         {

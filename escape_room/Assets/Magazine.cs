@@ -32,7 +32,7 @@ namespace Valve.VR.InteractionSystem
                     }
                     //var magazine = Instantiate(this.gameObject, this.gameObject.transform.position, this.gameObject.transform.rotation);
                     //this.gameObject.SetActive(false);
-
+                    Destroy(this.GetComponent<InteractTaskTrigger>());
                     Destroy(this.GetComponent<Interactable>());
 
                     magazine_hidden.SetActive(true);
