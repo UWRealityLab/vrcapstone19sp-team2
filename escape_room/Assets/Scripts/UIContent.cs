@@ -102,7 +102,6 @@ public class UIContent : MonoBehaviour
             { EventTypes.GLASS_BROKEN, audios[31] },
             //{ EventTypes.FLARE_GUN_FIRED, audios[31] },
             
-            // TODO
             { EventTypes.HELI_ARRIVED, audios[32] },
             //{ EventTypes.ESCAPED, audios[0]},
     };
