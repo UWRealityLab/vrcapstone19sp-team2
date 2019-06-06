@@ -23,8 +23,8 @@ public class LightFlashing : MonoBehaviour
 
     private void FixedUpdate()
     {
-        redLight.GetComponent<Light>().intensity = Mathf.Abs(Mathf.Sin(intensity)) * 1.5f;
-        blueLight.GetComponent<Light>().intensity = Mathf.Abs(Mathf.Cos(intensity)) * 1.5f;
+        redLight.GetComponent<Light>().intensity = Mathf.Abs(Mathf.Sin(intensity)) * 3f;
+        blueLight.GetComponent<Light>().intensity = Mathf.Abs(Mathf.Cos(intensity)) * 3f;
         intensity += 0.023f;
         if(intensity >= 10000 * Mathf.PI)
         {

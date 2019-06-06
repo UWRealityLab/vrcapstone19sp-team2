@@ -38,6 +38,8 @@ namespace Valve.VR.InteractionSystem
         [Tooltip("When detaching the object, should it return to its original parent?")]
         public bool restoreOriginalParent = false;
 
+        public GameObject PlayerPosition;
+
 
 
         protected VelocityEstimator velocityEstimator;
@@ -75,7 +77,8 @@ namespace Valve.VR.InteractionSystem
         {
             if (startFly)
             {
-                player.transform.position = this.transform.position;
+                //player.transform.position = this.transform.position;
+                player.transform.position = PlayerPosition.transform.position;
             }
         }
 
