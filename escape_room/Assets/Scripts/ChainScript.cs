@@ -43,8 +43,9 @@ public class ChainScript : MonoBehaviour
         {
             executed = true;
             // Trigger
-            manager.TriggerTask(TaskTypes.RELEASE, EventTypes.WAKE_UP, 1);
-            manager.TriggerEvent(EventTypes.WAKE_UP, 1);
+            manager.TriggerTask(TaskTypes.RELEASE, EventTypes.WAKE_UP, getAudioLength(EventTypes.TRY_TO_RELEASE) + 0.2f);
+            manager.TriggerEvent(EventTypes.WAKE_UP, 0.5f);
+            manager.TriggerEvent(EventTypes.TRY_TO_RELEASE, getAudioLength(EventTypes.WAKE_UP) + 1);
         }
 
         if (!broke)
@@ -90,7 +91,7 @@ public class ChainScript : MonoBehaviour
 
     IEnumerator HintWait()
     {
-        yield return new WaitForSeconds(getUILength(EventTypes.CUTTER_CUT));
+        yield return new WaitForSeconds(getAudioLength(EventTypes.CUTTER_CUT));
         // Enable Hint
         Teleport.GetComponent<Teleport>().ShowTeleportHint();
     }

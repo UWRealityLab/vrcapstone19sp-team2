@@ -15,6 +15,7 @@ public class LightControl : MonoBehaviour
     private GameObject[] LandE;
 
     public GameObject switchA, switchB, switchC;
+    public GameObject screen;
     public GameObject lightMapController;
     private bool freelyOff = false;
 
@@ -57,6 +58,7 @@ public class LightControl : MonoBehaviour
             l.GetComponent<Light>().enabled = lightOn;
         }
         lightMapController.GetComponent<LightMapSwitcher>().SwapLightmaps(1);
+        screen.SetActive(false);
     }
 
     public void switchLight()
@@ -120,6 +122,7 @@ public class LightControl : MonoBehaviour
                     l.GetComponent<Light>().enabled = lightOn;
                 }
                 lightMapController.GetComponent<LightMapSwitcher>().SwapLightmaps(0);
+                screen.SetActive(true);
 
                 // Trigger
                 manager.CompleteTask(GameManagerScript.TaskTypes.LIGHT);

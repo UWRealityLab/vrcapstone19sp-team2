@@ -26,8 +26,11 @@ public class InteractTaskTrigger : MonoBehaviour
             GameManagerScript manager = GameObject.Find("GameManager").GetComponent<GameManagerScript>();
             string name = this.gameObject.name;
             
-            if (name == "MusicBox" || name == "HandleTrigger" || name == "KeyHole")
+            if (name == "MusicboxInteractionTrigger" || name == "HandleTrigger" || name == "KeyHole")
             {
+                // Disable the trigger
+                GameObject.Find("MusicboxInteractionTrigger").SetActive(false);
+
                 manager.CompleteTask(GameManagerScript.TaskTypes.FIND_MUSIC_BOX);
                 manager.TriggerEvent(GameManagerScript.EventTypes.MUSIC_BOX_TOUCHED);
                 manager.TriggerTask(GameManagerScript.TaskTypes.KEY_HINT, GameManagerScript.EventTypes.MUSIC_BOX_TOUCHED);
@@ -74,9 +77,6 @@ public class InteractTaskTrigger : MonoBehaviour
             } else if (name == "Safe_Door_LOD0")
             {
                 manager.TriggerEvent(GameManagerScript.EventTypes.SAFEBOX_OPEN, 1);
-            } else if (name == "Cutter_skinned")
-            {
-                manager.TriggerEvent(GameManagerScript.EventTypes.PICKUP_CUTTER);
             }
         }
     }

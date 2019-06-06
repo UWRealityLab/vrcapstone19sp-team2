@@ -28,7 +28,7 @@ public class GameManagerScript : MonoBehaviour
     {
         NULL,
         WAKE_UP,
-        PICKUP_CUTTER,
+        TRY_TO_RELEASE,
         CUTTER_CUT,
         EXIT_BATHROOM,
         AFTER_RADIO_MILITARY,
@@ -57,7 +57,8 @@ public class GameManagerScript : MonoBehaviour
         GLASS_BROKEN,
         FLARE_GUN_FIRED,
         HELI_ARRIVED,
-        ESCAPED
+        ESCAPED,
+        FAILED
     }
 
     public HashSet<TaskTypes> completedTasks;
@@ -76,12 +77,12 @@ public class GameManagerScript : MonoBehaviour
         UIDisplay = UIDisplaySystem.GetComponent<HintsAndNarrativeScript>();
     }
 
-    public void TriggerTask(TaskTypes task, EventTypes afterUI=EventTypes.NULL, int extraDelay = 0)
+    public void TriggerTask(TaskTypes task, EventTypes afterUI=EventTypes.NULL, float extraDelay = 0.2f)
     {
-        StartCoroutine(TriggerDelay(task, afterUI == EventTypes.NULL ? 0 + extraDelay : getUILength(afterUI) + extraDelay));
+        StartCoroutine(TriggerDelay(task, afterUI == EventTypes.NULL ? 0 + extraDelay : getAudioLength(afterUI) + extraDelay));
     }
 
-    IEnumerator TriggerDelay(TaskTypes task, int delay)
+    IEnumerator TriggerDelay(TaskTypes task, float delay)
     {
         yield return new WaitForSeconds(delay);
         if (!activeTasks.Contains(task) && !completedTasks.Contains(task))
@@ -126,25 +127,37 @@ public class GameManagerScript : MonoBehaviour
             Debug.Log(s);
         }
     }
-    
-    public void TriggerEvent(EventTypes e, int delay = 0) {
+
+    public void TriggerEvent(EventTypes e, float delay = 0) {
         if (!triggeredEvents.Contains(e))
         {
             triggeredEvents.Add(e);
             //UIDisplay.updateEventNarrative(EventToVoice[e]);
-            //StartCoroutine(TriggerEventDelay(e, delay));
-            StartCoroutine(TriggerEventVoiceDelay(e, delay));
+            if (e == EventTypes.ESCAPED || e == EventTypes.FAILED)
+            {
+                StartCoroutine(TriggerUIEventDelay(e, delay));
+            }
+            else
+            {
+                StartCoroutine(TriggerEventVoiceDelay(e, delay));
+            }
         }
     }
 
-    IEnumerator TriggerEventDelay(EventTypes e, int delay=0)
+    IEnumerator TriggerUIEventDelay(EventTypes e, float delay=0)
     {
         yield return new WaitForSeconds(delay);
         string words = EventToUI[e];
-        UIDisplay.updateEventUI(words, getUILength(e));
+        if (e == EventTypes.ESCAPED)
+        {
+            UIDisplay.updateEventUI(words, getUILength(e), false);
+        } else
+        {
+            UIDisplay.updateEventUI(words, getUILength(e), true);
+        }
     }
 
-    IEnumerator TriggerEventVoiceDelay(EventTypes e, int delay=0)
+    IEnumerator TriggerEventVoiceDelay(EventTypes e, float delay =0)
     {
         yield return new WaitForSeconds(delay);
         UIDisplay.updateEventNarrative(EventToVoice[e]);
@@ -152,5 +165,10 @@ public class GameManagerScript : MonoBehaviour
 
     public static int getUILength(EventTypes e) {
         return Mathf.Max(EventToUI[e].Split(' ').Length / 2, UIContent.UI_MIN_DELAY_SECONDS);
+    }
+
+    public static float getAudioLength(EventTypes e)
+    {
+        return EventToVoice[e].length;
     }
 }
