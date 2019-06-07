@@ -33,8 +33,8 @@ public class ShutterSwitch : MonoBehaviour
 
         if (startingGrabType != GrabTypes.None)
         {           
-            shutter1.GetComponent<Animator>().SetTrigger(trigger);
-            // shutter2.GetComponent<Animator>().SetTrigger(trigger);
+            // shutter1.GetComponent<Animator>().SetTrigger(trigger);
+            shutter2.GetComponent<Animator>().SetTrigger(trigger);
 
             if (Mathf.Abs(switchObject.transform.localEulerAngles.x - onPosition.localEulerAngles.x) <= delta)
             {
