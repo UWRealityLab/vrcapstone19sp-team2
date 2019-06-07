@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Valve.VR.InteractionSystem;
 
-public class SecreteDoorSwitch : MonoBehaviour
+public class SecretDoorSwitch : MonoBehaviour
 {
     public Animator ScreteDoor;
+    private bool enabled = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,16 +21,30 @@ public class SecreteDoorSwitch : MonoBehaviour
 
     public void Open()
     {
-        StartCoroutine(OpenWait());
+        if (enabled)
+        {
+            disable();
+            StartCoroutine(OpenWait());
+        }
     }
 
     IEnumerator OpenWait()
     {
         // Disable door circular 
         // To disable hovering
-        ScreteDoor.SetTrigger("move");
+        ScreteDoor.SetTrigger("open");
         yield return new WaitForSeconds(5);
         // To enable hovering:
-        ScreteDoor.SetTrigger("move");
+        ScreteDoor.SetTrigger("close");
+    }
+
+    public void enable()
+    {
+        enabled = true;
+    }
+
+    public void disable()
+    {
+        enabled = false;
     }
 }

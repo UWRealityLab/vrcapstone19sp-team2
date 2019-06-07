@@ -36,6 +36,7 @@ public class InteractTaskTrigger : MonoBehaviour
                 manager.TriggerTask(GameManagerScript.TaskTypes.KEY_HINT, GameManagerScript.EventTypes.MUSIC_BOX_TOUCHED);
             } else if (name == "IceCubeWithKey")
             {
+                manager.CompleteTask(GameManagerScript.TaskTypes.KEY_HINT);
                 manager.CompleteTask(GameManagerScript.TaskTypes.KEY);
                 manager.TriggerEvent(GameManagerScript.EventTypes.ICE_CUBE_TOUCHED);
                 manager.TriggerTask(GameManagerScript.TaskTypes.ICE, GameManagerScript.EventTypes.ICE_CUBE_TOUCHED);
@@ -77,6 +78,9 @@ public class InteractTaskTrigger : MonoBehaviour
             } else if (name == "Safe_Door_LOD0")
             {
                 manager.TriggerEvent(GameManagerScript.EventTypes.SAFEBOX_OPEN, 1);
+            } else if (name == "StoveTrigger2" || name == "StoveTrigger1")
+            {
+                manager.TriggerEvent(GameManagerScript.EventTypes.GAS_STOVE);
             }
         }
     }

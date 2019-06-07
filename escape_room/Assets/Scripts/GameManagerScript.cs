@@ -58,7 +58,8 @@ public class GameManagerScript : MonoBehaviour
         FLARE_GUN_FIRED,
         HELI_ARRIVED,
         ESCAPED,
-        FAILED
+        FAILED,
+        GAS_STOVE,
     }
 
     public HashSet<TaskTypes> completedTasks;

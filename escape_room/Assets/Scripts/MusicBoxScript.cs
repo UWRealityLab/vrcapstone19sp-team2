@@ -20,12 +20,12 @@ public class MusicBoxScript : MonoBehaviour
 
     public void SecreteDoorTrigger()
     {
-        SecreteDoor.GetComponent<Animator>().SetTrigger("move");
+        SecreteDoor.GetComponent<Animator>().SetTrigger("open");
     }
     
     public void EnableHandleTrigger()
     {
-        SecreteDoor.GetComponent<Animator>().SetTrigger("move");
+        SecreteDoor.GetComponent<Animator>().SetTrigger("close");
         Destroy(HandleTrigger.GetComponent<IgnoreHovering>());
     }
 

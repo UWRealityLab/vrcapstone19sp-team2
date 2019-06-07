@@ -22,7 +22,7 @@ public class UIContent : MonoBehaviour
         { TaskTypes.KEY, "Find key"},
         { TaskTypes.ICE, "Get the key out"},
         { TaskTypes.AMMO, "Find more ammo"},
-        { TaskTypes.CURTAIN, "Open the curtain"}
+        { TaskTypes.CURTAIN, "Open skylight curtain"}
     };
 
     public static Dictionary<EventTypes, string> EventToUI =
@@ -104,6 +104,7 @@ public class UIContent : MonoBehaviour
             //{ EventTypes.FLARE_GUN_FIRED, audios[31] },
             
             { EventTypes.HELI_ARRIVED, audios[32] },
+            { EventTypes.GAS_STOVE, audios[33] },
             //{ EventTypes.ESCAPED, audios[0]},
     };
     }

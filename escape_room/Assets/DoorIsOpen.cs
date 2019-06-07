@@ -7,6 +7,8 @@ public class DoorIsOpen : MonoBehaviour
     public Transform open;
 
     private SecretRoomEnterTrigger enterTrigger;
+    public SecretDoorSwitch doorSwitch;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +32,7 @@ public class DoorIsOpen : MonoBehaviour
             GameManagerScript manager = GameObject.Find("GameManager").GetComponent<GameManagerScript>();
             manager.TriggerEvent(GameManagerScript.EventTypes.DOOR_CLOSED_WHILE_IN);
         }
+        doorSwitch.enable();
     }
 
     public void PlaySound()
