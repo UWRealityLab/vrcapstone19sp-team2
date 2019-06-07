@@ -460,3 +460,10 @@ This week, we finished the UI elements for the game, and were able to build the 
     - Write the contents in the animated book (storyline with tasks embedded in it)
     - Edit the tasks and hints we have to make them doable in 5 minutes
     - Try to find and fix bugs as well
+    
+### Week 10
+Last week of class! This week we are mainly working on game improvements and bug fixes.
+  - Jiwen Wu
+    - Continued working on the helicopter
+    - Recorded more audio to better enhance the game UI system
+    - Bug fixes
