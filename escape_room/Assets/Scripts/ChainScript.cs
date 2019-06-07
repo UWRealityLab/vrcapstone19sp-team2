@@ -25,6 +25,7 @@ public class ChainScript : MonoBehaviour
 
     protected float MaxLength;
     private bool executed = false;
+    private List<GameObject> chainsOnHand = new List<GameObject>();
 
     // Start is called before the first frame update
     void Start()
@@ -67,6 +68,7 @@ public class ChainScript : MonoBehaviour
 
     public void Break()
     {
+        // UpdateChainsOnHand();
         if (!broke)
         {
             broke = true;
@@ -101,6 +103,22 @@ public class ChainScript : MonoBehaviour
         if (enableHaptics)
         {
             hapticAction.Execute(0, 100f / 1000000f, 1000000f / 100f, 1, SteamVR_Input_Sources.LeftHand);
+        }
+    }
+
+    public void UpdateChainsOnHand()
+    {
+        chainsOnHand.Clear();
+        GameObject current = this.gameObject;
+        while (current.GetComponent<CharacterJoint>())
+        {
+            current = GetComponent<CharacterJoint>().connectedBody.gameObject;
+            chainsOnHand.Add(current);
+        }
+
+        foreach (GameObject chain in chainsOnHand)
+        {
+            chain.transform.parent = ChainEnd.transform;
         }
     }
 }
