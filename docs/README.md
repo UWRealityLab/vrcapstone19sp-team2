@@ -467,3 +467,11 @@ Last week of class! This week we are mainly working on game improvements and bug
     - Continued working on the helicopter
     - Recorded more audio to better enhance the game UI system
     - Bug fixes
+    - Finished poster.
+  - Yexiang Shao
+    - Had a cold :(.
+    - Tried to improve the helicopter as well but termed out it was too complicated. 
+    - Added "Game Over".
+    - Fix sound issues such as secret door open/close.
+    - We had a list of bugs / to-dos expected to be done this weekend. Most of them are done. I will be responsible for highlighting the objects.
+    - Found assets highlighting important game objects.
