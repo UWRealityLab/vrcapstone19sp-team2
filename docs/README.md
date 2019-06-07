@@ -475,3 +475,8 @@ Last week of class! This week we are mainly working on game improvements and bug
     - Fix sound issues such as secret door open/close.
     - We had a list of bugs / to-dos expected to be done this weekend. Most of them are done. I will be responsible for highlighting the objects.
     - Found assets highlighting important game objects.
+  - Qian Yan
+    - Fix many game play issues - script, UI, interaction, etc.
+    - Help with the lighting of the helicopter
+    - Add a CCTV in the game scene
+      ![CCTV](pics/cctv.gif)
