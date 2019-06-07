@@ -16,7 +16,7 @@ public class LightSwitch : MonoBehaviour
     {
         GrabTypes startingGrabType = hand.GetGrabStarting();
 
-        if (startingGrabType == GrabTypes.Pinch)
+        if (startingGrabType != GrabTypes.None)
         {
             on = !on;
             playSound();

@@ -95,7 +95,10 @@ public class LightControl : MonoBehaviour
                 l.GetComponent<Light>().enabled = lightOn;
             }
             lightMapController.GetComponent<LightMapSwitcher>().SwapLightmaps(1);
-        } else
+
+            screen.SetActive(lightOn);
+        }
+        else
         {
             //    Debug.Log("mmp");
             //    Debug.Log("AAtStart: " + AAtStart + ", BAtStart: " + BAtStart + ", CAtstart: " + CAtStart);
