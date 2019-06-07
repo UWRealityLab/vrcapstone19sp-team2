@@ -9,7 +9,7 @@ using static UIContent;
 
 public class ChainScript : MonoBehaviour
 {
-    public Transform ChainStart;
+    public GameObject ChainStart;
     public GameObject ChainEnd;
     public GameObject Hand;
     public GameObject Teleport;
@@ -17,6 +17,8 @@ public class ChainScript : MonoBehaviour
     public bool enableHaptics = true;
     public bool enableTeleport = false;
     public bool broke = false;
+
+    public List<GameObject> ChainParts;
 
     // Haptics
     public SteamVR_Action_Vibration hapticAction;
@@ -30,7 +32,7 @@ public class ChainScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        MaxLength = (ChainEnd.transform.position - ChainStart.position).magnitude + LengthOffset;
+        MaxLength = (ChainEnd.transform.position - ChainStart.transform.position).magnitude + LengthOffset;
         Teleport.GetComponent<Teleport>().enabled = enableTeleport;
 
         // Cancel TeleportHint
@@ -54,10 +56,10 @@ public class ChainScript : MonoBehaviour
             // Hide Left Hand
             Hand.GetComponent<Hand>().HideController(true);
 
-            Vector3 handDirection = (Hand.transform.position - ChainStart.position).normalized;
-            float handDistance = (Hand.transform.position - ChainStart.position).magnitude;
+            Vector3 handDirection = (Hand.transform.position - ChainStart.transform.position).normalized;
+            float handDistance = (Hand.transform.position - ChainStart.transform.position).magnitude;
 
-            ChainEnd.transform.position = ChainStart.position + handDirection * Mathf.Min(handDistance, MaxLength);
+            ChainEnd.transform.position = ChainStart.transform.position + handDirection * Mathf.Min(handDistance, MaxLength);
 
             if (handDistance > MaxLength + LengthOffset)
             {
@@ -75,7 +77,8 @@ public class ChainScript : MonoBehaviour
             // Show hand
             Hand.GetComponent<Hand>().ShowController(true);
             // disable self
-            this.GetComponent<ChainScript>().enabled = false;
+            // this.GetComponent<ChainScript>().enabled = false;
+
             // Attach end to hand
             //Hand.GetComponent<Hand>().AttachObject(ChainEnd, GrabTypes.Scripted, Valve.VR.InteractionSystem.Hand.AttachmentFlags.ParentToHand | Valve.VR.InteractionSystem.Hand.AttachmentFlags.DetachFromOtherHand | Valve.VR.InteractionSystem.Hand.AttachmentFlags.TurnOnKinematic, ChainEnd.transform.Find("AttachmentOffset"));
             ChainEnd.transform.parent = Hand.transform;
@@ -108,12 +111,22 @@ public class ChainScript : MonoBehaviour
 
     public void UpdateChainsOnHand()
     {
-        chainsOnHand.Clear();
-        GameObject current = this.gameObject;
-        while (current.GetComponent<CharacterJoint>())
+        // Reset all to ChainStart's parent
+        foreach (GameObject chain in ChainParts)
         {
-            current = GetComponent<CharacterJoint>().connectedBody.gameObject;
-            chainsOnHand.Add(current);
+            chain.transform.parent = ChainStart.transform.parent;
+        }
+
+        chainsOnHand.Clear();
+        foreach (GameObject chain in ChainParts)
+        {
+            if (chain.GetComponent<CharacterJoint>())
+            {
+                chainsOnHand.Add(chain);
+            } else
+            {
+                break;
+            }
         }
 
         foreach (GameObject chain in chainsOnHand)
