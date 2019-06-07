@@ -16,6 +16,7 @@ public class MusicBoxScript : MonoBehaviour
         // trigger
         GameManagerScript manager = GameObject.Find("GameManager").GetComponent<GameManagerScript>();
         manager.TriggerEvent(GameManagerScript.EventTypes.MUSIC_BOX_KEY_INSERTED);
+        ShowTriggerHint(GameManagerScript.getAudioLength(GameManagerScript.EventTypes.MUSIC_BOX_KEY_INSERTED));
     }
 
     public void SecreteDoorTrigger()
@@ -34,5 +35,22 @@ public class MusicBoxScript : MonoBehaviour
         AudioSource audioSource = this.GetComponent<AudioSource>();
         audioSource.clip = KeyInsertionSound;
         audioSource.Play();
+    }
+
+    public void ShowTriggerHint(float delay)
+    {
+        StartCoroutine(HintWait(delay));
+    }
+
+    IEnumerator HintWait(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        HandleTrigger.GetComponent<Outline>().enabled = true;
+        yield return new WaitForSeconds(0.5f);
+        HandleTrigger.GetComponent<Outline>().enabled = false;
+        yield return new WaitForSeconds(0.5f);
+        HandleTrigger.GetComponent<Outline>().enabled = true;
+        yield return new WaitForSeconds(0.5f);
+        HandleTrigger.GetComponent<Outline>().enabled = false;
     }
 }

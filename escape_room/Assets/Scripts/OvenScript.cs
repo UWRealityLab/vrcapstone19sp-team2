@@ -10,6 +10,7 @@ public class OvenScript : MonoBehaviour
     public GameObject key;
     public GameObject iceCubePos;
     public GameObject doorCollider;
+    public GameObject door;
     public AudioClip ovenFinishedSound;
     public AudioClip ovenDoorClosedSound;
 
@@ -66,5 +67,22 @@ public class OvenScript : MonoBehaviour
             cubeIn = false;
             executed = true;
         }
+    }
+
+    public void ShowTriggerHint(float delay)
+    {
+        StartCoroutine(HintWait(delay));
+    }
+
+    IEnumerator HintWait(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        door.GetComponent<Outline>().enabled = true;
+        yield return new WaitForSeconds(0.5f);
+        door.GetComponent<Outline>().enabled = false;
+        yield return new WaitForSeconds(0.5f);
+        door.GetComponent<Outline>().enabled = true;
+        yield return new WaitForSeconds(0.5f);
+        door.GetComponent<Outline>().enabled = false;
     }
 }

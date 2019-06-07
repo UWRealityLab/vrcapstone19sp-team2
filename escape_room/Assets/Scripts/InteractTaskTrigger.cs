@@ -81,6 +81,7 @@ public class InteractTaskTrigger : MonoBehaviour
             } else if (name == "StoveTrigger2" || name == "StoveTrigger1")
             {
                 manager.TriggerEvent(GameManagerScript.EventTypes.GAS_STOVE);
+                GameObject.Find("RFAIPP_Gas_Stove (1)").GetComponent<OvenScript>().ShowTriggerHint(GameManagerScript.getAudioLength(GameManagerScript.EventTypes.GAS_STOVE));
             }
         }
     }
