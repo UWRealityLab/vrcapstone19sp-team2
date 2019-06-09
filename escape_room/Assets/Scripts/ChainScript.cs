@@ -70,7 +70,7 @@ public class ChainScript : MonoBehaviour
 
     public void Break()
     {
-        // UpdateChainsOnHand();
+        UpdateChainsOnHand();
         if (!broke)
         {
             broke = true;
@@ -111,27 +111,18 @@ public class ChainScript : MonoBehaviour
 
     public void UpdateChainsOnHand()
     {
-        // Reset all to ChainStart's parent
-        foreach (GameObject chain in ChainParts)
+        bool broke = ChainEnd.GetComponent<CharacterJoint>() == null;
+        foreach (GameObject chainPart in ChainParts)
         {
-            chain.transform.parent = ChainStart.transform.parent;
-        }
-
-        chainsOnHand.Clear();
-        foreach (GameObject chain in ChainParts)
-        {
-            if (chain.GetComponent<CharacterJoint>())
+            if (!broke)
             {
-                chainsOnHand.Add(chain);
-            } else
-            {
-                break;
+                chainPart.transform.parent = ChainEnd.transform;
+                broke = chainPart.GetComponent<CharacterJoint>() == null;
             }
-        }
-
-        foreach (GameObject chain in chainsOnHand)
-        {
-            chain.transform.parent = ChainEnd.transform;
+            else
+            {
+                chainPart.transform.parent = ChainStart.transform.parent;
+            }
         }
     }
 }
