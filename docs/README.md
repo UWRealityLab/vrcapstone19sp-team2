@@ -488,3 +488,6 @@ Last week of class! This week we are mainly working on game improvements and bug
     - Help with the lighting of the helicopter
     - Add a CCTV in the game scene
       ![CCTV](pics/cctv.gif)
+
+### Teaser Video
+[![]](https://www.youtube.com/watch?v=bmOlb51Y3ww "Teaser")
