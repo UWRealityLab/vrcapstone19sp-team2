@@ -490,4 +490,4 @@ Last week of class! This week we are mainly working on game improvements and bug
       ![CCTV](pics/cctv.gif)
 
 ### Teaser Video
-[![(https://i.ytimg.com/vi/bmOlb51Y3ww/hqdefault.jpg?sqp=-oaymwEZCNACELwBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLAx1g0JRM9McQTbLFQGtEIfKsI5ng)]](https://www.youtube.com/watch?v=bmOlb51Y3ww "Teaser")
+[![](https://youtu.be/bmOlb51Y3ww?t=55)](https://www.youtube.com/watch?v=bmOlb51Y3ww "Teaser")
