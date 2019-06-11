@@ -26,4 +26,9 @@ public class CurtainScript : MonoBehaviour
         manager.CompleteTask(GameManagerScript.TaskTypes.CURTAIN);
         manager.TriggerEvent(GameManagerScript.EventTypes.CURTAIN_OPEN);
     }
+
+    public void PlaySound()
+    {
+        this.GetComponent<AudioSource>().Play();
+    }
 }
