@@ -375,10 +375,13 @@ public class AnimatedBookController : MonoBehaviour {
 
             manager.TriggerEvent(GameManagerScript.EventTypes.AFTER_DIARY_FUSE_PAGE, UIContent.UI_MIN_DELAY_SECONDS);
             manager.TriggerTask(GameManagerScript.TaskTypes.FIND_FUSE, GameManagerScript.EventTypes.AFTER_DIARY_FUSE_PAGE, UIContent.UI_MIN_DELAY_SECONDS);
-            manager.TriggerEvent(GameManagerScript.EventTypes.AFTER_DIARY_MUSIC_PAGE, GameManagerScript.getAudioLength(GameManagerScript.EventTypes.AFTER_DIARY_FUSE_PAGE) + UIContent.UI_MIN_DELAY_SECONDS);
-            manager.TriggerTask(GameManagerScript.TaskTypes.FIND_MUSIC_BOX, GameManagerScript.EventTypes.AFTER_DIARY_FUSE_PAGE, GameManagerScript.getAudioLength(GameManagerScript.EventTypes.AFTER_DIARY_FUSE_PAGE) + UIContent.UI_MIN_DELAY_SECONDS);
         }
         else if (currentPage == 2)
+        {
+            manager.TriggerEvent(GameManagerScript.EventTypes.AFTER_DIARY_MUSIC_PAGE, UIContent.UI_MIN_DELAY_SECONDS);
+            manager.TriggerTask(GameManagerScript.TaskTypes.FIND_MUSIC_BOX, GameManagerScript.EventTypes.AFTER_DIARY_MUSIC_PAGE, UIContent.UI_MIN_DELAY_SECONDS);
+        }
+        else if (currentPage == 3)
         {
             manager.TriggerEvent(GameManagerScript.EventTypes.AFTER_DIARY_FLARE_GUN, UIContent.UI_MIN_DELAY_SECONDS);
             manager.TriggerTask(GameManagerScript.TaskTypes.FIND_FLARE, GameManagerScript.EventTypes.AFTER_DIARY_FLARE_GUN, UIContent.UI_MIN_DELAY_SECONDS);

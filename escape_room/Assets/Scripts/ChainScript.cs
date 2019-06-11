@@ -117,11 +117,13 @@ public class ChainScript : MonoBehaviour
             if (!broke)
             {
                 chainPart.transform.parent = ChainEnd.transform;
+                chainPart.GetComponent<BoxCollider>().enabled = false;
                 broke = chainPart.GetComponent<CharacterJoint>() == null;
             }
             else
             {
                 chainPart.transform.parent = ChainStart.transform.parent;
+                chainPart.GetComponent<BoxCollider>().enabled = true;
             }
         }
     }

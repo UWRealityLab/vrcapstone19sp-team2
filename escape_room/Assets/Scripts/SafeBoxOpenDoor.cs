@@ -21,4 +21,10 @@ public class SafeBoxOpenDoor : MonoBehaviour
         Destroy(GetComponent<IgnoreHovering>());
         this.GetComponent<CircularDrive>().enabled = true;
     }
+
+    public void DoorOpen()
+    {
+        GameManagerScript manager = GameObject.Find("GameManager").GetComponent<GameManagerScript>();
+        manager.TriggerEvent(GameManagerScript.EventTypes.SAFEBOX_OPEN, 1);
+    }
 }
