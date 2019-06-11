@@ -6,6 +6,9 @@ using Valve.VR.InteractionSystem;
 [RequireComponent(typeof(Interactable))]
 public class InteractTaskTrigger : MonoBehaviour
 {
+
+    public GameObject MusicboxInteractionTrigger = null;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,14 +32,17 @@ public class InteractTaskTrigger : MonoBehaviour
             if (name == "MusicboxInteractionTrigger" || name == "HandleTrigger" || name == "KeyHole")
             {
                 // Disable the trigger
-                GameObject.Find("MusicboxInteractionTrigger").SetActive(false);
+                MusicboxInteractionTrigger.SetActive(false);
 
                 manager.CompleteTask(GameManagerScript.TaskTypes.FIND_MUSIC_BOX);
                 manager.TriggerEvent(GameManagerScript.EventTypes.MUSIC_BOX_TOUCHED);
-                manager.TriggerTask(GameManagerScript.TaskTypes.KEY_HINT, GameManagerScript.EventTypes.MUSIC_BOX_TOUCHED);
-            } else if (name == "IceCubeWithKey")
+                // manager.TriggerTask(GameManagerScript.TaskTypes.KEY_HINT, GameManagerScript.EventTypes.MUSIC_BOX_TOUCHED);
+
+                manager.TriggerEvent(GameManagerScript.EventTypes.PICKED_UP_CLIPBOARD, GameManagerScript.getAudioLength(GameManagerScript.EventTypes.MUSIC_BOX_TOUCHED) + UIContent.UI_MIN_DELAY_SECONDS);
+            }
+            else if (name == "IceCubeWithKey")
             {
-                manager.CompleteTask(GameManagerScript.TaskTypes.KEY_HINT);
+                // manager.CompleteTask(GameManagerScript.TaskTypes.KEY_HINT);
                 manager.CompleteTask(GameManagerScript.TaskTypes.KEY);
                 manager.TriggerEvent(GameManagerScript.EventTypes.ICE_CUBE_TOUCHED);
                 manager.TriggerTask(GameManagerScript.TaskTypes.ICE, GameManagerScript.EventTypes.ICE_CUBE_TOUCHED);
@@ -63,7 +69,7 @@ public class InteractTaskTrigger : MonoBehaviour
             }
             else if (name == "Clipboard")
             {
-                manager.CompleteTask(GameManagerScript.TaskTypes.KEY_HINT);
+                // manager.CompleteTask(GameManagerScript.TaskTypes.KEY_HINT);
                 manager.TriggerEvent(GameManagerScript.EventTypes.PICKED_UP_CLIPBOARD);
                 manager.TriggerTask(GameManagerScript.TaskTypes.KEY, GameManagerScript.EventTypes.PICKED_UP_CLIPBOARD);
             } else if (name == "Flashlight")
@@ -75,9 +81,6 @@ public class InteractTaskTrigger : MonoBehaviour
             } else if (name == "RFAIP_Cupboard_Door_Right")
             {
                 manager.TriggerEvent(GameManagerScript.EventTypes.SAFEBOX_CABINET_OPEN, 1);
-            } else if (name == "Safe_Door_LOD0")
-            {
-                manager.TriggerEvent(GameManagerScript.EventTypes.SAFEBOX_OPEN, 1);
             } else if (name == "StoveTrigger2" || name == "StoveTrigger1")
             {
                 manager.TriggerEvent(GameManagerScript.EventTypes.GAS_STOVE);

@@ -49,7 +49,7 @@ public class RadioAudio : MonoBehaviour
                 if (audioSource.clip == null || !audioSource.clip.Equals(audio1))
                 {
                     audioSource.clip = audio1;
-                    audioSource.volume = 0.02f;
+                    audioSource.volume = 0.04f;
                     audioSource.Play();
                 }
             }

@@ -27,7 +27,7 @@ public class RoofTrigger : MonoBehaviour
 
             // trigger
             GameManagerScript manager = GameObject.Find("GameManager").GetComponent<GameManagerScript>();
-            manager.TriggerEvent(GameManagerScript.EventTypes.FLARE_GUN_FIRED);
+            manager.TriggerEvent(GameManagerScript.EventTypes.HELI_ARRIVED, UIContent.UI_MIN_DELAY_SECONDS);
         }
     }
 }

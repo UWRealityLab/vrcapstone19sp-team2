@@ -6,7 +6,7 @@ using static GameManagerScript;
 public class UIContent : MonoBehaviour
 {
     public List<AudioClip> audios;
-    public static int UI_MIN_DELAY_SECONDS = 3;
+    public static int UI_MIN_DELAY_SECONDS = 2;
 
     public static Dictionary<TaskTypes, string> TaskToUI = 
         new Dictionary<TaskTypes, string>()
