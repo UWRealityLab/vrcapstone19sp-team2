@@ -10,7 +10,7 @@ public class LightSwitch : MonoBehaviour
     public Transform endPosition;
     public AudioClip switchSound;
 
-    private bool on = false;
+    public bool on = false;
 
     protected virtual void HandHoverUpdate(Hand hand)
     {

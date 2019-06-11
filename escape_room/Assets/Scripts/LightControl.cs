@@ -22,8 +22,6 @@ public class LightControl : MonoBehaviour
     public string lightTagName;
     public string emissiveTagName;
 
-    public Transform AStart, AEnd, BStart, BEnd, CStart, CEnd;
-
     public float delta = 0.001f;
     public bool passed;
 
@@ -63,15 +61,7 @@ public class LightControl : MonoBehaviour
 
     public void switchLight()
     {
-        bool AAtEnd = Mathf.Abs(switchA.transform.localPosition.y - AEnd.localPosition.y) <= delta;
-        bool BAtEnd = Mathf.Abs(switchB.transform.localPosition.y - BEnd.localPosition.y) <= delta;
-        bool CAtEnd = Mathf.Abs(switchC.transform.localPosition.y - CEnd.localPosition.y) <= delta;
-
-        bool AAtStart = Mathf.Abs(AStart.transform.localPosition.y - switchA.transform.localPosition.y) <= delta;
-        bool BAtStart = Mathf.Abs(BStart.transform.localPosition.y - switchB.transform.localPosition.y) <= delta;
-        bool CAtStart = Mathf.Abs(CStart.transform.localPosition.y - switchC.transform.localPosition.y) <= delta;
-
-        if (freelyOff)
+        if (!switchB.GetComponent<LightSwitch>().on)
         {
 
             lightOn = false;
@@ -100,37 +90,32 @@ public class LightControl : MonoBehaviour
         }
         else
         {
-            //    Debug.Log("mmp");
-            //    Debug.Log("AAtStart: " + AAtStart + ", BAtStart: " + BAtStart + ", CAtstart: " + CAtStart);
-            if (AAtStart && BAtStart && CAtStart)
+            //Debug.Log("gtmdsb");
+            passed = true;
+            lightOn = true;
+            freelyOff = true;
+            AudioSource audioSource = this.GetComponent<AudioSource>();
+            audioSource.clip = buttonSound;
+            audioSource.Play();
+            foreach (GameObject l in allLights)
             {
-                //Debug.Log("gtmdsb");
-                passed = true;
-                lightOn = true;
-                freelyOff = true;
-                AudioSource audioSource = this.GetComponent<AudioSource>();
-                audioSource.clip = buttonSound;
-                audioSource.Play();
-                foreach (GameObject l in allLights)
-                {
-                    l.GetComponent<Light>().enabled = lightOn;
-                }
-                foreach (GameObject l in allEmissives)
-                {
-                    l.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
-                }
-                foreach (GameObject l in LandE)
-                {
-                    l.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
-                    l.GetComponent<Light>().enabled = lightOn;
-                }
-                lightMapController.GetComponent<LightMapSwitcher>().SwapLightmaps(0);
-                screen.SetActive(true);
-
-                // Trigger
-                manager.CompleteTask(GameManagerScript.TaskTypes.LIGHT);
-                manager.TriggerEvent(GameManagerScript.EventTypes.AFTER_LIGHT_ON);
+                l.GetComponent<Light>().enabled = lightOn;
             }
+            foreach (GameObject l in allEmissives)
+            {
+                l.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
+            }
+            foreach (GameObject l in LandE)
+            {
+                l.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
+                l.GetComponent<Light>().enabled = lightOn;
+            }
+            lightMapController.GetComponent<LightMapSwitcher>().SwapLightmaps(0);
+            screen.SetActive(true);
+
+            // Trigger
+            manager.CompleteTask(GameManagerScript.TaskTypes.LIGHT);
+            manager.TriggerEvent(GameManagerScript.EventTypes.AFTER_LIGHT_ON);
         }
     }
 }
